@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">Heathdale Glen Orden Reserve</h1>
+				<p class="text-xl mt-4">Werribee</p>
+			</div>
+		</section>
+
+		<!-- Course Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Overview -->
+				<div class="bg-green-50 rounded-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold text-green-800 mb-4">Course Overview</h2>
+					<p class="text-green-700 text-lg mb-4">
+						"Partnership between MDGC and Wyndham City"
+					</p>
+					<p class="text-gray-600">
+						Located in Werribee, this course represents a successful collaboration 
+						between Melbourne Disc Golf Club and Wyndham City, providing disc golf 
+						opportunities in the western suburbs.
+					</p>
+				</div>
+
+				<!-- Course Details -->
+				<div class="grid md:grid-cols-2 gap-8 mb-8">
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Course Features</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>9-basket course</li>
+							<li>Two main sections: North and south</li>
+							<li>Structured layout across reserve</li>
+							<li>Navigation path between sections</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Course Layout</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>Holes 1-5: First section</li>
+							<li>Transition via northeast path</li>
+							<li>Holes 6-9: Second section</li>
+							<li>Well-marked navigation</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Development -->
+				<div class="bg-blue-50 rounded-lg p-6 mb-8">
+					<h3 class="text-xl font-bold mb-4">Development Partnership</h3>
+					<p class="text-gray-600">
+						This course demonstrates successful collaboration between Melbourne Disc Golf Club 
+						and Wyndham City Council, bringing disc golf to the Werribee community and 
+						providing recreational opportunities in the western suburbs of Melbourne.
+					</p>
+				</div>
+
+				<!-- Navigation -->
+				<div class="mt-12 text-center">
+					<a href="/courses" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+						← Back to All Courses
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">Bald Hill Park</h1>
+				<p class="text-xl mt-4">Inverness St, Clarinda</p>
+			</div>
+		</section>
+
+		<!-- Course Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Overview -->
+				<div class="bg-green-50 rounded-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold text-green-800 mb-4">Course Overview</h2>
+					<p class="text-green-700 text-lg mb-4">
+						"Beginner-friendly while providing complete disc golf experience"
+					</p>
+					<p class="text-gray-600">
+						Bald Hill Park is an excellent course for newcomers to disc golf, featuring 
+						comprehensive signage and facilities while still offering challenges for 
+						more experienced players.
+					</p>
+				</div>
+
+				<!-- Course Details -->
+				<div class="grid md:grid-cols-2 gap-8 mb-8">
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Course Features</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>9 baskets, 18 tees</li>
+							<li>Concrete tee pads</li>
+							<li>RAD baskets</li>
+							<li>Full course signage</li>
+							<li>Practice basket area</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Beginner Friendly Features</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>"How to play" sign for new players</li>
+							<li>Designed for all skill levels</li>
+							<li>Practice area available</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Navigation -->
+				<div class="mt-12 text-center">
+					<a href="/courses" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+						← Back to All Courses
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

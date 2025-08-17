@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">Llewellyn Park</h1>
+				<p class="text-xl mt-4">Wantirna South, Melbourne</p>
+			</div>
+		</section>
+
+		<!-- Course Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Overview -->
+				<div class="bg-green-50 rounded-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold text-green-800 mb-4">Course Overview</h2>
+					<p class="text-green-700 text-lg mb-4">
+						"Welcoming location for introducing friends and family"
+					</p>
+					<p class="text-gray-600">
+						Llewellyn Park in Wantirna South offers a family-friendly disc golf experience 
+						with excellent facilities and a layout designed to welcome newcomers to the sport.
+					</p>
+				</div>
+
+				<!-- Course Details -->
+				<div class="grid md:grid-cols-2 gap-8 mb-8">
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Course Features</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>9 baskets, 18 tees</li>
+							<li>Temporary course</li>
+							<li>Beginner to intermediate friendly</li>
+							<li>Heritage from "Melbourne Celebrates 2023"</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Park Facilities</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>Central pavilion</li>
+							<li>Free BBQ facilities</li>
+							<li>Toilet facilities</li>
+							<li>Cricket practice nets nearby</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Purpose -->
+				<div class="bg-blue-50 rounded-lg p-6 mb-8">
+					<h3 class="text-xl font-bold mb-4">Family-Friendly Focus</h3>
+					<p class="text-gray-600 mb-4">
+						Llewellyn Park is specifically designed to be a welcoming location for introducing 
+						friends and family to disc golf. The course maintains some holes from the 
+						"Melbourne Celebrates 2023" event, preserving its community connection.
+					</p>
+					<p class="text-gray-600">
+						<strong>Planned improvements:</strong> Course sign and check-in area near cricket practice nets.
+					</p>
+				</div>
+
+				<!-- Navigation -->
+				<div class="mt-12 text-center">
+					<a href="/courses" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+						← Back to All Courses
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
