@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">Membership</h1>
+				<p class="text-xl mt-4">Join the Melbourne disc golf community</p>
+			</div>
+		</section>
+
+		<!-- Membership Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Introduction -->
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold mb-6">Welcome to MDGC</h2>
+					<p class="text-lg text-gray-600 max-w-3xl mx-auto">
+						Membership is open to the public and recommended for both experienced players and beginners. 
+						Our membership is designed to help players learn, build skills, and support the ongoing growth 
+						of disc golf in Melbourne.
+					</p>
+				</div>
+
+				<!-- Membership Types -->
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="bg-white rounded-lg shadow-lg p-8">
+						<div class="text-center mb-6">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m3 5.197V9a3 3 0 00-3-3v0a3 3 0 00-3 3v12.43"></path>
+								</svg>
+							</div>
+							<h3 class="text-2xl font-bold text-blue-600">Junior Membership</h3>
+						</div>
+						<div class="text-center">
+							<p class="text-gray-600 mb-6">
+								Perfect for young players getting started in disc golf. Includes access to all club activities and social events.
+							</p>
+							<ul class="text-left text-gray-600 space-y-2 mb-6">
+								<li>• Access to monthly social days</li>
+								<li>• New player instruction</li>
+								<li>• Club community participation</li>
+								<li>• Skill development opportunities</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-8">
+						<div class="text-center mb-6">
+							<div class="bg-green-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+								</svg>
+							</div>
+							<h3 class="text-2xl font-bold text-green-600">Adult Membership</h3>
+						</div>
+						<div class="text-center">
+							<p class="text-gray-600 mb-6">
+								For adult players of all skill levels, from beginners to competitive athletes participating in state and national championships.
+							</p>
+							<ul class="text-left text-gray-600 space-y-2 mb-6">
+								<li>• Full club access and benefits</li>
+								<li>• Competition eligibility</li>
+								<li>• Social event participation</li>
+								<li>• Community building opportunities</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Benefits Section -->
+				<div class="bg-gray-50 rounded-lg p-8 mb-12">
+					<h2 class="text-2xl font-bold text-center mb-8">Membership Benefits</h2>
+					<div class="grid md:grid-cols-3 gap-6">
+						<div class="text-center">
+							<div class="bg-green-100 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+								<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+								</svg>
+							</div>
+							<h3 class="font-semibold mb-2">Community</h3>
+							<p class="text-gray-600 text-sm">Join a welcoming community of players aged 9-70+</p>
+						</div>
+						<div class="text-center">
+							<div class="bg-green-100 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+								<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+								</svg>
+							</div>
+							<h3 class="font-semibold mb-2">Learning</h3>
+							<p class="text-gray-600 text-sm">Skill development and instruction for all levels</p>
+						</div>
+						<div class="text-center">
+							<div class="bg-green-100 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+								<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+								</svg>
+							</div>
+							<h3 class="font-semibold mb-2">Events</h3>
+							<p class="text-gray-600 text-sm">Access to social days and competitive opportunities</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Call to Action -->
+				<div class="bg-green-600 text-white rounded-lg p-8 text-center">
+					<h2 class="text-2xl font-bold mb-4">Ready to Join?</h2>
+					<p class="text-lg mb-6">
+						Whether you're new to disc golf or an experienced player, we encourage you to become part of our community.
+					</p>
+					<div class="space-x-4">
+						<a href="/contact" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+							Contact Us
+						</a>
+						<a href="/what-is-disc-golf" class="bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors border border-green-500">
+							Learn About Disc Golf
+						</a>
+					</div>
+				</div>
+
+				<!-- Additional Info -->
+				<div class="mt-12 text-center">
+					<h3 class="text-xl font-semibold mb-4">Questions about Membership?</h3>
+					<p class="text-gray-600 mb-6">
+						Our friendly committee members are happy to help you get started. From beginners to competitive players, 
+						everyone is welcome in our inclusive disc golf community.
+					</p>
+					<a href="/about" class="text-green-600 hover:text-green-700 font-medium">
+						Learn More About MDGC →
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

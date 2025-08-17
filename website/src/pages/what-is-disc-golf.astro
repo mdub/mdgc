@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">What is Disc Golf?</h1>
+				<p class="text-xl mt-4">Learn about this exciting and accessible sport</p>
+			</div>
+		</section>
+
+		<!-- Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Introduction -->
+				<div class="prose lg:prose-lg mx-auto mb-12">
+					<p class="text-xl text-gray-600 mb-8">
+						Disc golf is similar to traditional ball golf, but with some exciting differences that make it 
+						accessible to players of all ages and abilities.
+					</p>
+				</div>
+
+				<!-- Basic Concept -->
+				<div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold mb-6">Basic Concept</h2>
+					<div class="grid md:grid-cols-2 gap-6">
+						<div>
+							<ul class="space-y-3 text-gray-600">
+								<li class="flex items-start">
+									<span class="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
+									Players throw a disc (like a frisbee) instead of hitting a ball
+								</li>
+								<li class="flex items-start">
+									<span class="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
+									The goal is to complete each "hole" in as few throws as possible
+								</li>
+								<li class="flex items-start">
+									<span class="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
+									Each hole has a starting point (tee) and a target (metal basket)
+								</li>
+								<li class="flex items-start">
+									<span class="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
+									Hole lengths can range from 40m to over 300m
+								</li>
+							</ul>
+						</div>
+						<div class="bg-green-50 rounded-lg p-6">
+							<div class="text-center">
+								<div class="bg-green-100 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+									<svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+									</svg>
+								</div>
+								<h3 class="font-semibold text-green-800">The Goal</h3>
+								<p class="text-green-700 text-sm mt-2">
+									Get the disc into the basket using the least number of throws
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- How to Play -->
+				<div class="bg-gray-50 rounded-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold mb-6">How to Play</h2>
+					<p class="text-gray-600 mb-6">
+						The fundamental objective is to get the disc into the basket using the least number of throws, 
+						mirroring the scoring concept in ball golf. Players start at a designated tee area and aim to 
+						land their disc in a metal basket that serves as the "hole" target.
+					</p>
+					
+					<div class="grid md:grid-cols-3 gap-6">
+						<div class="text-center">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<span class="text-2xl font-bold text-blue-600">1</span>
+							</div>
+							<h3 class="font-semibold mb-2">Start at the Tee</h3>
+							<p class="text-gray-600 text-sm">Begin each hole from the designated tee area</p>
+						</div>
+						<div class="text-center">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<span class="text-2xl font-bold text-blue-600">2</span>
+							</div>
+							<h3 class="font-semibold mb-2">Throw Your Disc</h3>
+							<p class="text-gray-600 text-sm">Aim for the metal basket target</p>
+						</div>
+						<div class="text-center">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<span class="text-2xl font-bold text-blue-600">3</span>
+							</div>
+							<h3 class="font-semibold mb-2">Reach the Basket</h3>
+							<p class="text-gray-600 text-sm">Complete the hole in as few throws as possible</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Why Play Disc Golf -->
+				<div class="bg-green-50 rounded-lg p-8">
+					<h2 class="text-2xl font-bold text-center mb-6">Why Play Disc Golf?</h2>
+					<div class="grid md:grid-cols-3 gap-6">
+						<div class="text-center">
+							<h3 class="font-semibold text-green-800 mb-2">Enjoyable</h3>
+							<p class="text-green-700 text-sm">Fun for all ages and skill levels</p>
+						</div>
+						<div class="text-center">
+							<h3 class="font-semibold text-green-800 mb-2">Challenging</h3>
+							<p class="text-green-700 text-sm">Strategic gameplay with varied terrain</p>
+						</div>
+						<div class="text-center">
+							<h3 class="font-semibold text-green-800 mb-2">Environmentally Responsible</h3>
+							<p class="text-green-700 text-sm">Played in natural park settings</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Call to Action -->
+				<div class="mt-12 text-center">
+					<h2 class="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+					<p class="text-gray-600 mb-6">
+						Join our welcoming community and discover the joy of disc golf in Melbourne.
+					</p>
+					<div class="space-x-4">
+						<a href="/membership" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+							Join MDGC
+						</a>
+						<a href="/events" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold border border-green-600 hover:bg-green-50 transition-colors">
+							View Events
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
