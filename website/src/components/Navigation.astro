@@ -1,4 +1,41 @@
 ---
+const navItems = [
+  {
+    title: 'Disc Golf',
+    href: '/disc-golf',
+    dropdown: [
+      { title: 'What is Disc Golf?', href: '/disc-golf' },
+      { title: 'New Player Essentials', href: '/disc-golf/new-players' }
+    ]
+  },
+  {
+    title: 'Courses',
+    href: '/courses',
+    dropdown: [
+      { title: 'Melbourne Courses', href: '/courses' },
+      { title: 'Other Courses in Victoria', href: '/courses/victoria' },
+      { title: 'Australia and Overseas', href: '/courses/australia' }
+    ]
+  },
+  {
+    title: 'Club',
+    href: '/club',
+    dropdown: [
+      { title: 'About MDGC', href: '/club' },
+      { title: 'Membership', href: '/club/membership' },
+      { title: 'Contact Us', href: '/club/contact' },
+      { title: 'MDGC Board', href: '/club/board' }
+    ]
+  },
+  {
+    title: 'Events',
+    href: '/events'
+  },
+  {
+    title: 'Shop',
+    href: '/shop'
+  }
+];
 ---
 
 <nav class="bg-green-600 text-white shadow-lg">
@@ -7,52 +44,25 @@
       <a href="/" class="text-xl font-bold">MDGC</a>
       
       <div class="hidden md:flex items-center space-x-8">
-        
-        <div class="relative group">
-          <button class="hover:text-green-200 transition-colors flex items-center">
-            Disc Golf
-            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
-            <a href="/disc-golf" class="block px-4 py-2 hover:bg-gray-100">What is Disc Golf?</a>
-            <a href="/disc-golf/new-players" class="block px-4 py-2 hover:bg-gray-100">New Player Essentials</a>
-          </div>
-        </div>
-
-        <div class="relative group">
-          <button class="hover:text-green-200 transition-colors flex items-center">
-            Courses
-            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
-            <a href="/courses" class="block px-4 py-2 hover:bg-gray-100">Melbourne Courses</a>
-            <a href="/courses/victoria" class="block px-4 py-2 hover:bg-gray-100">Other Courses in Victoria</a>
-            <a href="/courses/australia" class="block px-4 py-2 hover:bg-gray-100">Australia and Overseas</a>
-          </div>
-        </div>
-
-        <div class="relative group">
-          <button class="hover:text-green-200 transition-colors flex items-center">
-            Club
-            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
-            <a href="/club" class="block px-4 py-2 hover:bg-gray-100">About MDGC</a>
-            <a href="/club/membership" class="block px-4 py-2 hover:bg-gray-100">Membership</a>
-            <a href="/club/contact" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
-            <a href="/club/board" class="block px-4 py-2 hover:bg-gray-100">MDGC Board</a>
-          </div>
-        </div>
-
-        <a href="/events" class="hover:text-green-200 transition-colors">Events</a>
-        
-        <a href="/shop" class="hover:text-green-200 transition-colors">Shop</a>
+        {navItems.map(item => (
+          item.dropdown ? (
+            <div class="relative group">
+              <button class="hover:text-green-200 transition-colors flex items-center">
+                {item.title}
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+                {item.dropdown.map(subItem => (
+                  <a href={subItem.href} class="block px-4 py-2 hover:bg-gray-100">{subItem.title}</a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a href={item.href} class="hover:text-green-200 transition-colors">{item.title}</a>
+          )
+        ))}
       </div>
 
       
@@ -69,11 +79,9 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="/disc-golf" class="block px-3 py-2 hover:bg-green-700 rounded-md">Disc Golf</a>
-        <a href="/courses" class="block px-3 py-2 hover:bg-green-700 rounded-md">Courses</a>
-        <a href="/club" class="block px-3 py-2 hover:bg-green-700 rounded-md">Club</a>
-        <a href="/events" class="block px-3 py-2 hover:bg-green-700 rounded-md">Events</a>
-        <a href="/shop" class="block px-3 py-2 hover:bg-green-700 rounded-md">Shop</a>
+        {navItems.map(item => (
+          <a href={item.href} class="block px-3 py-2 hover:bg-green-700 rounded-md">{item.title}</a>
+        ))}
       </div>
     </div>
   </div>
