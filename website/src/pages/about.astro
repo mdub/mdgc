@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">About Melbourne Disc Golf Club</h1>
+				<p class="text-xl mt-4">Building community through disc golf since 2008</p>
+			</div>
+		</section>
+
+		<!-- Main Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="prose lg:prose-lg mx-auto">
+					<h2>Our Story</h2>
+					<p>
+						Founded in 2008, the Melbourne Disc Golf Club is a not-for-profit organisation 
+						managed by a voluntary committee. We have a simple goal - to create a local 
+						community of players and to spread awareness of this enjoyable, challenging 
+						and environmentally responsible sport.
+					</p>
+
+					<h2>Our Community</h2>
+					<p>
+						Membership is open to all ages and abilities. Our current membership ranges 
+						from 9 to 70+ years old, so whether you're young or old, super competitive 
+						or just want to have fun, there's a place for you in our club.
+					</p>
+
+					<h2>How We Play</h2>
+					<p>
+						Some members play socially in monthly events, while others compete in 
+						tournaments including:
+					</p>
+					<ul>
+						<li>State championships</li>
+						<li>National Championships</li>
+						<li>US Disc Golf Championships</li>
+						<li>World Championships</li>
+					</ul>
+
+					<h2>Mission & Values</h2>
+					<p>
+						We believe disc golf is an enjoyable, challenging and environmentally 
+						responsible sport that brings people together. Our focus is on building 
+						an inclusive community where players of all skill levels can enjoy the game.
+					</p>
+
+					<div class="bg-green-50 p-6 rounded-lg mt-8">
+						<h3 class="text-green-800 font-semibold mb-4">Ready to Join?</h3>
+						<p class="text-green-700 mb-4">
+							Whether you're new to disc golf or an experienced player, we'd love to welcome you to our community.
+						</p>
+						<div class="space-x-4">
+							<a href="/membership" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+								Learn About Membership
+							</a>
+							<a href="/what-is-disc-golf" class="bg-white text-green-600 px-6 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition-colors">
+								What is Disc Golf?
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

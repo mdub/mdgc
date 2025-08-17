@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">Disc Golf Courses in Melbourne</h1>
+				<p class="text-xl mt-4">Discover amazing disc golf courses across Melbourne</p>
+			</div>
+		</section>
+
+		<!-- Courses Grid -->
+		<section class="py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid md:grid-cols-2 gap-8">
+					<!-- Bicentennial Park -->
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+						<div class="h-48 bg-green-100 flex items-center justify-center">
+							<svg class="w-16 h-16 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+							</svg>
+						</div>
+						<div class="p-6">
+							<h3 class="text-2xl font-bold mb-2">Bicentennial Park</h3>
+							<p class="text-gray-600 mb-4"><strong>Location:</strong> Chelsea, City of Kingston</p>
+							
+							<div class="mb-4">
+								<h4 class="font-semibold mb-2">Course Features:</h4>
+								<ul class="text-gray-600 space-y-1">
+									<li>• 9 tees, 18 baskets</li>
+									<li>• Practice basket</li>
+									<li>• Tee signage and course map</li>
+									<li>• Mixed terrain (trees + open holes)</li>
+								</ul>
+							</div>
+							
+							<div class="mb-4">
+								<h4 class="font-semibold mb-2">Park Amenities:</h4>
+								<ul class="text-gray-600 space-y-1">
+									<li>• Toilets and playground</li>
+									<li>• Sports courts and ovals</li>
+									<li>• Skatepark</li>
+								</ul>
+							</div>
+							
+							<p class="text-gray-600 italic">
+								"A fantastic challenge suitable for both new and experienced players"
+							</p>
+						</div>
+					</div>
+
+					<!-- Ruffey Lake Park -->
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+						<div class="h-48 bg-blue-100 flex items-center justify-center">
+							<svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"></path>
+							</svg>
+						</div>
+						<div class="p-6">
+							<h3 class="text-2xl font-bold mb-2">Ruffey Lake Park</h3>
+							<p class="text-gray-600 mb-4"><strong>Location:</strong> Doncaster, Manningham City Council</p>
+							
+							<div class="mb-4">
+								<h4 class="font-semibold mb-2">Course Details:</h4>
+								<ul class="text-gray-600 space-y-1">
+									<li>• <strong>Cost:</strong> Free to play</li>
+									<li>• <strong>Type:</strong> Public park course</li>
+									<li>• <strong>Status:</strong> MDGC home turf</li>
+								</ul>
+							</div>
+							
+							<div class="mb-4">
+								<h4 class="font-semibold mb-2">Course History:</h4>
+								<ul class="text-gray-600 space-y-1">
+									<li>• <strong>2012:</strong> Original 6 baskets installed</li>
+									<li>• <strong>2016:</strong> Expanded with 3 new baskets</li>
+									<li>• Additional tees added by MDGC</li>
+								</ul>
+							</div>
+							
+							<p class="text-gray-600 italic">
+								"An amazingly large area of public parkland"
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Additional Information -->
+				<div class="mt-16 bg-gray-50 rounded-lg p-8">
+					<h2 class="text-2xl font-bold text-center mb-8">Explore More Courses</h2>
+					<div class="grid md:grid-cols-3 gap-6 text-center">
+						<div>
+							<h3 class="font-semibold mb-2">Victoria Courses</h3>
+							<p class="text-gray-600 mb-4">Discover disc golf courses throughout Victoria</p>
+							<a href="/courses/victoria" class="text-green-600 hover:text-green-700 font-medium">View Courses</a>
+						</div>
+						<div>
+							<h3 class="font-semibold mb-2">Australia & Overseas</h3>
+							<p class="text-gray-600 mb-4">International disc golf destinations</p>
+							<a href="/courses/australia" class="text-green-600 hover:text-green-700 font-medium">Explore Destinations</a>
+						</div>
+						<div>
+							<h3 class="font-semibold mb-2">Course Installation</h3>
+							<p class="text-gray-600 mb-4">Learn about installing disc golf courses</p>
+							<a href="/courses/installation" class="text-green-600 hover:text-green-700 font-medium">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
