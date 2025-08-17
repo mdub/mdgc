@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">New Player Essentials</h1>
+				<p class="text-xl mt-4">Everything you need to know to get started with disc golf</p>
+			</div>
+		</section>
+
+		<!-- Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Getting Started -->
+				<div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold mb-6">Getting Started</h2>
+					<p class="text-gray-600 mb-6">
+						New to disc golf? Don't worry - it's easier than you think! Here's what you need to know 
+						to get started on your disc golf journey.
+					</p>
+					
+					<div class="grid md:grid-cols-2 gap-6">
+						<div>
+							<h3 class="font-semibold text-lg mb-3">Basic Equipment</h3>
+							<ul class="space-y-2 text-gray-600">
+								<li>• Start with just one disc (a mid-range disc is ideal)</li>
+								<li>• Comfortable walking shoes</li>
+								<li>• Water bottle</li>
+								<li>• Small towel for cleaning discs</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="font-semibold text-lg mb-3">What to Expect</h3>
+							<ul class="space-y-2 text-gray-600">
+								<li>• Games typically take 1-2 hours</li>
+								<li>• Courses are usually 9 or 18 holes</li>
+								<li>• Most courses are free to play</li>
+								<li>• Welcoming community of players</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Learning the Game -->
+				<div class="bg-gray-50 rounded-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold mb-6">Learning the Game</h2>
+					
+					<div class="grid md:grid-cols-3 gap-6">
+						<div class="text-center">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<span class="text-2xl font-bold text-blue-600">1</span>
+							</div>
+							<h3 class="font-semibold mb-2">Start Simple</h3>
+							<p class="text-gray-600 text-sm">Begin with short throws focusing on accuracy over distance</p>
+						</div>
+						<div class="text-center">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<span class="text-2xl font-bold text-blue-600">2</span>
+							</div>
+							<h3 class="font-semibold mb-2">Play with Others</h3>
+							<p class="text-gray-600 text-sm">Join our social days to learn from experienced players</p>
+						</div>
+						<div class="text-center">
+							<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+								<span class="text-2xl font-bold text-blue-600">3</span>
+							</div>
+							<h3 class="font-semibold mb-2">Have Fun</h3>
+							<p class="text-gray-600 text-sm">Don't worry about scores - focus on enjoying the game</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Join MDGC -->
+				<div class="bg-green-50 rounded-lg p-8">
+					<h2 class="text-2xl font-bold text-center mb-6">Join Our Community</h2>
+					<p class="text-center text-gray-600 mb-6">
+						Melbourne Disc Golf Club welcomes players of all skill levels. Our friendly community 
+						is here to help you learn and enjoy the game.
+					</p>
+					
+					<div class="text-center space-x-4">
+						<a href="/events" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+							View Social Days
+						</a>
+						<a href="/club/membership" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold border border-green-600 hover:bg-green-50 transition-colors">
+							Join MDGC
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
