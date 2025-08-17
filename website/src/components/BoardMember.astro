@@ -1,0 +1,28 @@
+---
+export interface Props {
+	name: string;
+	title: string;
+}
+
+const { name, title } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-lg p-8">
+	<div class="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
+		<div class="flex-shrink-0">
+			<div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center">
+				<svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+				</svg>
+			</div>
+		</div>
+		<div class="flex-1">
+			<h3 class="text-2xl font-bold text-green-600 mb-2">{name}</h3>
+			<p class="text-lg font-semibold text-gray-700 mb-4">{title}</p>
+			
+			<div class="prose text-gray-600">
+				<slot />
+			</div>
+		</div>
+	</div>
+</div>
