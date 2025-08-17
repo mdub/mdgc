@@ -10,113 +10,123 @@ import Navigation from '../../components/Navigation.astro';
 		<!-- Hero Section -->
 		<section class="bg-green-600 text-white py-16">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h1 class="text-4xl font-bold">Disc Golf Courses</h1>
-				<p class="text-xl mt-4">Discover disc golf courses across Australia and beyond</p>
+				<h1 class="text-4xl font-bold">Melbourne Disc Golf Courses</h1>
+				<p class="text-xl mt-4">Discover amazing disc golf courses across Melbourne</p>
 			</div>
 		</section>
 
-		<!-- Course Regions -->
+		<!-- Melbourne Courses -->
 		<section class="py-16">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid md:grid-cols-3 gap-8">
-					<div class="bg-white rounded-lg shadow-lg p-8 text-center">
-						<div class="bg-green-100 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-							<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-2xl font-bold mb-4">Melbourne Courses</h3>
-						<p class="text-gray-600 mb-6">
-							Explore 10+ disc golf courses across Melbourne, from beginner-friendly parks to challenging championship layouts.
-						</p>
-						<ul class="text-left text-gray-600 mb-6 space-y-2">
-							<li>• Bicentennial Park (Chelsea)</li>
-							<li>• Ruffey Lake Park (Doncaster)</li>
-							<li>• Bald Hill Park (Clarinda)</li>
-							<li>• Stony Creek (Under Westgate Bridge)</li>
-							<li>• And 6 more courses...</li>
-						</ul>
-						<a href="/courses/melbourne" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-							View Melbourne Courses
-						</a>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+					<!-- Featured Courses -->
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/ruffey-lake-park" class="text-green-600 hover:text-green-700">Ruffey Lake Park</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Doncaster - MDGC Home Turf</p>
+						<p class="text-sm text-gray-500">Free to play • Public park course</p>
 					</div>
 
-					<div class="bg-white rounded-lg shadow-lg p-8 text-center">
-						<div class="bg-blue-100 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-							<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m-6 3l6-3"></path>
-							</svg>
-						</div>
-						<h3 class="text-2xl font-bold mb-4">Victoria Courses</h3>
-						<p class="text-gray-600 mb-6">
-							Discover disc golf courses throughout Victoria, from regional towns to major cities outside Melbourne.
-						</p>
-						<ul class="text-left text-gray-600 mb-6 space-y-2">
-							<li>• Ballarat courses</li>
-							<li>• Geelong area</li>
-							<li>• Regional Victoria</li>
-							<li>• Country tournaments</li>
-							<li>• Scenic locations</li>
-						</ul>
-						<a href="/courses/victoria" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-							Explore Victoria
-						</a>
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/bicentennial-park" class="text-green-600 hover:text-green-700">Bicentennial Park</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Chelsea, City of Kingston</p>
+						<p class="text-sm text-gray-500">9 tees, 18 baskets • Mixed terrain</p>
 					</div>
 
-					<div class="bg-white rounded-lg shadow-lg p-8 text-center">
-						<div class="bg-purple-100 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-							<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-2xl font-bold mb-4">Australia & Overseas</h3>
-						<p class="text-gray-600 mb-6">
-							Plan your disc golf travels across Australia and international destinations for tournaments and holidays.
-						</p>
-						<ul class="text-left text-gray-600 mb-6 space-y-2">
-							<li>• Sydney & NSW courses</li>
-							<li>• Brisbane & Queensland</li>
-							<li>• Adelaide & South Australia</li>
-							<li>• International destinations</li>
-							<li>• Tournament venues</li>
-						</ul>
-						<a href="/courses/australia" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-							Plan Your Trip
-						</a>
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/bald-hill-park" class="text-green-600 hover:text-green-700">Bald Hill Park</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Inverness St, Clarinda</p>
+						<p class="text-sm text-gray-500">Beginner-friendly • Full signage</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/stony-creek" class="text-green-600 hover:text-green-700">Stony Creek Reserve</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Under Westgate Bridge</p>
+						<p class="text-sm text-gray-500">Near CBD • 9 concrete teepads</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/little-blind-creek" class="text-green-600 hover:text-green-700">Little Blind Creek</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Melton</p>
+						<p class="text-sm text-gray-500">Natural environment • Beginner-friendly</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/llewellyn-park" class="text-green-600 hover:text-green-700">Llewellyn Park</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Wantirna South</p>
+						<p class="text-sm text-gray-500">Family-friendly • BBQ facilities</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/caulfield-racecourse" class="text-green-600 hover:text-green-700">Caulfield Racecourse</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Caulfield</p>
+						<p class="text-sm text-gray-500">4 baskets • Windy conditions</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/livingstone-primary" class="text-green-600 hover:text-green-700">Livingstone Primary</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Vermont South</p>
+						<p class="text-sm text-gray-500">6 baskets • Perfect for ace runs</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/upper-yarra-sc" class="text-green-600 hover:text-green-700">Upper Yarra SC</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Yarra Junction</p>
+						<p class="text-sm text-gray-500">School course • Educational focus</p>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-3">
+							<a href="/courses/heathdale-glen-orden" class="text-green-600 hover:text-green-700">Heathdale Glen Orden Reserve</a>
+						</h3>
+						<p class="text-gray-600 mb-2">Werribee</p>
+						<p class="text-sm text-gray-500">9 baskets • MDGC/Wyndham partnership</p>
 					</div>
 				</div>
 
-				<!-- Introduction -->
+				<!-- Other Locations -->
 				<div class="mt-16 bg-gray-50 rounded-lg p-8">
-					<h2 class="text-2xl font-bold text-center mb-6">About Our Course Information</h2>
-					<div class="max-w-4xl mx-auto text-center">
-						<p class="text-gray-600 mb-6">
-							Melbourne Disc Golf Club maintains comprehensive information about disc golf courses to help our 
-							community discover new places to play. Whether you're a beginner looking for your first course 
-							or an experienced player planning a disc golf road trip, we've got you covered.
-						</p>
-						<div class="grid md:grid-cols-2 gap-8 text-left">
-							<div>
-								<h3 class="font-semibold mb-3">What We Include</h3>
-								<ul class="text-gray-600 space-y-2">
-									<li>• Course layouts and hole counts</li>
-									<li>• Difficulty levels and terrain</li>
-									<li>• Amenities and facilities</li>
-									<li>• Historical information</li>
-									<li>• Accessibility details</li>
-								</ul>
-							</div>
-							<div>
-								<h3 class="font-semibold mb-3">Course Types</h3>
-								<ul class="text-gray-600 space-y-2">
-									<li>• Public park courses (free)</li>
-									<li>• Championship-level layouts</li>
-									<li>• Beginner-friendly courses</li>
-									<li>• Temporary event courses</li>
-									<li>• School and community courses</li>
-								</ul>
-							</div>
+					<h2 class="text-2xl font-bold text-center mb-8">Courses Beyond Melbourne</h2>
+					<div class="grid md:grid-cols-2 gap-8">
+						<div class="bg-white rounded-lg p-6 text-center">
+							<h3 class="text-xl font-bold mb-4">Victoria & Australia</h3>
+							<p class="text-gray-600 mb-6">
+								For comprehensive information about disc golf courses throughout Victoria and Australia, 
+								visit flyspot.com.au - the ultimate resource for Australian disc golf course information.
+							</p>
+							<a href="https://flyspot.com.au" target="_blank" rel="noopener noreferrer" 
+								class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+								Visit flyspot.com.au ↗
+							</a>
+						</div>
+
+						<div class="bg-white rounded-lg p-6 text-center">
+							<h3 class="text-xl font-bold mb-4">Courses Worldwide</h3>
+							<p class="text-gray-600 mb-6">
+								Planning disc golf travels around the world? UDisc is the global standard for 
+								course directories, scorekeeping, and finding disc golf wherever you go.
+							</p>
+							<a href="https://udisc.com" target="_blank" rel="noopener noreferrer" 
+								class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+								Visit udisc.com ↗
+							</a>
 						</div>
 					</div>
 				</div>
