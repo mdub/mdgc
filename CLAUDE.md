@@ -3,10 +3,25 @@
 ## Project Overview
 This project involves building a new modern website for the Melbourne Disc Golf Club (MDGC) using Astro and Tailwind CSS to replace their existing WordPress site.
 
+## Site Architecture Evolution
+The new site structure has diverged significantly from the original WordPress site to provide better information architecture and user experience:
+
+### Original Site Structure (WordPress)
+- Home, About (dropdown), Courses (dropdown), Events, Media (dropdown), Shop
+
+### New Site Structure (Redesigned)
+- **Disc Golf** (dropdown): Educational content about the sport
+- **Courses** (dropdown): Location-based course information  
+- **Club** (dropdown): MDGC-specific community content
+- **Events**: Social days and tournaments
+- **Shop**: Equipment and merchandise
+
+This reorganization separates educational content from club operations and gives proper prominence to courses and events.
+
 ## Existing Site Analysis
 - **Current Site**: https://www.melbournediscgolf.com/
-- **Documentation**: See `existing-site/` directory for structured content mapping
-- **Key Sections**: About, Courses, Events, Media (Shop excluded for now)
+- **Documentation**: See `existing-site/` directory for structured content mapping (reference only)
+- **Note**: New site structure intentionally diverges from original for improved UX
 
 ## Technology Stack
 - **Framework**: Astro 5.12.8
@@ -18,23 +33,35 @@ This project involves building a new modern website for the Melbourne Disc Golf 
 website/
 ├── src/
 │   ├── components/
-│   │   └── Navigation.astro    # Main navigation with dropdowns
+│   │   ├── Navigation.astro    # Main navigation with dropdowns
+│   │   ├── BoardMember.astro   # Board member profile component
+│   │   ├── Course.astro        # Course information component
+│   │   └── Welcome.astro       # Welcome section component
 │   ├── layouts/
 │   │   └── Layout.astro        # Base layout template
 │   ├── pages/
 │   │   ├── index.astro         # Homepage with hero section
-│   │   ├── about.astro         # Club information
-│   │   ├── courses.astro       # Melbourne disc golf courses
-│   │   └── events.astro        # Social days and events
+│   │   ├── disc-golf/
+│   │   │   ├── index.astro     # What is Disc Golf?
+│   │   │   └── new-players.astro # New Player Essentials
+│   │   ├── courses/
+│   │   │   ├── index.astro     # Melbourne courses
+│   │   │   ├── victoria.astro  # Other Victorian courses
+│   │   │   └── australia.astro # Australia & overseas
+│   │   ├── club/
+│   │   │   ├── index.astro     # About MDGC
+│   │   │   ├── membership.astro # Membership information
+│   │   │   ├── contact.astro   # Contact details
+│   │   │   └── board.astro     # Board member profiles
+│   │   ├── events/
+│   │   │   └── index.astro     # Social days and events
+│   │   └── shop.astro          # Equipment and merchandise
 │   └── styles/
 │       └── global.css
-└── existing-site/              # Documentation of current site structure
-    ├── _navbar.md              # Navigation structure reference
-    ├── index.md                # Homepage content
-    ├── about/
-    ├── melbourne-courses/
-    ├── events/
-    └── media/
+└── existing-site/              # Documentation of original site (reference)
+    ├── _navbar.md              # Original navigation structure
+    ├── index.md                # Original homepage content
+    ├── about/, melbourne-courses/, events/, media/
 ```
 
 ## Development Commands
@@ -45,24 +72,25 @@ website/
 ## Site Features
 - Responsive design with mobile navigation
 - Modern green color scheme reflecting disc golf/outdoor theme
-- Navigation dropdowns matching original site structure
+- Reorganized navigation structure with improved information architecture
 - Hero sections on all pages
 - Card-based layouts for courses and events
 - Accessible markup and semantic HTML
+- Component-based architecture for reusable elements
 
-## Content Migration Status
-- ✅ Homepage hero and welcome content
-- ✅ About section (club history, mission, demographics)
-- ✅ Course information (Bicentennial Park, Ruffey Lake Park)
-- ✅ Events structure (social days, competitive opportunities)
-- 🔄 Media section (basic structure created)
-- ❌ Shop section (excluded per requirements)
-- ❌ Blog/news content (structure planned)
+## Implementation Status
+- ✅ **Navigation Structure**: Complete redesign with new information architecture
+- ✅ **Homepage**: Hero section and welcome content migrated
+- ✅ **Disc Golf Section**: Educational content (What is Disc Golf, New Player Essentials)
+- ✅ **Courses Section**: Melbourne courses + placeholder pages for Victoria/Australia
+- ✅ **Club Section**: About MDGC, membership, contact, board member profiles
+- ✅ **Events Section**: Social days structure and competitive opportunities
+- ✅ **Shop Section**: Basic placeholder page created
+- 🔄 **Content Population**: Many pages need additional content from original site
+- ❌ **Media/Blog**: Not yet implemented (may be added to Club section)
 
-## Next Steps
-- Add remaining pages (What is Disc Golf, Membership, Contact, etc.)
-- Implement media gallery functionality
-- Add more course details and photos
-- Create blog/news section
-- Add contact forms and membership signup
-- Optimize for SEO and performance
+## Key Architectural Decisions
+- **URL Structure**: Moved from flat structure to organized subdirectories (`/club/`, `/courses/`, etc.)
+- **Navigation**: Simplified from complex nested dropdowns to clearer categorical organization
+- **Content Separation**: Distinguishes between educational disc golf content and club-specific information
+- **Component Reuse**: BoardMember and Course components for consistent presentation
