@@ -12,5 +12,5 @@ Disc golf is similar to traditional ball golf, with key differences:
 The fundamental objective is to get the disc into the basket using the least number of throws, mirroring the scoring concept in ball golf. Players start at a designated tee area and aim to land their disc in a metal basket that serves as the "hole" target.
 
 ## Navigation
-- [Back to About section](./about/)
-- [New Player Essentials](./upcoming-events/new-player-essentials/)
+- [Back to About section](./about/index.md)
+- [New Player Essentials](./upcoming-events/new-player-essentials.md)

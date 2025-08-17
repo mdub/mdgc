@@ -20,5 +20,5 @@
 "An amazingly large area of public parkland" suitable for disc golf.
 
 ## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/)
-- [Other Melbourne Courses](../bicentennial-park/)
+- [Back to Melbourne Courses](../melbourne-courses/index.md)
+- [Other Melbourne Courses](../bicentennial-park/index.md)

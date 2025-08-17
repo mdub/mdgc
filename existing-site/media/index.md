@@ -19,4 +19,4 @@
 - Sport development stories
 
 ## Related Sections
-- [Blog](../news/) - Additional club news and updates
+- [Blog](../news/index.md) - Additional club news and updates

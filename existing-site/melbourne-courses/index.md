@@ -5,12 +5,12 @@
 ### Bicentennial Park
 - **Location**: Chelsea
 - Features course photography
-- [More details](../bicentennial-park/)
+- [More details](../bicentennial-park/index.md)
 
 ### Ruffey Lake Park  
 - **Location**: Doncaster
 - Features course photography
-- [More details](../ruffey-lake-park-disc-golf-course/)
+- [More details](../ruffey-lake-park-disc-golf-course/index.md)
 
 ## Additional Information
 - Interactive map showing disc golf courses around Melbourne
@@ -18,6 +18,6 @@
 - Multiple course locations available across Melbourne
 
 ## Related Sections
-- [Other Courses in Victoria](../other-courses-in-victoria/)
-- [Australia and Overseas](../australia-international/)
-- [Why Install a Disc Golf Course](../why-install-a-disc-golf-course/)
+- [Other Courses in Victoria](../other-courses-in-victoria/index.md)
+- [Australia and Overseas](../australia-international/index.md)
+- [Why Install a Disc Golf Course](../why-install-a-disc-golf-course.md)

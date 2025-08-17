@@ -15,5 +15,5 @@ Based on site structure, events may include:
 - Special tournaments and competitions
 
 ## Related Content
-- [New Player Essentials](../upcoming-events/new-player-essentials/)
-- [About MDGC](../about/) - includes information about competitive tournaments members participate in
+- [New Player Essentials](../upcoming-events/new-player-essentials.md)
+- [About MDGC](../about/index.md) - includes information about competitive tournaments members participate in

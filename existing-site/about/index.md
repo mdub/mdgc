@@ -25,8 +25,8 @@ Members compete in various tournaments including:
 To create a local community of players and to spread awareness of this enjoyable, challenging and environmentally responsible sport.
 
 ## Related Pages
-- [What is Disc Golf?](../what-is-disc-golf/)
-- [New Player Essentials](../upcoming-events/new-player-essentials/)
-- [Membership](../membership/)
-- [Contact Us](../contact/)
-- [MDGC Board](../board/)
+- [What is Disc Golf?](../what-is-disc-golf.md)
+- [New Player Essentials](../upcoming-events/new-player-essentials.md)
+- [Membership](../membership/index.md)
+- [Contact Us](../contact/index.md)
+- [MDGC Board](../board/index.md)
