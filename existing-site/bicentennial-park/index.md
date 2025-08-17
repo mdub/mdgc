@@ -25,5 +25,5 @@
 - Baseball diamonds
 
 ## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/)
-- [Other Melbourne Courses](../ruffey-lake-park-disc-golf-course/)
+- [Back to Melbourne Courses](../melbourne-courses/index.md)
+- [Other Melbourne Courses](../ruffey-lake-park-disc-golf-course/index.md)
