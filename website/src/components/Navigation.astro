@@ -1,0 +1,91 @@
+---
+---
+
+<nav class="bg-green-600 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/" class="text-xl font-bold">MDGC</a>
+      </div>
+      
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/" class="hover:text-green-200 transition-colors">Home</a>
+        
+        <div class="relative group">
+          <button class="hover:text-green-200 transition-colors flex items-center">
+            About
+            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+            <a href="/what-is-disc-golf" class="block px-4 py-2 hover:bg-gray-100">What is Disc Golf?</a>
+            <a href="/about" class="block px-4 py-2 hover:bg-gray-100">About MDGC</a>
+            <a href="/membership" class="block px-4 py-2 hover:bg-gray-100">Membership</a>
+            <a href="/contact" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+            <a href="/board" class="block px-4 py-2 hover:bg-gray-100">MDGC Board</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="hover:text-green-200 transition-colors flex items-center">
+            Courses
+            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+            <a href="/courses" class="block px-4 py-2 hover:bg-gray-100">Melbourne Courses</a>
+            <a href="/courses/victoria" class="block px-4 py-2 hover:bg-gray-100">Other Courses in Victoria</a>
+            <a href="/courses/australia" class="block px-4 py-2 hover:bg-gray-100">Australia and Overseas</a>
+            <a href="/courses/installation" class="block px-4 py-2 hover:bg-gray-100">Why Install a Course</a>
+          </div>
+        </div>
+
+        <a href="/events" class="hover:text-green-200 transition-colors">Events</a>
+        
+        <div class="relative group">
+          <button class="hover:text-green-200 transition-colors flex items-center">
+            Media
+            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-40 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+            <a href="/media" class="block px-4 py-2 hover:bg-gray-100">Videos & Articles</a>
+            <a href="/news" class="block px-4 py-2 hover:bg-gray-100">Blog</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-white hover:text-green-200">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="/" class="block px-3 py-2 hover:bg-green-700 rounded-md">Home</a>
+        <a href="/about" class="block px-3 py-2 hover:bg-green-700 rounded-md">About</a>
+        <a href="/courses" class="block px-3 py-2 hover:bg-green-700 rounded-md">Courses</a>
+        <a href="/events" class="block px-3 py-2 hover:bg-green-700 rounded-md">Events</a>
+        <a href="/media" class="block px-3 py-2 hover:bg-green-700 rounded-md">Media</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
