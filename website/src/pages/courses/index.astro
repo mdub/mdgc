@@ -2,6 +2,7 @@
 import Layout from '/src/layouts/Layout.astro';
 import Navigation from '/src/components/Navigation.astro';
 import Hero from '/src/components/Hero.astro';
+import CourseCard from '/src/components/CourseCard.astro';
 ---
 
 <Layout>
@@ -14,86 +15,75 @@ import Hero from '/src/components/Hero.astro';
 		<section class="py-16">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-					<!-- Featured Courses -->
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/ruffey-lake-park" class="text-green-600 hover:text-green-700">Ruffey Lake Park</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Doncaster - MDGC Home Turf</p>
-						<p class="text-sm text-gray-500">Free to play • Public park course</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/bicentennial-park" class="text-green-600 hover:text-green-700">Bicentennial Park</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Chelsea, City of Kingston</p>
-						<p class="text-sm text-gray-500">9 tees, 18 baskets • Mixed terrain</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/bald-hill-park" class="text-green-600 hover:text-green-700">Bald Hill Park</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Inverness St, Clarinda</p>
-						<p class="text-sm text-gray-500">Beginner-friendly • Full signage</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/stony-creek" class="text-green-600 hover:text-green-700">Stony Creek Reserve</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Under Westgate Bridge</p>
-						<p class="text-sm text-gray-500">Near CBD • 9 concrete teepads</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/little-blind-creek" class="text-green-600 hover:text-green-700">Little Blind Creek</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Melton</p>
-						<p class="text-sm text-gray-500">Natural environment • Beginner-friendly</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/llewellyn-park" class="text-green-600 hover:text-green-700">Llewellyn Park</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Wantirna South</p>
-						<p class="text-sm text-gray-500">Family-friendly • BBQ facilities</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/caulfield-racecourse" class="text-green-600 hover:text-green-700">Caulfield Racecourse</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Caulfield</p>
-						<p class="text-sm text-gray-500">4 baskets • Windy conditions</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/livingstone-primary" class="text-green-600 hover:text-green-700">Livingstone Primary</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Vermont South</p>
-						<p class="text-sm text-gray-500">6 baskets • Perfect for ace runs</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/upper-yarra-sc" class="text-green-600 hover:text-green-700">Upper Yarra SC</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Yarra Junction</p>
-						<p class="text-sm text-gray-500">School course • Educational focus</p>
-					</div>
-
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<h3 class="text-xl font-bold mb-3">
-							<a href="/courses/heathdale-glen-orden" class="text-green-600 hover:text-green-700">Heathdale Glen Orden Reserve</a>
-						</h3>
-						<p class="text-gray-600 mb-2">Werribee</p>
-						<p class="text-sm text-gray-500">9 baskets • MDGC/Wyndham partnership</p>
-					</div>
+					<CourseCard 
+						name="Ruffey Lake Park" 
+						href="/courses/ruffey-lake-park" 
+						location="Doncaster - MDGC Home Turf" 
+						description="Free to play • Public park course" 
+					/>
+					
+					<CourseCard 
+						name="Bicentennial Park" 
+						href="/courses/bicentennial-park" 
+						location="Chelsea, City of Kingston" 
+						description="9 tees, 18 baskets • Mixed terrain" 
+					/>
+					
+					<CourseCard 
+						name="Bald Hill Park" 
+						href="/courses/bald-hill-park" 
+						location="Inverness St, Clarinda" 
+						description="Beginner-friendly • Full signage" 
+					/>
+					
+					<CourseCard 
+						name="Stony Creek Reserve" 
+						href="/courses/stony-creek" 
+						location="Under Westgate Bridge" 
+						description="Near CBD • 9 concrete teepads" 
+					/>
+					
+					<CourseCard 
+						name="Little Blind Creek" 
+						href="/courses/little-blind-creek" 
+						location="Melton" 
+						description="Natural environment • Beginner-friendly" 
+					/>
+					
+					<CourseCard 
+						name="Llewellyn Park" 
+						href="/courses/llewellyn-park" 
+						location="Wantirna South" 
+						description="Family-friendly • BBQ facilities" 
+					/>
+					
+					<CourseCard 
+						name="Caulfield Racecourse" 
+						href="/courses/caulfield-racecourse" 
+						location="Caulfield" 
+						description="4 baskets • Windy conditions" 
+					/>
+					
+					<CourseCard 
+						name="Livingstone Primary" 
+						href="/courses/livingstone-primary" 
+						location="Vermont South" 
+						description="6 baskets • Perfect for ace runs" 
+					/>
+					
+					<CourseCard 
+						name="Upper Yarra SC" 
+						href="/courses/upper-yarra-sc" 
+						location="Yarra Junction" 
+						description="School course • Educational focus" 
+					/>
+					
+					<CourseCard 
+						name="Heathdale Glen Ordem Reserve" 
+						href="/courses/heathdale-glen-orden" 
+						location="Werribee" 
+						description="9 baskets • MDGC/Wyndham partnership" 
+					/>
 				</div>
 
 				<!-- Other Locations -->
@@ -107,7 +97,7 @@ import Hero from '/src/components/Hero.astro';
 								visit flyspot.com.au - the ultimate resource for Australian disc golf course information.
 							</p>
 							<a href="https://flyspot.com.au" target="_blank" rel="noopener noreferrer" 
-								class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+								class="bg-mdgc-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue-dark transition-colors">
 								Visit flyspot.com.au ↗
 							</a>
 						</div>
@@ -119,7 +109,7 @@ import Hero from '/src/components/Hero.astro';
 								course directories, scorekeeping, and finding disc golf wherever you go.
 							</p>
 							<a href="https://udisc.com" target="_blank" rel="noopener noreferrer" 
-								class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+								class="bg-mdgc-blue-dark text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue transition-colors">
 								Visit udisc.com ↗
 							</a>
 						</div>
