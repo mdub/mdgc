@@ -1,0 +1,66 @@
+---
+import Layout from '/src/layouts/Layout.astro';
+import Navigation from '/src/components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	
+	<main>
+		<!-- Hero Section -->
+		<section class="bg-green-600 text-white py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold">Bicentennial Park</h1>
+				<p class="text-xl mt-4">Chelsea, City of Kingston</p>
+			</div>
+		</section>
+
+		<!-- Course Content -->
+		<section class="py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Overview -->
+				<div class="bg-green-50 rounded-lg p-8 mb-8">
+					<h2 class="text-2xl font-bold text-green-800 mb-4">Course Overview</h2>
+					<p class="text-green-700 text-lg mb-4">
+						"A fantastic challenge suitable for both new and experienced players"
+					</p>
+					<p class="text-gray-600">
+						Located in Chelsea, Bicentennial Park offers a diverse disc golf experience with 
+						mixed terrain that challenges players of all skill levels. The course combines 
+						wooded holes with open areas for a complete disc golf experience.
+					</p>
+				</div>
+
+				<!-- Course Details -->
+				<div class="grid md:grid-cols-2 gap-8 mb-8">
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Course Features</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>9 tees, 18 baskets</li>
+							<li>Practice basket</li>
+							<li>Tee signage and course map</li>
+							<li>Mixed terrain (trees + open holes)</li>
+						</ul>
+					</div>
+
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<h3 class="text-xl font-bold mb-4">Park Amenities</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li>Toilets and playground</li>
+							<li>Sports courts and ovals</li>
+							<li>Skatepark</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Navigation -->
+				<div class="mt-12 text-center">
+					<a href="/courses" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+						← Back to All Courses
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
