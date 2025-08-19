@@ -1,4 +1,6 @@
 ---
+import logoImage from '/src/assets/images/mdgc-logo.png';
+
 const navItems = [
   {
     title: 'Disc Golf',
@@ -44,7 +46,9 @@ const navItems = [
 <nav class="bg-green-600 text-white shadow-lg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center h-16 space-x-8">
-      <a href="/" class="text-xl font-bold">MDGC</a>
+      <a href="/" class="flex items-center relative z-10 md:items-end md:translate-y-8">
+        <img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-12 w-auto md:h-24" />
+      </a>
 
       <div class="hidden md:flex items-center space-x-8">
         {navItems.map(item => (
