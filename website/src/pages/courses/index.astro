@@ -1,19 +1,14 @@
 ---
 import Layout from '/src/layouts/Layout.astro';
 import Navigation from '/src/components/Navigation.astro';
+import Hero from '/src/components/Hero.astro';
 ---
 
 <Layout>
 	<Navigation />
 	
 	<main>
-		<!-- Hero Section -->
-		<section class="bg-green-600 text-white py-16">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h1 class="text-4xl font-bold">Melbourne Disc Golf Courses</h1>
-				<p class="text-xl mt-4">Discover amazing disc golf courses across Melbourne</p>
-			</div>
-		</section>
+		<Hero title="Melbourne Disc Golf Courses" subtitle="Discover amazing disc golf courses across Melbourne" />
 
 		<!-- Melbourne Courses -->
 		<section class="py-16">
