@@ -52,13 +52,12 @@ const navItems = [
 
 <header>
   <nav class="bg-mdgc-blue-dark text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center h-16 space-x-8">
-        <a href="/" class="flex items-center relative z-10 md:items-end md:translate-y-8">
-          <img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-12 w-auto md:h-24" />
-        </a>
+    <div id="nav-container" class="max-w-7xl mx-auto px-4 md:px-8 flex items-center h-16 space-x-8">
+      <a href="/" class="flex items-end relative z-10 md:translate-y-6">
+        <img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-12 w-auto md:h-20" />
+      </a>
 
-        <div class="hidden md:flex items-center space-x-8">
+      <div id="nav-links" class="hidden md:flex items-center space-x-8">
           {navItems.map(item => (
             item.dropdown ? (
               <div class="relative group">
@@ -80,45 +79,47 @@ const navItems = [
               <a href={item.href} class="text-mdgc-blue-light hover:text-white transition-colors">{item.title}</a>
             )
           ))}
-        </div>
-
-        <!-- Mobile menu button -->
-        <div class="md:hidden ml-auto">
-          <button id="mobile-menu-button" class="text-mdgc-blue-light hover:text-white">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
       </div>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          {navItems.map(item => (
-            item.dropdown ? (
-              <div>
-                <a href={item.href} class="block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold">{item.title}</a>
-                {item.dropdown.map(subItem => (
-                  <a href={subItem.href} class="block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md text-mdgc-blue-light">{subItem.title}</a>
-                ))}
-              </div>
-            ) : (
-              <a href={item.href} class="block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md">{item.title}</a>
-            )
-          ))}
-        </div>
+      <!-- Mobile menu button -->
+      <div class="md:hidden ml-auto">
+        <button id="mobile-menu-button" class="text-mdgc-blue-light hover:text-white">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        {navItems.map(item => (
+          item.dropdown ? (
+            <div>
+              <a href={item.href} class="block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold">{item.title}</a>
+              {item.dropdown.map(subItem => (
+                <a href={subItem.href} class="block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md text-mdgc-blue-light">{subItem.title}</a>
+              ))}
+            </div>
+          ) : (
+            <a href={item.href} class="block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md">{item.title}</a>
+          )
+        ))}
       </div>
     </div>
   </nav>
 
-  <section class="bg-gradient-to-b from-mdgc-blue to-mdgc-blue-dark text-white px-4 py-8 pt-6">
-    <div class="max-w-7xl mx-auto md:pl-40">
+</header>
+
+<section class="bg-gradient-to-b from-mdgc-blue to-mdgc-blue-dark text-white">
+  <div id="title-container" class="max-w-7xl mx-auto px-4 py-8 pt-6 md:px-36">
+    <div id="title-and-subtitle">
       <h1 class="text-4xl font-bold">{title}</h1>
       {subtitle && <p class="text-xl mt-4">{subtitle}</p>}
     </div>
-  </section>
-</header>
+  </div>
+</section>
 
 <script>
   const mobileMenuButton = document.getElementById('mobile-menu-button');
