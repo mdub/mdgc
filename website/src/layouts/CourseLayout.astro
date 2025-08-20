@@ -1,17 +1,15 @@
 ---
 import Layout from './Layout.astro';
-import Navigation from '/src/components/Navigation.astro';
-import Hero from '/src/components/Hero.astro';
+import Header from '/src/components/Header.astro';
 
 const { frontmatter } = Astro.props;
 const { title, subtitle } = frontmatter;
 ---
 
 <Layout>
-	<Navigation />
+	<Header title={title} subtitle={subtitle} />
 	
 	<main>
-		<Hero title={title} subtitle={subtitle} />
 
 		<!-- Course Content -->
 		<section class="py-16">
