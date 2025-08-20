@@ -1,5 +1,5 @@
 dev:
-    bin/pnpm run dev
+    pnpm run dev
 
 run TARGET:
-    bin/pnpm run {{TARGET}}
+    pnpm run {{TARGET}}
