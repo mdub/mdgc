@@ -1,5 +1,6 @@
 ---
 import logoImage from '/src/assets/images/mdgc-logo.png';
+import { navItems } from '/src/data/navigation.js';
 
 export interface Props {
   title: string;
@@ -16,47 +17,6 @@ function isActiveNavItem(itemHref: string, currentPath: string): boolean {
 }
 
 const currentPath = Astro.url.pathname;
-
-const navItems = [
-  {
-    title: 'Disc Golf',
-    href: '/disc-golf'
-  },
-  {
-    title: 'Club',
-    href: '/club',
-    dropdown: [
-      { title: 'About MDGC', href: '/club' },
-      { title: 'Membership', href: '/club/membership' },
-      { title: 'Contact Us', href: '/club/contact' },
-      { title: 'MDGC Board', href: '/club/board' }
-    ]
-  },
-  {
-    title: 'Courses',
-    href: '/courses',
-    dropdown: [
-      { title: 'Ruffey Lake Park', href: '/courses/ruffey-lake-park' },
-      { title: 'Bicentennial Park', href: '/courses/bicentennial-park' },
-      { title: 'Bald Hill Park', href: '/courses/bald-hill-park' },
-      { title: 'Stony Creek Reserve', href: '/courses/stony-creek' },
-      { title: 'Little Blind Creek', href: '/courses/little-blind-creek' },
-      { title: 'Llewellyn Park', href: '/courses/llewellyn-park' },
-      { title: 'Caulfield Racecourse', href: '/courses/caulfield-racecourse' },
-      { title: 'Livingstone Primary', href: '/courses/livingstone-primary' },
-      { title: 'Upper Yarra SC', href: '/courses/upper-yarra-sc' },
-      { title: 'Heathdale Glen Orden', href: '/courses/heathdale-glen-orden' }
-    ]
-  },
-  {
-    title: 'Events',
-    href: '/events'
-  },
-  {
-    title: 'Shop',
-    href: '/shop'
-  }
-];
 ---
 
 <header>
@@ -68,7 +28,7 @@ const navItems = [
 
       <div id="nav-links" class="hidden md:flex items-center space-x-8 ml-auto">
           {navItems.map(item => (
-            item.dropdown ? (
+            item.subPages ? (
               <div class="relative group">
                 <div class="flex items-center">
                   <a href={item.href} class={`${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
@@ -79,7 +39,7 @@ const navItems = [
                   </button>
                 </div>
                 <div class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
-                  {item.dropdown.map(subItem => (
+                  {item.subPages.map(subItem => (
                     <a href={subItem.href} class="block px-4 py-2 hover:bg-gray-100">{subItem.title}</a>
                   ))}
                 </div>
@@ -104,10 +64,10 @@ const navItems = [
     <div id="mobile-menu" class="md:hidden hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
         {navItems.map(item => (
-          item.dropdown ? (
+          item.subPages ? (
             <div>
               <a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold ${isActiveNavItem(item.href, currentPath) ? 'text-white' : ''}`}>{item.title}</a>
-              {item.dropdown.map(subItem => (
+              {item.subPages.map(subItem => (
                 <a href={subItem.href} class="block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md text-mdgc-blue-light">{subItem.title}</a>
               ))}
             </div>

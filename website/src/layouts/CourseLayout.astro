@@ -1,29 +1,16 @@
 ---
 import Layout from './Layout.astro';
-import Header from '/src/components/Header.astro';
 
 const { frontmatter } = Astro.props;
 const { title, subtitle } = frontmatter;
 ---
 
-<Layout>
-	<Header title={title} subtitle={subtitle} />
-	
+<Layout title={title} subtitle={subtitle}>
 	<main>
-
-		<!-- Course Content -->
 		<section class="py-16">
 			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<!-- MDX Content -->
-				<div class="prose prose-lg max-w-none mb-8">
+				<div class="prose prose-lg max-w-none">
 					<slot />
-				</div>
-
-				<!-- Navigation -->
-				<div class="mt-12 text-center">
-					<a href="/courses" class="bg-mdgc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-mdgc-blue-dark transition-colors">
-						← Back to All Courses
-					</a>
 				</div>
 			</div>
 		</section>
