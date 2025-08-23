@@ -8,3 +8,18 @@
   --color-mdgc-blue-dark: #3F79B2;
 }
 
+.concept-list {
+	list-style: none;
+	counter-reset: list-counter;
+}
+
+.concept-list li {
+	@apply relative pl-10;
+	counter-increment: list-counter;
+}
+
+.concept-list li::before {
+	content: counter(list-counter);
+	@apply absolute left-0 top-0.5 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold;
+}
+

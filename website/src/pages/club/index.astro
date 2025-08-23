@@ -1,15 +1,12 @@
 ---
 import Layout from '/src/layouts/Layout.astro';
+import ContentSection from '/src/components/ContentSection.astro';
 ---
 
 <Layout title="About Melbourne Disc Golf Club" subtitle="Building community through disc golf since 2008">
-	
-	<main>
 
-		<!-- Main Content -->
-		<section class="py-16">
-			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="prose mx-auto">
+	<ContentSection>
+		<div class="prose mx-auto">
 					<h2>Our Story</h2>
 					<p>
 						Founded in 2008, the Melbourne Disc Golf Club is a not-for-profit organisation 
@@ -57,9 +54,8 @@ import Layout from '/src/layouts/Layout.astro';
 								What is Disc Golf?
 							</a>
 						</div>
-					</div>
 				</div>
 			</div>
-		</section>
-	</main>
+		</div>
+	</ContentSection>
 </Layout>

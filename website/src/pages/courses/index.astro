@@ -1,16 +1,14 @@
 ---
 import Layout from '/src/layouts/Layout.astro';
+import ContentSection from '/src/components/ContentSection.astro';
+import Card from '/src/components/Card.astro';
 import CourseCard from '/src/components/CourseCard.astro';
 ---
 
 <Layout title="Melbourne Disc Golf Courses" subtitle="Discover amazing disc golf courses across Melbourne">
-	
-	<main>
 
-		<!-- Melbourne Courses -->
-		<section class="py-16">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+	<ContentSection class="max-w-7xl">
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
 					<CourseCard 
 						name="Ruffey Lake Park" 
 						href="/courses/ruffey-lake-park" 
@@ -80,38 +78,39 @@ import CourseCard from '/src/components/CourseCard.astro';
 						location="Werribee" 
 						description="9 baskets • MDGC/Wyndham partnership" 
 					/>
-				</div>
+		</div>
 
-				<!-- Other Locations -->
-				<div class="mt-16 bg-gray-50 rounded-lg p-8">
-					<h2 class="text-2xl font-bold text-center mb-8">Courses Beyond Melbourne</h2>
-					<div class="grid md:grid-cols-2 gap-8">
-						<div class="bg-white rounded-lg p-6 text-center">
-							<h3 class="text-xl font-bold mb-4">Victoria & Australia</h3>
-							<p class="text-gray-600 mb-6">
-								For comprehensive information about disc golf courses throughout Victoria and Australia, 
-								visit flyspot.com.au - the ultimate resource for Australian disc golf course information.
-							</p>
-							<a href="https://flyspot.com.au" target="_blank" rel="noopener noreferrer" 
-								class="bg-mdgc-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue-dark transition-colors">
-								Visit flyspot.com.au ↗
-							</a>
-						</div>
-
-						<div class="bg-white rounded-lg p-6 text-center">
-							<h3 class="text-xl font-bold mb-4">Courses Worldwide</h3>
-							<p class="text-gray-600 mb-6">
-								Planning disc golf travels around the world? UDisc is the global standard for 
-								course directories, scorekeeping, and finding disc golf wherever you go.
-							</p>
-							<a href="https://udisc.com" target="_blank" rel="noopener noreferrer" 
-								class="bg-mdgc-blue-dark text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue transition-colors">
-								Visit udisc.com ↗
-							</a>
-						</div>
+		<Card background="gray" class="mt-16">
+			<h2 class="text-2xl font-bold text-center mb-8">Courses Beyond Melbourne</h2>
+			<div class="grid md:grid-cols-2 gap-8">
+				<Card>
+					<div class="text-center">
+						<h3 class="text-xl font-bold mb-4">Victoria & Australia</h3>
+						<p class="text-gray-600 mb-6">
+							For comprehensive information about disc golf courses throughout Victoria and Australia, 
+							visit flyspot.com.au - the ultimate resource for Australian disc golf course information.
+						</p>
+						<a href="https://flyspot.com.au" target="_blank" rel="noopener noreferrer" 
+							class="bg-mdgc-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue-dark transition-colors">
+							Visit flyspot.com.au ↗
+						</a>
 					</div>
-				</div>
+				</Card>
+
+				<Card>
+					<div class="text-center">
+						<h3 class="text-xl font-bold mb-4">Courses Worldwide</h3>
+						<p class="text-gray-600 mb-6">
+							Planning disc golf travels around the world? UDisc is the global standard for 
+							course directories, scorekeeping, and finding disc golf wherever you go.
+						</p>
+						<a href="https://udisc.com" target="_blank" rel="noopener noreferrer" 
+							class="bg-mdgc-blue-dark text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue transition-colors">
+							Visit udisc.com ↗
+						</a>
+					</div>
+				</Card>
 			</div>
-		</section>
-	</main>
+		</Card>
+	</ContentSection>
 </Layout>

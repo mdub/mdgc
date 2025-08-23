@@ -1,0 +1,33 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  icon?: string;
+  title: string;
+  description: string;
+  iconColor?: string;
+  background?: string;
+  number?: string;
+}
+
+const { 
+  icon, 
+  title, 
+  description, 
+  iconColor = 'text-green-600',
+  background = 'bg-green-100',
+  number
+} = Astro.props;
+---
+
+<div class="text-center">
+  <div class={`rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center ${background}`}>
+    {number ? (
+      <span class={`text-2xl font-bold ${iconColor}`}>{number}</span>
+    ) : (
+      <Icon name={icon} class={`w-8 h-8 ${iconColor}`} />
+    )}
+  </div>
+  <h3 class="font-semibold mb-2">{title}</h3>
+  <p class="text-gray-600 text-sm">{description}</p>
+</div>
