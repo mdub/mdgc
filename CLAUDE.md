@@ -94,3 +94,4 @@ website/
 - **Navigation**: Simplified from complex nested dropdowns to clearer categorical organization
 - **Content Separation**: Distinguishes between educational disc golf content and club-specific information
 - **Component Reuse**: BoardMember and Course components for consistent presentation
+- The website source is managed in Git

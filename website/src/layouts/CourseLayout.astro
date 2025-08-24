@@ -1,18 +1,15 @@
 ---
 import Layout from './Layout.astro';
+import ContentSection from '../components/ContentSection.astro';
 
 const { frontmatter } = Astro.props;
 const { title, subtitle } = frontmatter;
 ---
 
 <Layout title={title} subtitle={subtitle}>
-	<main>
-		<section class="py-16">
-			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="prose max-w-none">
-					<slot />
-				</div>
-			</div>
-		</section>
-	</main>
+	<ContentSection>
+		<div class="prose max-w-none">
+			<slot />
+		</div>
+	</ContentSection>
 </Layout>
