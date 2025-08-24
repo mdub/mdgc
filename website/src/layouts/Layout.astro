@@ -22,16 +22,20 @@ const currentPath = Astro.url.pathname;
 
 // Transform navigation data for footer - show all nav items
 const footerSections = navItems;
+
+// Favicon sizes to generate links for
+const faviconSizes = [16, 32, 48, 192];
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<title>{title} | Melbourne Disc Golf Club</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Melbourne Disc Golf Club</title>
+		{faviconSizes.map(size => (
+			<link rel="icon" type="image/png" sizes={`${size}x${size}`} href={`/favicon-${size}x${size}.png`} />
+		))}
 	</head>
 	<body>
 		<header>
