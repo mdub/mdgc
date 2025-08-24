@@ -1,0 +1,128 @@
+---
+// Melbourne disc golf courses data with coordinates
+const courses = [
+	{
+		name: "Ruffey Lake Park",
+		location: "Doncaster - MDGC Home Turf",
+		description: "Free to play • Public park course",
+		href: "/courses/ruffey-lake-park",
+		lat: -37.7965,
+		lng: 145.1318
+	},
+	{
+		name: "Bicentennial Park",
+		location: "Chelsea, City of Kingston",
+		description: "9 tees, 18 baskets • Mixed terrain",
+		href: "/courses/bicentennial-park",
+		lat: -38.0511,
+		lng: 145.1275
+	},
+	{
+		name: "Bald Hill Park",
+		location: "Inverness St, Clarinda",
+		description: "Beginner-friendly • Full signage",
+		href: "/courses/bald-hill-park",
+		lat: -37.9286,
+		lng: 145.0917
+	},
+	{
+		name: "Stony Creek Reserve",
+		location: "Under Westgate Bridge",
+		description: "Near CBD • 9 concrete teepads",
+		href: "/courses/stony-creek",
+		lat: -37.8306,
+		lng: 144.9014
+	},
+	{
+		name: "Little Blind Creek",
+		location: "Melton",
+		description: "Natural environment • Beginner-friendly",
+		href: "/courses/little-blind-creek",
+		lat: -37.6839,
+		lng: 144.5784
+	},
+	{
+		name: "Llewellyn Park",
+		location: "Wantirna South",
+		description: "Family-friendly • BBQ facilities",
+		href: "/courses/llewellyn-park",
+		lat: -37.8697,
+		lng: 145.2264
+	},
+	{
+		name: "Caulfield Racecourse",
+		location: "Caulfield",
+		description: "4 baskets • Windy conditions",
+		href: "/courses/caulfield-racecourse",
+		lat: -37.8847,
+		lng: 145.0453
+	},
+	{
+		name: "Livingstone Primary",
+		location: "Vermont South",
+		description: "6 baskets • Perfect for ace runs",
+		href: "/courses/livingstone-primary",
+		lat: -37.8553,
+		lng: 145.1914
+	},
+	{
+		name: "Upper Yarra SC",
+		location: "Yarra Junction",
+		description: "School course • Educational focus",
+		href: "/courses/upper-yarra-sc",
+		lat: -37.7831,
+		lng: 145.6103
+	},
+	{
+		name: "Heathdale Glen Ordem Reserve",
+		location: "Werribee",
+		description: "9 baskets • MDGC/Wyndham partnership",
+		href: "/courses/heathdale-glen-orden",
+		lat: -37.9047,
+		lng: 144.6614
+	}
+];
+---
+
+<div class="mb-8">
+	<h2 class="text-2xl font-bold mb-4">Melbourne Course Locations</h2>
+	<div id="course-map" class="h-96 w-full rounded-lg border-2 border-gray-200"></div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script define:vars={{ courses }}>
+	// Initialize map centered on Melbourne
+	const map = L.map('course-map').setView([-37.8136, 144.9631], 10);
+
+	// Add tile layer
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	// Add markers for each course
+	courses.forEach(course => {
+		const marker = L.marker([course.lat, course.lng]).addTo(map);
+		
+		const popupContent = `
+			<div class="p-2">
+				<h3 class="font-bold text-lg mb-1">${course.name}</h3>
+				<p class="text-sm text-gray-600 mb-2">${course.location}</p>
+				<p class="text-sm mb-3">${course.description}</p>
+				<a href="${course.href}" class="inline-block bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
+					View Details →
+				</a>
+			</div>
+		`;
+		
+		marker.bindPopup(popupContent);
+	});
+</script>
+
+<style>
+	/* Ensure proper Leaflet map styling */
+	#course-map {
+		z-index: 1;
+	}
+</style>
