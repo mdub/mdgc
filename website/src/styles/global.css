@@ -28,5 +28,5 @@
 }
 
 .content-width {
-	@apply max-w-7xl mx-auto px-4 md:px-36;
+	@apply max-w-7xl mx-auto px-4;
 }
