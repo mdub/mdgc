@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import logoImage from '../assets/images/mdgc-logo.png';
 import { navItems } from '../data/navigation.js';
+import { Icon } from 'astro-icon/components'
 
 export interface Props {
   title: string;
@@ -47,9 +48,7 @@ const footerSections = navItems;
 										<div class="flex items-center">
 											<a href={item.href} class={`${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
 											<button class={`ml-1 ${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
-												<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-												</svg>
+												<Icon name="heroicons:chevron-down" class="h-4 w-4" />
 											</button>
 										</div>
 										<div class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
@@ -67,9 +66,7 @@ const footerSections = navItems;
 					<!-- Mobile menu button -->
 					<div class="md:hidden ml-auto">
 						<button id="mobile-menu-button" class="text-mdgc-blue-light hover:text-white">
-							<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-							</svg>
+							<Icon name="heroicons:bars-3" class="h-6 w-6" />
 						</button>
 					</div>
 				</div>
