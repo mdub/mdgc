@@ -3,6 +3,11 @@
 ## Location
 **Stony Creek Reserve** - Near Melbourne CBD, located under the Westgate Bridge
 
+## Course Images
+![Stony Creek Course](course-photo.jpg)
+
+![Stony Creek Course 2](course-photo-2.jpg)
+
 ## Course Features
 - **9 concrete teepads**
 - **9 permanent baskets**
@@ -19,6 +24,5 @@
 ## Development
 Collaborative effort between the local disc golf community and Maribyrnong City Council to develop a public disc golf facility.
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
-- [Other Melbourne Courses](../ruffey-lake-park-disc-golf-course/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/stony-creek-disc-golf-course/

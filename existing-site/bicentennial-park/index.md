@@ -3,9 +3,14 @@
 ## Location
 **City of Kingston, Melbourne**
 
+## Course Images
+![Bicentennial Park Course](course-photo.jpg)
+
+![Course Map](course-map.jpg)
+
 ## Course Features
 - **9 tees**
-- **18 baskets** 
+- **18 baskets**
 - **Practice basket**
 - **Tee signage**
 - **Main sign** with course map and "How-to" guide
@@ -24,6 +29,5 @@
 - Football ovals
 - Baseball diamonds
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
-- [Other Melbourne Courses](../ruffey-lake-park-disc-golf-course/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/bicentennial-park/

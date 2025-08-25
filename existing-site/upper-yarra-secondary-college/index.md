@@ -3,6 +3,11 @@
 ## Location
 **Yarra Junction, Yarra Ranges**
 
+## Course Images
+![Course Photo](course-photo.jpg)
+
+![Course Map](course-map.png)
+
 ## Course Features
 - **9-hole disc golf course**
 - **Integrated into physical education curriculum**
@@ -16,5 +21,5 @@
 ## Educational Integration
 Provides innovative recreational and educational opportunities for the school community, allowing engagement with disc golf during the school day.
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/upper-yarra-secondary-college/

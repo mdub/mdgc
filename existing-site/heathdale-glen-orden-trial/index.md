@@ -3,6 +3,11 @@
 ## Location
 **Heathdale Glen Orden Reserve, Werribee**
 
+## Course Images
+![Course Photo](course-photo.jpg)
+
+![Course Map](course-map.png)
+
 ## Course Features
 - **9-basket course**
 - **Two main sections**: North and south sides
@@ -14,5 +19,5 @@
 ## Purpose
 Provides disc golf playing experience in the Werribee area with structured layout across the reserve.
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/heathdale-glen-orden-trial/

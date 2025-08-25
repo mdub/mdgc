@@ -3,6 +3,11 @@
 ## Location
 **Wantirna South, Melbourne**
 
+## Course Images
+![Llewellyn Park Course](course-photo.jpg)
+
+![Course Map](course-map.jpg)
+
 ## Course Features
 - **9 baskets, 18 tees**
 - **Temporary course**
@@ -18,5 +23,5 @@
 ## Purpose
 Designed to be a welcoming location for introducing friends and family to disc golf.
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/llewellyn-park/

@@ -3,6 +3,9 @@
 ## Location
 **Little Blind Creek Reserve, Melton City**
 
+## Course Image
+![Little Blind Creek Course](course-photo.jpg)
+
 ## Course Features
 - **9-hole layout**
 - **9 baskets**
@@ -21,6 +24,9 @@
 
 ## Target Audience
 Accessible for players of different skill levels, designed to provide engaging experience for both new and experienced players.
+
+## Source
+- **Original page**: https://www.melbournediscgolf.com/little-blind-creek/
 
 ## Navigation
 - [Back to Melbourne Courses](../melbourne-courses/index.md)
