@@ -4,7 +4,9 @@
 **City of Kingston, Melbourne**
 
 ## Course Images
-![Bicentennial Park Course](course-photo.jpg)
+![Course Thumbnail](course-thumbnail.jpg)
+
+![Course Photo](course-photo.jpg)
 
 ![Course Map](course-map.jpg)
 

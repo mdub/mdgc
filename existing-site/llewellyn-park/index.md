@@ -4,7 +4,9 @@
 **Wantirna South, Melbourne**
 
 ## Course Images
-![Llewellyn Park Course](course-photo.jpg)
+![Course Thumbnail](course-thumbnail.jpg)
+
+![Course Photo](course-photo.jpg)
 
 ![Course Map](course-map.jpg)
 

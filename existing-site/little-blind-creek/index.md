@@ -3,8 +3,10 @@
 ## Location
 **Little Blind Creek Reserve, Melton City**
 
-## Course Image
-![Little Blind Creek Course](course-photo.jpg)
+## Course Images
+![Course Thumbnail](course-thumbnail.jpg)
+
+![Course Photo](course-photo.jpg)
 
 ## Course Features
 - **9-hole layout**

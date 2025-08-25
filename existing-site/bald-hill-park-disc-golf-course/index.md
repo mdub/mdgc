@@ -4,9 +4,11 @@
 **Inverness St, Clarinda** (just south of Melbourne city)
 
 ## Course Images
+![Course Thumbnail](course-thumbnail.jpg)
+
 ![Course Photo](course-photo.jpg)
 
-![Action Photo at Bald Hill Park](action-photo.jpg)
+![Action Photo](action-photo.jpg)
 
 ![Course Map](course-map.png)
 

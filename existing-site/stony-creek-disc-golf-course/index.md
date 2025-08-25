@@ -4,9 +4,11 @@
 **Stony Creek Reserve** - Near Melbourne CBD, located under the Westgate Bridge
 
 ## Course Images
-![Stony Creek Course](course-photo.jpg)
+![Course Thumbnail](course-thumbnail.jpg)
 
-![Stony Creek Course 2](course-photo-2.jpg)
+![Course Photo](course-photo.jpg)
+
+![Course Photo 2](course-photo-2.jpg)
 
 ## Course Features
 - **9 concrete teepads**

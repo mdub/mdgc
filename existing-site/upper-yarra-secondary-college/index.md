@@ -4,6 +4,8 @@
 **Yarra Junction, Yarra Ranges**
 
 ## Course Images
+![Course Thumbnail](course-thumbnail.jpg)
+
 ![Course Photo](course-photo.jpg)
 
 ![Course Map](course-map.png)

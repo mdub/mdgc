@@ -4,6 +4,8 @@
 **Caulfield Racecourse, Melbourne**
 
 ## Course Images
+![Course Thumbnail](course-thumbnail.jpg)
+
 ![Course Photo](course-photo.jpg)
 
 ![Course Photo 2](course-photo-2.jpg)

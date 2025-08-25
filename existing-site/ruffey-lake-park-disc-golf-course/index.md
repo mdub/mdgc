@@ -4,11 +4,13 @@
 **Manningham City Council area, Melbourne**
 
 ## Course Images
-![Ruffey Lake Park Course](course-photo.jpg)
+![Course Thumbnail](course-thumbnail.jpg)
 
-![Ruffey Lake Park Thumbnail](course-thumbnail.jpg)
+![Course Photo](course-photo.jpg)
 
-![Action Photo at Ruffey Lake Park](action-photo.jpg)
+![Action Photo](action-photo.jpg)
+
+![Action Photo 2](action-photo-2.jpg)
 
 ![Aerial View](course-aerial.webp)
 
