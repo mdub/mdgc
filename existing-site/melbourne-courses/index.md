@@ -4,12 +4,10 @@
 
 ### Bicentennial Park
 - **Location**: Chelsea
-- Features course photography
 - [More details](../bicentennial-park/index.md)
 
 ### Ruffey Lake Park  
 - **Location**: Doncaster
-- Features course photography
 - [More details](../ruffey-lake-park-disc-golf-course/index.md)
 
 ### Bald Hill Park
@@ -56,6 +54,9 @@
 - Interactive map showing disc golf courses around Melbourne
 - Maintained by Melbourne Disc Golf Club (MDGC)
 - Multiple course locations available across Melbourne
+
+## Visual Assets
+- **Melbourne Courses Map**: ![Melbourne Courses Map](courses-map.png)
 
 ## Related Sections
 - [Other Courses in Victoria](../other-courses-in-victoria/index.md)

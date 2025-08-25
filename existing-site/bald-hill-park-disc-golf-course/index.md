@@ -3,6 +3,13 @@
 ## Location
 **Inverness St, Clarinda** (just south of Melbourne city)
 
+## Course Images
+![Course Photo](course-photo.jpg)
+
+![Action Photo at Bald Hill Park](action-photo.jpg)
+
+![Course Map](course-map.png)
+
 ## Course Features
 - **9 baskets**
 - **18 tees**
@@ -16,6 +23,5 @@
 - Provides complete disc golf experience for players of all skill levels
 - Practice area specifically designed to help new players learn
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
-- [Other Melbourne Courses](../bicentennial-park/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/bald-hill-park-disc-golf-course/

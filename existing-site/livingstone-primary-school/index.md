@@ -3,6 +3,11 @@
 ## Location
 **Livingstone Primary School grounds**
 
+## Course Images
+![Course Photo](course-photo.jpg)
+
+![Course Map](course-map.jpg)
+
 ## Course Features
 - **6 baskets**
 - **Short holes**
@@ -18,5 +23,5 @@
 - Usage tracking recommended
 - **Support**: Whitehorse City Council
 
-## Navigation
-- [Back to Melbourne Courses](../melbourne-courses/index.md)
+## Source
+- **Original page**: https://www.melbournediscgolf.com/livingstone-primary-school/
