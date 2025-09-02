@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: mdub/mdgc
   branch: main
-
-# Local backend for development
-local_backend: true
 
 media_folder: public/images
 public_folder: /images
