@@ -1,0 +1,8 @@
+---
+// Redirect to admin/index.html
+export const prerender = false;
+
+if (Astro.request.method === 'GET') {
+  return Astro.redirect('/admin/index.html');
+}
+---
