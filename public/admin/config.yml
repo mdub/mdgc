@@ -6,7 +6,7 @@ media_folder: public/images
 public_folder: /images
 
 site_url: https://mdgc.netlify.app
-logo_url: https://mdgc.netlify.app/favicon-192x192.png
+logo_url: https://mdgc.netlify.app/images/favicon-192x192.png
 
 collections:
   - name: "courses"
