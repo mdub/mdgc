@@ -5,61 +5,64 @@
 A modern website for the Melbourne Disc Golf Club, built with Astro and Tailwind CSS.
 
 ## 🌐 Live Site
-**New Site**: https://mdgc.netlify.app/  
+**New Site**: https://mdgc.netlify.app/
 **Original Site**: https://www.melbournediscgolf.com/
 
 ## 📋 Project Status
-Currently porting the existing WordPress site to a modern Astro-based website. 
+Currently porting the existing WordPress site to a modern Astro-based website.
 
 ## 🚀 Development
 
-### Prerequisites
-- Node.js (latest LTS recommended)
-- npm
+### 🏗️ Tech Stack
+- **Type**: Static (generated) site
+- **Framework**: Astro 5.12.8
+- **Styling**: Tailwind CSS 4.1.11
+- **CMS**: Decap CMS (backed by Git)
+- **Deployment**: Netlify
 
-### Getting Started
-```bash
-cd website
-npm install
-npm run dev
-```
+### Running locally
+
+Run `pnpm run dev` to start the development server.
 
 Visit http://localhost:4321 to view the site locally.
 
-### Available Scripts
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
+### 🧞 Commands
 
-## 🏗️ Tech Stack
-- **Framework**: Astro 5.12.8
-- **Styling**: Tailwind CSS 4.1.11
-- **Deployment**: Netlify
-- **Type**: Static site generation
+All commands are run from the root of the project, from a terminal:
 
-## 📁 Project Structure
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm run build`           | Build your production site to `./dist/`          |
+| `pnpm run preview`         | Preview your build locally, before deploying     |
+| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
+
+### 🚀 Project Structure
+
+```text
+/
+├── public/
+│   └── images/
+├── src
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   └── pages/
+├── package.json
+├── existing-site/
+└── existing-site/    # Original site files (reference only)
 ```
-├── website/                    # New Astro website
-│   ├── src/
-│   │   ├── components/
-│   │   ├── layouts/
-│   │   ├── pages/
-│   │   └── styles/
-│   └── package.json
-├── existing-site/              # Documentation of original site structure
-│   ├── _navbar.md             # Navigation reference
-│   ├── about/
-│   ├── melbourne-courses/
-│   ├── events/
-│   └── media/
-└── woollyams/existing-site/    # Original site files (reference only)
-```
 
-## 🎯 About Melbourne Disc Golf Club
-Founded in 2008, MDGC is a non-profit organisation dedicated to building a local disc golf community in Melbourne. The club welcomes players aged 9-70+ of all skill levels, from casual social players to competitive athletes.
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 📝 Content Migration
 The `existing-site/` directory contains structured documentation of the original website content, organized by section with working internal links for easy navigation in VS Code.
 
 ## 🤝 Contributing
 This is an active migration project. See `CLAUDE.md` for detailed development notes and progress tracking.
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

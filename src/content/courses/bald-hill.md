@@ -1,5 +1,5 @@
 ---
 title: Bald Hill
 description: stuff goes here
-featuredImage: /images/action-photo.jpg
+featuredImage: /images/bald-hill-action.jpg
 ---
