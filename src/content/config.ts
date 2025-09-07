@@ -4,11 +4,11 @@ const courses = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    suburb: z.string(),
     featuredImage: z.string(),
+    thumbnail: z.string().optional(),
     address: z.string().optional(),
     location: z.string().optional(),
-    thumbnail: z.string().optional(),
     courseMap: z.string().optional(),
   }),
 });

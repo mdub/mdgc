@@ -1,86 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '/src/layouts/Layout.astro';
 import ContentSection from '/src/components/ContentSection.astro';
 import Card from '/src/components/Card.astro';
 import CourseCard from '/src/components/CourseCard.astro';
-import CourseMap from '/src/components/CourseMap.astro';
+
+const courses = await getCollection('courses');
+courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="Melbourne Disc Golf Courses" subtitle="Discover amazing disc golf courses across Melbourne">
 
 	<ContentSection class="max-w-7xl">
-		<!-- <CourseMap /> -->
 
 		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-					<CourseCard
-						name="Ruffey Lake Park"
-						href="/courses/ruffey-lake-park"
-						location="Doncaster - MDGC Home Turf"
-						description="Free to play • Public park course"
-					/>
-
-					<CourseCard
-						name="Bicentennial Park"
-						href="/courses/bicentennial-park"
-						location="Chelsea, City of Kingston"
-						description="9 tees, 18 baskets • Mixed terrain"
-					/>
-
-					<CourseCard
-						name="Bald Hill Park"
-						href="/courses/bald-hill-park"
-						location="Inverness St, Clarinda"
-						description="Beginner-friendly • Full signage"
-					/>
-
-					<CourseCard
-						name="Stony Creek Reserve"
-						href="/courses/stony-creek"
-						location="Under Westgate Bridge"
-						description="Near CBD • 9 concrete teepads"
-					/>
-
-					<CourseCard
-						name="Little Blind Creek"
-						href="/courses/little-blind-creek"
-						location="Melton"
-						description="Natural environment • Beginner-friendly"
-					/>
-
-					<CourseCard
-						name="Llewellyn Park"
-						href="/courses/llewellyn-park"
-						location="Wantirna South"
-						description="Family-friendly • BBQ facilities"
-					/>
-
-					<CourseCard
-						name="Caulfield Racecourse"
-						href="/courses/caulfield-racecourse"
-						location="Caulfield"
-						description="4 baskets • Windy conditions"
-					/>
-
-					<CourseCard
-						name="Livingstone Primary"
-						href="/courses/livingstone-primary"
-						location="Vermont South"
-						description="6 baskets • Perfect for ace runs"
-					/>
-
-					<CourseCard
-						name="Upper Yarra SC"
-						href="/courses/upper-yarra-sc"
-						location="Yarra Junction"
-						description="School course • Educational focus"
-					/>
-
-					<CourseCard
-						name="Heathdale Glen Ordem Reserve"
-						href="/courses/heathdale-glen-orden"
-						location="Werribee"
-						description="9 baskets • MDGC/Wyndham partnership"
-					/>
+			{courses.map((course) => (
+				<CourseCard
+					name={course.data.title}
+					href={`/courses/${course.slug}`}
+					location={course.data.suburb}
+					image={course.data.thumbnail || course.data.featuredImage}
+				/>
+			))}
 		</div>
 
 		<Card background="gray" class="mt-16">
