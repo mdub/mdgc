@@ -18,6 +18,7 @@ collections:
       preview: false
     slug: "{{slug}}"
     extension: "mdx"
+    format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Suburb", name: "suburb", widget: "string" }
