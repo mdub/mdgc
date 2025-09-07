@@ -19,7 +19,7 @@ courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 					name={course.data.title}
 					href={`/courses/${course.slug}`}
 					location={course.data.suburb}
-					image={course.data.thumbnail || course.data.featuredImage}
+					image={course.data.thumbnail || course.data.mainImage}
 				/>
 			))}
 		</div>

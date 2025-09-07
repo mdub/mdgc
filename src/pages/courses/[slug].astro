@@ -17,10 +17,10 @@ const { Content } = await course.render();
 
 <Layout title={course.data.title} subtitle={course.data.suburb}>
   <ContentSection>
-    {course.data.featuredImage && (
+    {course.data.mainImage && (
       <div class="w-full aspect-[2/1] mb-8">
         <img 
-          src={course.data.featuredImage} 
+          src={course.data.mainImage} 
           alt={course.data.title}
           class="w-full h-full object-cover rounded-lg"
         />
