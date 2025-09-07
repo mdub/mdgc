@@ -14,7 +14,7 @@ export interface NavItem {
 async function getCourseNavItems(): Promise<NavSubPage[]> {
   const courses = await getCollection('courses');
   courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
-  
+
   return courses.map(course => ({
     title: course.data.title,
     href: `/courses/${course.slug}`
@@ -23,7 +23,7 @@ async function getCourseNavItems(): Promise<NavSubPage[]> {
 
 export async function getNavItems(): Promise<NavItem[]> {
   const courseSubPages = await getCourseNavItems();
-  
+
   return [
     {
       title: 'Disc Golf',

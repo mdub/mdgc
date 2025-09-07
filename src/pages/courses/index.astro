@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '/src/layouts/Layout.astro';
-import ContentSection from '/src/components/ContentSection.astro';
-import Card from '/src/components/Card.astro';
-import CourseCard from '/src/components/CourseCard.astro';
+import Layout from '~/layouts/Layout.astro';
+import ContentSection from '~/components/ContentSection.astro';
+import Card from '~/components/Card.astro';
+import CourseCard from '~/components/CourseCard.astro';
 
 const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
