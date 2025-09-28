@@ -1,32 +1,8 @@
-# Melbourne Disc Golf Club Website Project
+# Melbourne Disc Golf Club website rebuild
 
 ## Project Overview
-This project involves building a new modern website for the Melbourne Disc Golf Club (MDGC) using Astro and Tailwind CSS to replace their existing WordPress site.
 
-## Site Architecture Evolution
-The new site structure has diverged significantly from the original WordPress site to provide better information architecture and user experience:
-
-### Original Site Structure (WordPress)
-- Home, About (dropdown), Courses (dropdown), Events, Media (dropdown), Shop
-
-### New Site Structure (Redesigned)
-- **Disc Golf** (dropdown): Educational content about the sport
-- **Courses** (dropdown): Location-based course information  
-- **Club** (dropdown): MDGC-specific community content
-- **Events**: Social days and tournaments
-- **Shop**: Equipment and merchandise
-
-This reorganization separates educational content from club operations and gives proper prominence to courses and events.
-
-## Existing Site Analysis
-- **Current Site**: https://www.melbournediscgolf.com/
-- **Documentation**: See `existing-site/` directory for structured content mapping (reference only)
-- **Note**: New site structure intentionally diverges from original for improved UX
-
-## Technology Stack
-- **Framework**: Astro 5.12.8
-- **Styling**: Tailwind CSS 4.1.11
-- **Deployment**: Static site generation
+This project involves building a new modern website for the Melbourne Disc Golf Club (MDGC) to replace their existing WordPress site.
 
 ## Project Structure
 ```
@@ -64,34 +40,45 @@ website/
     ├── about/, melbourne-courses/, events/, media/
 ```
 
-## Development Commands
-- **Start dev server**: `npm run dev` (runs on http://localhost:4321)
-- **Build**: `npm run build`
-- **Preview**: `npm run preview`
+## Existing site
 
-## Site Features
-- Responsive design with mobile navigation
-- Modern green color scheme reflecting disc golf/outdoor theme
-- Reorganized navigation structure with improved information architecture
-- Hero sections on all pages
-- Card-based layouts for courses and events
-- Accessible markup and semantic HTML
-- Component-based architecture for reusable elements
+The existing (Wordpress-based) website is hosted at https://www.melbournediscgolf.com/.
 
-## Implementation Status
-- ✅ **Navigation Structure**: Complete redesign with new information architecture
-- ✅ **Homepage**: Hero section and welcome content migrated
-- ✅ **Disc Golf Section**: Educational content (What is Disc Golf, New Player Essentials)
-- ✅ **Courses Section**: Melbourne courses + placeholder pages for Victoria/Australia
-- ✅ **Club Section**: About MDGC, membership, contact, board member profiles
-- ✅ **Events Section**: Social days structure and competitive opportunities
-- ✅ **Shop Section**: Basic placeholder page created
-- 🔄 **Content Population**: Many pages need additional content from original site
-- ❌ **Media/Blog**: Not yet implemented (may be added to Club section)
+The [`existing-site/`](existing-site/) directory contains a "sketch" of that existing site, including key content.
 
-## Key Architectural Decisions
-- **URL Structure**: Moved from flat structure to organized subdirectories (`/club/`, `/courses/`, etc.)
-- **Navigation**: Simplified from complex nested dropdowns to clearer categorical organization
-- **Content Separation**: Distinguishes between educational disc golf content and club-specific information
-- **Component Reuse**: BoardMember and Course components for consistent presentation
-- The website source is managed in Git
+## Approach
+
+- Use a static site, for runtime simplicity and performance.
+- Design should be responsive, mobile-first.
+- Use clean, accessible, semantic HTML.
+- Make it as easy as possible for non-technical club members to manage content.
+  - use Astro components and/or "content collections" for consistency
+
+## Tech stack
+
+- manage website source in Git (on GitHub)
+- use [Astro](https://astro.build/) as a static site generator
+- use [Tailwind CSS](https://tailwindcss.com/) for styling
+- deploy to [Netlify](https://www.netlify.com/)
+- use Decap CMS to manage content of some pages (courses, events)
+
+## Site structure
+
+We have structured the new site into these sections:
+
+- **Disc Golf**: information about the sport of disc golf
+- **Club**: information about the club, and how it operates
+- **Courses**: information on where to play, in Melbourne
+- **Events**: information about when to play with others - social days and tournaments
+- **Shop**: buying discs etc (link to external shop site)
+
+## Status
+
+- We have a nagivation structure in place.
+- We have a content collection for courses, (see src/content/courses).
+
+### TODO
+
+- Reduce the amount of markup required in "pages".
+  - Convert to MDX?
+  - Define better components?
