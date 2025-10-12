@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "WebFetch(domain:www.melbournediscgolf.com)",
+      "WebFetch(domain:mdgc.netlify.app)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
