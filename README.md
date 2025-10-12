@@ -124,3 +124,8 @@ The website code needs to be hosted somewhere. [GitHub](https://github.com) is a
 On their Free [plan](https://github.com/pricing), Netlify would give us 300 "build minutes", and 100GB of traffic served per month. I suspect this will be sufficient for MDGC's needs. If not, we may need to upgrade to a paid plan, e.g. "Personal" ($14/month) or "Pro" ($30/month).
 
 I am also considering [Cloudflare Pages](https://pages.cloudflare.com), as an alternative to Netlify (but the pricing would be similar).
+
+#### Editing experience
+
+The experience of people _editing_ the website will be quite different, for those used to WordPress. In particular, the new solution
+will not provide a WYSIWYG ("what you see is what you get") editing experience, and it will be harder to change site _styling_, without some technical knowledge. However - though a combination of Decap CMS and the GitHub UI - we should be able to make it pretty easy for non-technical folks to edit and add _content_.
