@@ -44,15 +44,14 @@ still todo:
     - [ ] add relevant folks as "contributors" on GitHub
     - [ ] document the contribution process
 
-
 ## 🚀 Development
 
 ### 🏗️ Tech Stack
 - **Type**: Static (generated) site
-- **Framework**: Astro 5.12.8
-- **Styling**: Tailwind CSS 4.1.11
-- **CMS**: Decap CMS (backed by Git)
-- **Deployment**: Netlify
+- **Framework**: [Astro](https://astro.build) 5.12.8
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) 4.1.11
+- **CMS**: [Decap CMS](https://decapcms.org) (backed by Git)
+- **Deployment**: [Netlify](https://www.netlify.com)
 
 ### Running locally
 
@@ -99,3 +98,29 @@ As of Oct 2025, the existing WordPress site is hosted at:
 
 The `existing-site/` directory contains a summary of the contents and structure of the WordPress site.
 
+## Comparison to existing site
+
+### WordPress vs static site
+
+MDGC's existing website is based on WordPress. WordPress is a "dynamic" platform, which generate web-pages on-the-fly, as users browse.
+
+In constrast, this rebuild is a "static website", meaning that the web-pages are pre-built, meaning much less work needs to be done on the "server" when people use the site.  Because of this, it should be:
+
+  - **Faster**. A static site loads almost instantly, even on mobile or low-bandwidth connections. 
+  - **Cheaper**. Static sites can be hosted very cheaply - often for free. No ongoing fees for WordPress hosting, security plugins, or maintenance work.
+  - **Much more reliable**. Static websites don’t crash or break after software updates. Once it’s live, it just works — no background software to maintain.
+  - **Much more secure**. WordPress sites are one of the most common targets for hackers. A static site, by contrast, has no login system or database for attackers to get into. That means no security headaches, no emergency fixes, and no risk of losing content.
+
+### Moving parts
+
+#### Code hosting = GitHub (free)
+
+The website code needs to be hosted somewhere. [GitHub](https://github.com) is a great option, and their Free plan support hosting of Git repositories with multiple collaborators. Anyone who needs to edit the website would need to register for a (free) GitHub account.
+
+#### Site build and hosting = Netlify ($0-30/month)
+
+[Netlify](https://www.netlify.com) are a popular platform for static websites. We have things configured such that any change to the website code (on GitHub) triggers a "build" and update of the site, which is then "served" by Netlify.
+
+On their Free [plan](https://github.com/pricing), Netlify would give us 300 "build minutes", and 100GB of traffic served per month. I suspect this will be sufficient for MDGC's needs. If not, we may need to upgrade to a paid plan, e.g. "Personal" ($14/month) or "Pro" ($30/month).
+
+I am also considering [Cloudflare Pages](https://pages.cloudflare.com), as an alternative to Netlify (but the pricing would be similar).
