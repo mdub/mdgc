@@ -1,121 +1,113 @@
 ---
 import Layout from '~/layouts/Layout.astro';
-import ContentSection from '~/components/ContentSection.astro';
-import Card from '~/components/Card.astro';
-import IconCard from '~/components/IconCard.astro';
+import Panel from '~/components/Panel.astro';
+import Prose from '~/components/Prose.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Membership" subtitle="Join the Melbourne disc golf community">
 
-	<ContentSection>
-		<div class="text-center mb-12">
-			<h2 class="text-3xl font-bold mb-6">Welcome to MDGC</h2>
-			<p class="text-lg text-gray-600 max-w-3xl mx-auto">
-				Membership is open to the public and recommended for both experienced players and beginners. 
-				Our membership is designed to help players learn, build skills, and support the ongoing growth 
-				of disc golf in Melbourne.
-			</p>
-		</div>
+	<Prose>
+		<h2>Welcome to MDGC</h2>
+		<p>
+			Membership is open to the public and recommended for both experienced players and beginners.
+			Our membership is designed to help players learn, build skills, and support the ongoing growth
+			of disc golf in Melbourne.
+		</p>
+	</Prose>
 
-		<div class="grid md:grid-cols-2 gap-8 mb-12">
-			<Card>
-				<div class="text-center mb-6">
-					<IconCard 
-						icon="heroicons:users"
-						title="Junior Membership"
-						description=""
-						iconColor="text-blue-600"
-						background="bg-blue-100"
-					/>
+	<div class="grid md:grid-cols-2 gap-8">
+		<Panel>
+			<div class="text-center mb-6">
+				<div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+					<Icon name="heroicons:users" class="w-8 h-8 text-blue-600" />
 				</div>
-				<div class="text-center">
-					<p class="text-gray-600 mb-6">
-						Perfect for young players getting started in disc golf. Includes access to all club activities and social events.
-					</p>
-					<ul class="text-left text-gray-600 space-y-2 mb-6">
-						<li>• Access to monthly social days</li>
-						<li>• New player instruction</li>
-						<li>• Club community participation</li>
-						<li>• Skill development opportunities</li>
-					</ul>
-				</div>
-			</Card>
-
-			<Card>
-				<div class="text-center mb-6">
-					<IconCard 
-						icon="heroicons:users"
-						title="Adult Membership"
-						description=""
-						iconColor="text-green-600"
-						background="bg-green-100"
-					/>
-				</div>
-				<div class="text-center">
-					<p class="text-gray-600 mb-6">
-						For adult players of all skill levels, from beginners to competitive athletes participating in state and national championships.
-					</p>
-					<ul class="text-left text-gray-600 space-y-2 mb-6">
-						<li>• Full club access and benefits</li>
-						<li>• Competition eligibility</li>
-						<li>• Social event participation</li>
-						<li>• Community building opportunities</li>
-					</ul>
-				</div>
-			</Card>
-		</div>
-
-		<Card background="gray" class="mb-12">
-			<h2 class="text-2xl font-bold text-center mb-8">Membership Benefits</h2>
-			<div class="grid md:grid-cols-3 gap-6">
-				<IconCard 
-					icon="heroicons:users"
-					title="Community"
-					description="Join a welcoming community of players aged 9-70+"
-					iconColor="text-green-600"
-					background="bg-green-100"
-				/>
-				<IconCard 
-					icon="heroicons:play"
-					title="Learning"
-					description="Skill development and instruction for all levels"
-					iconColor="text-green-600"
-					background="bg-green-100"
-				/>
-				<IconCard 
-					icon="heroicons:calendar"
-					title="Events"
-					description="Access to social days and competitive opportunities"
-					iconColor="text-green-600"
-					background="bg-green-100"
-				/>
+				<h3 class="text-xl font-bold">Junior Membership</h3>
 			</div>
-		</Card>
+			<Prose>
+				<p>
+					Perfect for young players getting started in disc golf. Includes access to all club activities and social events.
+				</p>
+				<ul>
+					<li>Access to monthly social days</li>
+					<li>New player instruction</li>
+					<li>Club community participation</li>
+					<li>Skill development opportunities</li>
+				</ul>
+			</Prose>
+		</Panel>
 
-		<div class="bg-green-600 text-white rounded-lg p-8 text-center">
-			<h2 class="text-2xl font-bold mb-4">Ready to Join?</h2>
-			<p class="text-lg mb-6">
-				Whether you're new to disc golf or an experienced player, we encourage you to become part of our community.
-			</p>
-			<div class="space-x-4">
-				<a href="/club/contact" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-					Contact Us
-				</a>
-				<a href="/disc-golf" class="bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors border border-green-500">
-					Learn About Disc Golf
-				</a>
+		<Panel>
+			<div class="text-center mb-6">
+				<div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+					<Icon name="heroicons:users" class="w-8 h-8 text-green-600" />
+				</div>
+				<h3 class="text-xl font-bold">Adult Membership</h3>
+			</div>
+			<Prose>
+				<p>
+					For adult players of all skill levels, from beginners to competitive athletes participating in state and national championships.
+				</p>
+				<ul>
+					<li>Full club access and benefits</li>
+					<li>Competition eligibility</li>
+					<li>Social event participation</li>
+					<li>Community building opportunities</li>
+				</ul>
+			</Prose>
+		</Panel>
+	</div>
+
+	<Panel class="bg-gray-50">
+		<h2 class="text-2xl font-bold text-center mb-8">Membership Benefits</h2>
+		<div class="grid md:grid-cols-3 gap-6">
+			<div class="text-center">
+				<div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+					<Icon name="heroicons:users" class="w-8 h-8 text-green-600" />
+				</div>
+				<h3 class="font-semibold text-lg mb-2">Community</h3>
+				<p class="text-gray-600 text-sm">Join a welcoming community of players aged 9-70+</p>
+			</div>
+			<div class="text-center">
+				<div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+					<Icon name="heroicons:play" class="w-8 h-8 text-green-600" />
+				</div>
+				<h3 class="font-semibold text-lg mb-2">Learning</h3>
+				<p class="text-gray-600 text-sm">Skill development and instruction for all levels</p>
+			</div>
+			<div class="text-center">
+				<div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+					<Icon name="heroicons:calendar" class="w-8 h-8 text-green-600" />
+				</div>
+				<h3 class="font-semibold text-lg mb-2">Events</h3>
+				<p class="text-gray-600 text-sm">Access to social days and competitive opportunities</p>
 			</div>
 		</div>
+	</Panel>
 
-		<div class="mt-12 text-center">
-			<h3 class="text-xl font-semibold mb-4">Questions about Membership?</h3>
-			<p class="text-gray-600 mb-6">
-				Our friendly committee members are happy to help you get started. From beginners to competitive players, 
-				everyone is welcome in our inclusive disc golf community.
-			</p>
-			<a href="/club" class="text-green-600 hover:text-green-700 font-medium">
-				Learn More About MDGC →
+	<div class="bg-green-600 text-white rounded-lg p-8 text-center my-8">
+		<h2 class="text-2xl font-bold mb-4">Ready to Join?</h2>
+		<p class="text-lg mb-6">
+			Whether you're new to disc golf or an experienced player, we encourage you to become part of our community.
+		</p>
+		<div class="space-x-4">
+			<a href="/club/contact" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
+				Contact Us
+			</a>
+			<a href="/disc-golf" class="bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors border border-green-500 inline-block">
+				Learn About Disc Golf
 			</a>
 		</div>
-	</ContentSection>
+	</div>
+
+	<Prose>
+		<h3>Questions about Membership?</h3>
+		<p>
+			Our friendly committee members are happy to help you get started. From beginners to competitive players,
+			everyone is welcome in our inclusive disc golf community.
+		</p>
+		<p>
+			<a href="/club">Learn More About MDGC →</a>
+		</p>
+	</Prose>
 </Layout>
