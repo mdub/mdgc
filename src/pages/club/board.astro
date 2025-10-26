@@ -1,27 +1,21 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import BoardMember from '~/components/BoardMember.astro';
+import Prose from '~/components/Prose.astro';
+import Panel from '~/components/Panel.astro';
 ---
 
 <Layout title="MDGC Board" subtitle="Meet our volunteer committee members">
 
-	<main>
+	<Prose>
+		<h2>Our Volunteer Committee</h2>
+		<p>
+			The Melbourne Disc Golf Club is managed by a dedicated voluntary committee of passionate
+			disc golf enthusiasts who work to grow and support our community.
+		</p>
+	</Prose>
 
-		<!-- Board Content -->
-		<section class="py-16">
-			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-				<!-- Introduction -->
-				<div class="text-center mb-12">
-					<h2 class="text-3xl font-bold mb-6">Our Volunteer Committee</h2>
-					<p class="text-lg text-gray-600 max-w-3xl mx-auto">
-						The Melbourne Disc Golf Club is managed by a dedicated voluntary committee of passionate
-						disc golf enthusiasts who work to grow and support our community.
-					</p>
-				</div>
-
-				<!-- Board Members -->
-				<div class="space-y-8">
+	<div class="space-y-8">
 					<BoardMember name="Mike Van der Linden" title="President">
 						<p class="mb-3">
 							I'm married and have 2 teenage daughters. An engineer by training, I've spent most of my working life in corporate and operational management roles around the world. During Covid, I took a package and now have the time to get involved in all the things I never had time for in the past. I'm into volleyball, energy efficiency, gardening and currently house renovations … & lots of DG.
@@ -78,32 +72,28 @@ import BoardMember from '~/components/BoardMember.astro';
 							I was a founding member of both ADG and MDGC and have been playing Disc Golf since around 2004. I've been fortunate to be able to play extensively in Europe, Japan, and the USA (and of course Australia), including participating in five PDGA Worlds events. Disc Golf was popular during the 80s in Australia however by the time I discovered the sport it's footprint here had shrunk significantly with only a handful of players. This meant that back then if you wanted anything to happen you had to organise it yourself. As a result, I spent many of my starting years in Disc Golf running tournaments and helping develop some of the organisational structures that are still in place today.
 						</p>
 					</BoardMember>
-				</div>
+	</div>
 
-				<!-- Organization Info -->
-				<div class="mt-12 bg-gray-50 rounded-lg p-8">
-					<h2 class="text-2xl font-bold text-center mb-6">About Our Committee</h2>
-					<div class="text-center">
-						<p class="text-gray-600 mb-6">
-							Since our founding in 2008, MDGC has been managed by passionate volunteers who donate their
-							time and expertise to support the growth of disc golf in Melbourne. As a non-profit organisation,
-							we rely on dedicated community members to guide our club's direction.
-						</p>
-						<p class="text-gray-600 mb-6">
-							Interested in getting involved or learning more about our committee? We're always looking for
-							enthusiastic members to help with various club activities and initiatives.
-						</p>
-						<div class="space-x-4">
-							<a href="/club/contact" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-								Contact Us
-							</a>
-							<a href="/club/membership" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold border border-green-600 hover:bg-green-50 transition-colors">
-								Join MDGC
-							</a>
-						</div>
-					</div>
-				</div>
+	<Panel class="bg-gray-50">
+		<Prose>
+			<h2>About Our Committee</h2>
+			<p>
+				Since our founding in 2008, MDGC has been managed by passionate volunteers who donate their
+				time and expertise to support the growth of disc golf in Melbourne. As a non-profit organisation,
+				we rely on dedicated community members to guide our club's direction.
+			</p>
+			<p>
+				Interested in getting involved or learning more about our committee? We're always looking for
+				enthusiastic members to help with various club activities and initiatives.
+			</p>
+			<div class="space-x-4 text-center">
+				<a href="/club/contact" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+					Contact Us
+				</a>
+				<a href="/club/membership" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold border border-green-600 hover:bg-green-50 transition-colors">
+					Join MDGC
+				</a>
 			</div>
-		</section>
-	</main>
+		</Prose>
+	</Panel>
 </Layout>
