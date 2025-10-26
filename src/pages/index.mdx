@@ -5,17 +5,13 @@ subtitle: The home of all things disc golf in Melbourne (Australia)
 ---
 
 import LinkPanel from '~/components/LinkPanel.astro';
-import Prose from '~/components/Prose.astro';
+import Image from '~/components/Image.astro';
 
-<Prose>
-
-## Welcome
-
-Founded in 2008, the Melbourne Disc Golf Club (MDGC) is a not-for-profit organisation with a simple goal - to create a local community of players and to spread awareness of this enjoyable, challenging and environmentally responsible sport.
-
-Our membership ranges from 9 to 70 years old so whether you're young or old, super competitive or just want to have fun, there's a place for you in our club.
-
-</Prose>
+<Image
+  src="/images/hero.jpg"
+  alt="MDGC members and guests"
+  class="aspect-[2/1] object-cover"
+/>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
 	<LinkPanel
