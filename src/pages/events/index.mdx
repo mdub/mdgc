@@ -1,0 +1,33 @@
+---
+layout: ~/layouts/MdxLayout.astro
+title: MDGC Events
+subtitle: Social Days 2025 and club activities
+---
+
+import Prose from '~/components/Prose.astro';
+import LinkPanel from '~/components/LinkPanel.astro';
+import Grid from '~/components/Grid.astro';
+
+<Prose>
+
+While disc golf _can_ be enjoyed solo, the best way to experience the sport is to play with others.
+
+MDGC events bring together players of all skill levels to share the joy of disc golf in a
+supportive and welcoming community.
+
+</Prose>
+
+<Grid cols={2}>
+	<LinkPanel
+		href="/events/social"
+		title="Social Days"
+		description="Monthly casual events where members can play together in a relaxed, friendly environment. Perfect for players of all skill levels."
+		icon="heroicons:heart"
+	/>
+	<LinkPanel
+		href="/events/tournaments"
+		title="Tournaments"
+		description="Competitive events for players ready to test their skills. Multiple divisions ensure fair competition for all skill levels."
+		icon="heroicons:trophy"
+	/>
+</Grid>
