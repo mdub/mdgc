@@ -1,60 +1,47 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/Layout.astro';
-import ContentSection from '~/components/ContentSection.astro';
-import Card from '~/components/Card.astro';
 import CourseCard from '~/components/CourseCard.astro';
+import Grid from '~/components/Grid.astro';
+import Panel from '~/components/Panel.astro';
+import Prose from '~/components/Prose.astro';
 
 const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="Melbourne Disc Golf Courses" subtitle="Discover amazing disc golf courses across Melbourne">
+	<Grid cols={3}>
+		{courses.map((course) => (
+			<CourseCard
+				name={course.data.title}
+				href={`/courses/${course.slug}`}
+				location={course.data.suburb}
+				image={course.data.thumbnail || course.data.mainImage}
+			/>
+		))}
+	</Grid>
 
-	<ContentSection class="max-w-6xl">
+	<Prose class="text-center">
+		<h2>Further afield</h2>
+	</Prose>
 
-		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-			{courses.map((course) => (
-				<CourseCard
-					name={course.data.title}
-					href={`/courses/${course.slug}`}
-					location={course.data.suburb}
-					image={course.data.thumbnail || course.data.mainImage}
-				/>
-			))}
-		</div>
+	<Grid cols={2}>
+		<Panel class="bg-gray-50 prose text-center mt-0">
+			<h3>Victoria & Australia</h3>
+			<p>
+				Visit <a href="https://flyspot.com.au" target="_blank"><b>flyspot.com.au</b></a>
+				for comprehensive information about disc golf courses across the country.
+			</p>
+		</Panel>
 
-		<Card background="gray" class="mt-16">
-			<h2 class="text-2xl font-bold text-center mb-8">Courses Beyond Melbourne</h2>
-			<div class="grid md:grid-cols-2 gap-8">
-				<Card>
-					<div class="text-center">
-						<h3 class="text-xl font-bold mb-4">Victoria & Australia</h3>
-						<p class="text-gray-600 mb-6">
-							For comprehensive information about disc golf courses throughout Victoria and Australia,
-							visit flyspot.com.au - the ultimate resource for Australian disc golf course information.
-						</p>
-						<a href="https://flyspot.com.au" target="_blank" rel="noopener noreferrer"
-							class="bg-mdgc-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue-dark transition-colors">
-							Visit flyspot.com.au ↗
-						</a>
-					</div>
-				</Card>
+		<Panel class="bg-gray-50 prose text-center mt-0">
+			<h3>Worldwide</h3>
+			<p>
+				<a href="https://udisc.com" target="_blank"><b>UDisc</b></a> is a great place
+				to find information about disc golf courses around the world.
+			</p>
+		</Panel>
+	</Grid>
 
-				<Card>
-					<div class="text-center">
-						<h3 class="text-xl font-bold mb-4">Courses Worldwide</h3>
-						<p class="text-gray-600 mb-6">
-							Planning disc golf travels around the world? UDisc is the global standard for
-							course directories, scorekeeping, and finding disc golf wherever you go.
-						</p>
-						<a href="https://udisc.com" target="_blank" rel="noopener noreferrer"
-							class="bg-mdgc-blue-dark text-white px-6 py-3 rounded-lg font-semibold hover:bg-mdgc-blue transition-colors">
-							Visit udisc.com ↗
-						</a>
-					</div>
-				</Card>
-			</div>
-		</Card>
-	</ContentSection>
 </Layout>
