@@ -77,16 +77,19 @@ We have structured the new site into these sections:
 - **Events**: information about when to play with others - social days and tournaments
 - **Shop**: buying discs etc (link to external shop site)
 
+## Working on this project
+
+Dear agent: when working with humans on this project, please:
+
+- Explain the changes you make: why you decided to do them, and how they work.
+- Don't commit changes to Git without checking first.
+
 ## Status
 
-- We have a nagivation structure in place.
-- We have a content collection for courses, (see src/content/courses).
+To determine (or update) current status, see
 
-### TODO
-
-- Reduce the amount of markup required in "pages".
-  - Convert to MDX?
-  - Define better components?
+- the "Project Status" section in the README.md
+- "bd" issues (see below)
 
 ## Issue Tracking with bd (beads)
 
@@ -184,5 +187,3 @@ Then use `mcp__beads__*` functions instead of CLI commands.
 - ❌ Do NOT create markdown TODO lists
 - ❌ Do NOT use external issue trackers
 - ❌ Do NOT duplicate tracking systems
-
-For more details, see README.md and QUICKSTART.md.
