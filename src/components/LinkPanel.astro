@@ -12,9 +12,9 @@ interface Props {
 const { href, title, description, icon } = Astro.props;
 ---
 
-<a href={href} class="section-link">
-	<Panel class="section-link-panel flex flex-col items-center text-center">
-		<div class="section-link-icon">
+<a href={href} class="link-panel">
+	<Panel class="link-panel-inner flex flex-col items-center text-center">
+		<div class="link-panel-icon">
 			<Icon name={icon} size={96} />
 		</div>
 		<h3>{title}</h3>
@@ -23,7 +23,7 @@ const { href, title, description, icon } = Astro.props;
 </a>
 
 <style>
-	.section-link {
+	.link-panel {
 		text-decoration: none;
 		color: inherit;
 		display: block;
@@ -31,33 +31,28 @@ const { href, title, description, icon } = Astro.props;
 		cursor: pointer;
 	}
 
-	.section-link:hover {
-		transform: translateY(-4px);
+	.link-panel:hover {
+		transform: scale(1.05);
 	}
 
-	.section-link:hover .section-link-panel {
-		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-	}
-
-	.section-link:hover .section-link-icon {
+	.link-panel:hover .link-panel-icon {
 		color: var(--color-mdgc-blue-dark);
-		transform: scale(1.1);
 	}
 
-	.section-link-icon {
+	.link-panel-icon {
 		margin-bottom: 1rem;
 		color: var(--color-mdgc-blue);
 		transition: all 0.2s;
 	}
 
-	.section-link h3 {
+	.link-panel h3 {
 		font-size: 1.5rem;
 		font-weight: 700;
 		margin-bottom: 0.5rem;
 		color: #1f2937;
 	}
 
-	.section-link p {
+	.link-panel p {
 		color: #6b7280;
 		font-size: 0.875rem;
 	}
