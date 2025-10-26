@@ -8,13 +8,13 @@ A modern website for the Melbourne Disc Golf Club.
 
 A preview of new site is available at:
 
-- https://mdgc.netlify.app/ 
+- https://mdgc.netlify.app/
 
 Once development is complete, we will change the existing site URL to refer to the new one.
 
 ## 📋 Project Status
 
-Mike Williams is currently in the midst of porting the existing WordPress site to a modern static website. The plan is to prove viablity by end of Oct 2025, and complete migration by the end of Nov.
+Mike Williams is currently in the midst of porting the existing WordPress site to a modern static website. The plan is to prove viability by end of Oct 2025, and complete migration by the end of Nov.
 
 So far, I have:
 
@@ -25,21 +25,37 @@ So far, I have:
     - **Club** - about the club
     - **Courses** - where to play
     - **Events** - when to play
-  - [X] sketched some of the content (including course photos and some details)
+  - [X] sketched content across all sections
   - [X] integrated [Decap CMS](https://decapcms.org) for easier content editing
+  - [X] created reusable page components (Panel, Prose, LinkPanel, Grid, HeroImage)
+  - [X] converted key pages to MDX format for easier editing
+  - [X] added custom font (Inter) and refined typography
+  - [X] added hero images to major pages with proper optimization
 
-still todo:
-  - **Disc Golf** section
-    - [ ] build out content, e.g. "what it is", "how to play", and links to other relevent sites
+Recent progress:
   - **Club** section
-    - [ ] _lots_ of content revision ... borrowing material from the existing site where appropriate
-  - **Courses** section
-    - [ ] review course pages, and add detail
-    - [ ] add an overview map to the main "Courses" page
+    - [X] converted all Club pages to MDX (board, contact, membership, index)
+    - [X] simplified styling and component structure
   - **Events** section
-    - [ ] revise material on Social Days
-    - [ ] create a "content collection" and CMS support for "Tournaments" to make them easy to add
-  - support for other editors
+    - [X] revised and converted Social Days page to MDX
+    - [X] converted Tournaments page to MDX
+    - [X] added hero images for social days and tournaments
+  - **Courses** section
+    - [X] created content collection for courses with MDX support
+    - [X] added course pages with maps and details
+
+Still todo:
+  - **Disc Golf** section
+    - [ ] build out content, e.g. "what it is", "how to play", and links to other relevant sites
+  - **Courses** section
+    - [ ] add an overview map to the main "Courses" page
+    - [ ] make course map images easier to open in new tab/window
+  - **Events** section
+    - [ ] pull upcoming social days information from Disc Golf Metrix
+    - [ ] embed club's Google calendar on events page
+  - **General**
+    - [ ] revisit component composition and whitespace handling
+  - Support for other editors
     - [ ] configure Decap CMS with a "github" backend
     - [ ] add relevant folks as "contributors" on GitHub
     - [ ] document the contribution process
@@ -106,7 +122,7 @@ MDGC's existing website is based on WordPress. WordPress is a "dynamic" platform
 
 In constrast, this rebuild is a "static website", meaning that the web-pages are pre-built, meaning much less work needs to be done on the "server" when people use the site.  Because of this, it should be:
 
-  - **Faster**. A static site loads almost instantly, even on mobile or low-bandwidth connections. 
+  - **Faster**. A static site loads almost instantly, even on mobile or low-bandwidth connections.
   - **Cheaper**. Static sites can be hosted very cheaply - often for free. No ongoing fees for WordPress hosting, security plugins, or maintenance work.
   - **Much more reliable**. Static websites don’t crash or break after software updates. Once it’s live, it just works — no background software to maintain.
   - **Much more secure**. WordPress sites are one of the most common targets for hackers. A static site, by contrast, has no login system or database for attackers to get into. That means no security headaches, no emergency fixes, and no risk of losing content.
