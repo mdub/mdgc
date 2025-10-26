@@ -5,7 +5,5 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title} subtitle={frontmatter.subtitle}>
-	<div class="py-8 space-y-8 max-w-4xl mx-auto">
-		<slot />
-	</div>
+	<slot />
 </Layout>
