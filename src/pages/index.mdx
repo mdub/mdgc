@@ -6,14 +6,16 @@ subtitle: The home of all things disc golf in Melbourne (Australia)
 
 import LinkPanel from '~/components/LinkPanel.astro';
 import Image from '~/components/Image.astro';
+import Grid from '~/components/Grid.astro';
+import heroImage from '~/assets/images/hero.jpg';
 
 <Image
-  src="/images/hero.jpg"
+  src={heroImage.src}
   alt="MDGC members and guests"
   class="aspect-[2/1] object-cover"
 />
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+<Grid cols={2}>
 	<LinkPanel
 		href="/disc-golf"
 		title="Disc Golf"
@@ -38,4 +40,4 @@ import Image from '~/components/Image.astro';
 		description="Social days and tournaments"
 		icon="heroicons:calendar"
 	/>
-</div>
+</Grid>

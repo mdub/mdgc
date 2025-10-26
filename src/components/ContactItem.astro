@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+	icon: string;
+	title: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<div class="text-center [&_a]:block [&_a]:text-mdgc-blue [&_a]:hover:text-mdgc-blue-dark [&_a]:break-all">
+	<Icon name={icon} class="w-12 h-12 mx-auto mb-3 text-mdgc-blue" />
+	<h3 class="font-semibold text-lg mb-2">{title}</h3>
+	<slot />
+</div>

@@ -1,0 +1,48 @@
+---
+layout: ~/layouts/MdxLayout.astro
+title: About the Melbourne Disc Golf Club
+subtitle: Building community through disc golf
+---
+
+import Prose from '~/components/Prose.astro';
+import LinkPanel from '~/components/LinkPanel.astro';
+import Grid from '~/components/Grid.astro';
+import Image from '~/components/Image.astro';
+import heroImage from '~/assets/images/club-hero.jpg';
+
+<Image
+  src={heroImage.src}
+  alt="Kingston Classic 2019 group photo"
+  class="aspect-[2/1] object-cover"
+/>
+
+<Prose>
+
+The MDGC is a not-for-profit organisation, formed in 2008.
+
+We believe disc golf is an enjoyable, challenging and environmentally responsible
+sport that brings people together. We focus on building an inclusive community where
+players of all ages and skill levels can enjoy the game.
+
+</Prose>
+
+<Grid cols={3}>
+	<LinkPanel
+		href="/club/membership"
+		title="Membership"
+		description="Join the club"
+		icon="heroicons:users"
+	/>
+	<LinkPanel
+		href="/club/contact"
+		title="Contact Us"
+		description="Get in touch"
+		icon="heroicons:envelope"
+	/>
+	<LinkPanel
+		href="/club/board"
+		title="MDGC Board"
+		description="Meet our committee"
+		icon="heroicons:user-group"
+	/>
+</Grid>
