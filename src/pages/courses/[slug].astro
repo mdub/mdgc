@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import ContentSection from '../../components/ContentSection.astro';
+import Image from '../../components/Image.astro';
 
 export async function getStaticPaths() {
   const courses = await getCollection('courses');
@@ -18,15 +19,13 @@ const { Content } = await course.render();
 <Layout title={course.data.title} subtitle={course.data.suburb}>
   <ContentSection>
     {course.data.mainImage && (
-      <div class="w-full aspect-[2/1] mb-8">
-        <img 
-          src={course.data.mainImage} 
-          alt={course.data.title}
-          class="w-full h-full object-cover rounded-lg"
-        />
-      </div>
+      <Image
+        src={course.data.mainImage}
+        alt={course.data.title}
+        class="aspect-[2/1] object-cover"
+      />
     )}
-    
+
     <div class="prose prose-lg max-w-none">
       <Content />
     </div>
@@ -41,10 +40,9 @@ const { Content } = await course.render();
     {course.data.courseMap && (
       <div class="mt-8">
         <h3 class="text-lg font-semibold mb-4">Course Map</h3>
-        <img 
-          src={course.data.courseMap} 
+        <Image
+          src={course.data.courseMap}
           alt={`${course.data.title} Course Map`}
-          class="w-full rounded-lg shadow-lg"
         />
       </div>
     )}
