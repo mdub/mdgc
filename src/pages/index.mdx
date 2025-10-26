@@ -1,0 +1,45 @@
+---
+layout: ~/layouts/MdxLayout.astro
+title: Melbourne Disc Golf Club
+subtitle: The home of all things disc golf in Melbourne (Australia)
+---
+
+import Panel from '~/components/Panel.astro';
+import SectionLink from '~/components/SectionLink.astro';
+
+<Panel class="prose">
+
+## Welcome
+
+Founded in 2008, the Melbourne Disc Golf Club (MDGC) is a not-for-profit organisation with a simple goal - to create a local community of players and to spread awareness of this enjoyable, challenging and environmentally responsible sport.
+
+Our membership ranges from 9 to 70 years old so whether you're young or old, super competitive or just want to have fun, there's a place for you in our club.
+
+</Panel>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+	<SectionLink
+		href="/disc-golf"
+		title="Disc Golf"
+		description="Playing the game"
+		icon="heroicons:play-circle"
+	/>
+	<SectionLink
+		href="/club"
+		title="Club"
+		description="Becoming a member"
+		icon="heroicons:users"
+	/>
+	<SectionLink
+		href="/courses"
+		title="Courses"
+		description="Where to play in Melbourne"
+		icon="heroicons:map-pin"
+	/>
+	<SectionLink
+		href="/events"
+		title="Events"
+		description="Social days and tournaments"
+		icon="heroicons:calendar"
+	/>
+</div>
