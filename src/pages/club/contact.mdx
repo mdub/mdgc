@@ -1,0 +1,33 @@
+---
+layout: ~/layouts/MdxLayout.astro
+title: Contact us
+subtitle: Get in touch with the Melbourne Disc Golf Club
+---
+
+import Prose from '~/components/Prose.astro';
+import Grid from '~/components/Grid.astro';
+import ContactItem from '~/components/ContactItem.astro';
+
+<Prose>
+
+For more information on disc golf, or the Melbourne Disc Golf Club, please don't hesitate to reach out.
+
+</Prose>
+
+<Grid cols={3}>
+	<ContactItem icon="heroicons:envelope" title="Email">
+		<p class="text-sm text-gray-600 mb-1">General inquiries</p>
+		<a href="mailto:info@melbournediscgolf.com">info@melbournediscgolf.com</a>
+		<p class="text-sm text-gray-600 mt-3 mb-1">Pro shop</p>
+		<a href="mailto:proshop@melbournediscgolf.com">proshop@melbournediscgolf.com</a>
+	</ContactItem>
+
+	<ContactItem icon="heroicons:phone" title="Phone">
+		<a href="tel:+61409827784">+61 409 827 784</a>
+	</ContactItem>
+
+	<ContactItem icon="heroicons:share" title="Follow us">
+		<a href="https://www.facebook.com/melbournediscgolf" class="mb-1">Facebook</a>
+		<a href="https://www.instagram.com/melbournediscgolf/">Instagram</a>
+	</ContactItem>
+</Grid>

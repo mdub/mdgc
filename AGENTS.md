@@ -54,6 +54,11 @@ The [`existing-site/`](existing-site/) directory contains a "sketch" of that exi
 - Make it as easy as possible for non-technical club members to manage content.
   - use Astro components and/or "content collections" for consistency
 
+## Writing style
+
+- In headings, use sentence case, not title case.
+  - e.g. "What you get" rather than "What You Get"
+
 ## Tech stack
 
 - manage website source in Git (on GitHub)
