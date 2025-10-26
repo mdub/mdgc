@@ -8,6 +8,10 @@
   --color-mdgc-blue-dark: #3F79B2;
 }
 
+.prose {
+  max-width: none;
+}
+
 .concept-list {
 	list-style: none;
 	counter-reset: list-counter;
