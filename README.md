@@ -1,14 +1,12 @@
 # Melbourne Disc Golf Club website (WIP)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4ca6a827-5291-4c5a-8308-db2f705f8dbd/deploy-status)](https://app.netlify.com/projects/mdgc/deploys)
-
 A modern website for the Melbourne Disc Golf Club.
 
 ## 🌐 Live Site
 
 A preview of new site is available at:
 
-- https://mdgc.netlify.app/
+- https://mdgc.pages.dev/
 
 Once development is complete, we will change the existing site URL to refer to the new one.
 
@@ -19,7 +17,7 @@ Mike Williams is currently in the midst of porting the existing WordPress site t
 So far, I have:
 
   - [X] selected and set up a static website framework - [Astro](https://astro.build)
-  - [X] set up site "builds" and hosting on [Netlify](https://www.netlify.com)
+  - [X] set up site "builds" and hosting on [Cloudflare Pages](https://pages.cloudflare.com)
   - [X] set up high-level site structure
     - **Disc Golf** - about the sport
     - **Club** - about the club
@@ -67,7 +65,7 @@ Still todo:
 - **Framework**: [Astro](https://astro.build) 5.12.8
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) 4.1.11
 - **CMS**: [Decap CMS](https://decapcms.org) (backed by Git)
-- **Deployment**: [Netlify](https://www.netlify.com)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com)
 
 ### Running locally
 
@@ -133,13 +131,11 @@ In constrast, this rebuild is a "static website", meaning that the web-pages are
 
 The website code needs to be hosted somewhere. [GitHub](https://github.com) is a great option, and their Free plan support hosting of Git repositories with multiple collaborators. Anyone who needs to edit the website would need to register for a (free) GitHub account.
 
-#### Site build and hosting = Netlify ($0-30/month)
+#### Site build and hosting = Cloudflare Pages (free)
 
-[Netlify](https://www.netlify.com) are a popular platform for static websites. We have things configured such that any change to the website code (on GitHub) triggers a "build" and update of the site, which is then "served" by Netlify.
+[Cloudflare Pages](https://pages.cloudflare.com) is a platform for static websites. We have things configured such that any change to the website code (on GitHub) triggers a "build" and update of the site, which is then "served" by Cloudflare.
 
-On their Free [plan](https://github.com/pricing), Netlify would give us 300 "build minutes", and 100GB of traffic served per month. I suspect this will be sufficient for MDGC's needs. If not, we may need to upgrade to a paid plan, e.g. "Personal" ($14/month) or "Pro" ($30/month).
-
-I am also considering [Cloudflare Pages](https://pages.cloudflare.com), as an alternative to Netlify (but the pricing would be similar).
+On their Free [plan](https://developers.cloudflare.com/pages/platform/limits/), Cloudflare Pages provides unlimited bandwidth and 500 builds per month. This should be more than sufficient for MDGC's needs.
 
 #### Editing experience
 
