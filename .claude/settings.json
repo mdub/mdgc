@@ -6,10 +6,8 @@
       "Bash(bd:*)",
       "Bash(cat:*)",
       "Bash(pnpm run build)",
-      "mcp__puppeteer__puppeteer_navigate",
-      "mcp__puppeteer__puppeteer_screenshot",
-      "mcp__puppeteer__puppeteer_evaluate",
-      "mcp__puppeteer__puppeteer_click"
+      "mcp__puppeteer__*",
+      "mcp__beads__*"
     ],
     "deny": [],
     "ask": []
