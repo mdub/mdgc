@@ -34,8 +34,8 @@ export async function getNavItems(): Promise<NavItem[]> {
       href: '/club',
       subPages: [
         { title: 'Membership', href: '/club/membership' },
-        { title: 'Contact Us', href: '/club/contact' },
-        { title: 'MDGC Board', href: '/club/board' }
+        { title: 'Contact us', href: '/club/contact' },
+        { title: 'Board', href: '/club/board' }
       ]
     },
     {
