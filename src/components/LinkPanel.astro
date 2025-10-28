@@ -14,10 +14,12 @@ const { href, title, description, icon } = Astro.props;
 <a href={href} class="link-panel">
 	<div class="link-panel-inner">
 		<div class="link-panel-icon">
-			<Icon name={icon} size={96} />
+			<Icon name={icon} size={58} />
 		</div>
-		<h3>{title}</h3>
-		<p>{description}</p>
+		<div class="link-panel-content">
+			<h3>{title}</h3>
+			<p>{description}</p>
+		</div>
 	</div>
 </a>
 
@@ -31,19 +33,22 @@ const { href, title, description, icon } = Astro.props;
 
 	.link-panel-inner {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
-		text-align: center;
+		gap: 1.5rem;
 		background-color: #f9fafb;
 		border: 1px solid #d1d5db;
 		border-radius: 0.5rem;
-		padding: 2rem;
-		margin: 2rem 0;
-		transition: transform 0.2s;
+		padding: 1.5rem;
+		margin: 1.5rem 0;
+		transition: all 0.2s;
 	}
 
 	.link-panel:hover .link-panel-inner {
 		transform: scale(1.05);
+		background-color: #ffffff;
+		border-color: var(--color-mdgc-blue-dark);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	}
 
 	.link-panel:hover .link-panel-icon {
@@ -51,20 +56,26 @@ const { href, title, description, icon } = Astro.props;
 	}
 
 	.link-panel-icon {
-		margin-bottom: 1rem;
+		flex-shrink: 0;
 		color: var(--color-mdgc-blue);
 		transition: all 0.2s;
 	}
 
+	.link-panel-content {
+		flex-grow: 1;
+		text-align: left;
+	}
+
 	.link-panel h3 {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-weight: 700;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.25rem;
 		color: #1f2937;
 	}
 
 	.link-panel p {
 		color: #6b7280;
 		font-size: 0.875rem;
+		margin: 0;
 	}
 </style>
