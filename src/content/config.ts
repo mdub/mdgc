@@ -8,7 +8,7 @@ const courses = defineCollection({
     mainImage: z.string(),
     thumbnail: z.string().optional(),
     address: z.string().optional(),
-    location: z.string().optional(),
+    location: z.string().optional(), // GeoJSON string from map widget
     courseMap: z.string().optional(),
   }),
 });

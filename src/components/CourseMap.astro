@@ -1,0 +1,101 @@
+---
+export interface Props {
+	courses: Array<{
+		name: string;
+		slug: string;
+		suburb: string;
+		thumbnail?: string;
+		location?: { lat: number; lng: number };
+	}>;
+}
+
+const { courses } = Astro.props;
+const coursesWithLocation = courses.filter(c => c.location);
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<div id="course-map" class="w-full h-[480px] rounded-lg"></div>
+
+<style>
+	/* Custom popup styling */
+	:global(.leaflet-popup-content-wrapper) {
+		border-radius: 8px;
+	}
+	:global(.leaflet-popup-content) {
+		margin: 12px 16px;
+		font-family: inherit;
+	}
+	:global(.leaflet-popup-content h3) {
+		margin: 0 0 8px 0;
+		font-size: 16px;
+		font-weight: 600;
+		color: #1e3a8a;
+	}
+	:global(.leaflet-popup-content a) {
+		color: #2563eb;
+		text-decoration: none;
+		font-weight: 500;
+	}
+	:global(.leaflet-popup-content a:hover) {
+		text-decoration: underline;
+	}
+</style>
+
+<script define:vars={{ coursesWithLocation }}>
+	// Load Leaflet dynamically
+	const script = document.createElement('script');
+	script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+	script.onload = () => {
+		// Initialize map centered on Melbourne
+		const map = L.map('course-map').setView([-37.8136, 144.9631], 10);
+
+		// Add OpenStreetMap standard tiles
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			maxZoom: 19
+		}).addTo(map);
+
+		// Create custom disc golf icon
+		const discIcon = L.divIcon({
+			className: 'custom-disc-marker',
+			html: `<div style="
+				font-size: 32px;
+				filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+			">🥏</div>`,
+			iconSize: [32, 32],
+			iconAnchor: [16, 16],
+			popupAnchor: [0, -16]
+		});
+
+		// Add markers for each course
+		coursesWithLocation.forEach(course => {
+			const marker = L.marker([course.location.lat, course.location.lng], {
+				icon: discIcon
+			}).addTo(map);
+
+			const thumbnailHtml = course.thumbnail
+				? `<img src="${course.thumbnail}" alt="${course.name}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />`
+				: '';
+
+			marker.bindPopup(`
+				<div style="min-width: 200px;">
+					${thumbnailHtml}
+					<h3>${course.name}</h3>
+					<p style="margin: 4px 0 8px 0; color: #6b7280; font-size: 14px;">${course.suburb}</p>
+					<a href="/courses/${course.slug}" style="display: inline-block; margin-top: 4px;">View course details →</a>
+				</div>
+			`, {
+				maxWidth: 280
+			});
+		});
+
+		// Fit bounds to show all markers if we have any
+		if (coursesWithLocation.length > 0) {
+			const bounds = L.latLngBounds(
+				coursesWithLocation.map(c => [c.location.lat, c.location.lng])
+			);
+			map.fitBounds(bounds, { padding: [50, 50] });
+		}
+	};
+	document.head.appendChild(script);
+</script>

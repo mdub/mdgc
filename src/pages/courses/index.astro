@@ -2,15 +2,47 @@
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/Layout.astro';
 import CourseCard from '~/components/CourseCard.astro';
+import CourseMap from '~/components/CourseMap.astro';
 import Grid from '~/components/Grid.astro';
 import Panel from '~/components/Panel.astro';
 import Prose from '~/components/Prose.astro';
 
 const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Prepare courses for map - parse GeoJSON location data
+const coursesForMap = courses.map(course => {
+	let location = undefined;
+
+	if (course.data.location) {
+		try {
+			const parsed = JSON.parse(course.data.location);
+			if (parsed.type === 'Point' && parsed.coordinates) {
+				// GeoJSON uses [longitude, latitude] order
+				location = { lat: parsed.coordinates[1], lng: parsed.coordinates[0] };
+			}
+		} catch (e) {
+			// Ignore parse errors
+		}
+	}
+
+	return {
+		name: course.data.title,
+		slug: course.slug,
+		suburb: course.data.suburb,
+		thumbnail: course.data.thumbnail || course.data.mainImage,
+		location
+	};
+}).filter(c => c.location);
 ---
 
 <Layout title="Melbourne Disc Golf Courses" subtitle="Discover amazing disc golf courses across Melbourne">
+	{coursesForMap.length > 0 && (
+		<div class="my-8">
+			<CourseMap courses={coursesForMap} />
+		</div>
+	)}
+
 	<Grid cols={3}>
 		{courses.map((course) => (
 			<CourseCard
