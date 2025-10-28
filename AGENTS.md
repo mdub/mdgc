@@ -64,7 +64,7 @@ The [`existing-site/`](existing-site/) directory contains a "sketch" of that exi
 - manage website source in Git (on GitHub)
 - use [Astro](https://astro.build/) as a static site generator
 - use [Tailwind CSS](https://tailwindcss.com/) for styling
-- deploy to [Netlify](https://www.netlify.com/)
+- deploy to [Cloudflare Pages](https://pages.cloudflare.com/)
 - use Decap CMS to manage content of some pages (courses, events)
 
 ## Site structure
