@@ -63,7 +63,7 @@
 }
 
 .content-width {
-	@apply max-w-4xl mx-auto px-4;
+	@apply max-w-4xl mx-auto px-8;
 }
 
 .extra-width {

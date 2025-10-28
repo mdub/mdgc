@@ -6,10 +6,14 @@ export interface Props {
 
 const { cols = 2, class: className = "" } = Astro.props;
 
+// Use different breakpoints based on column count:
+// - 2 cols: md: (768px+)
+// - 3 cols: lg: (1024px+)
+// - 4 cols: xl: (1280px+)
 const colsClass = {
 	2: "md:grid-cols-2",
-	3: "md:grid-cols-3",
-	4: "md:grid-cols-4"
+	3: "lg:grid-cols-3",
+	4: "xl:grid-cols-4"
 }[cols];
 ---
 
