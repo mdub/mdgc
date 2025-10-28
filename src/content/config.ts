@@ -13,6 +13,16 @@ const courses = defineCollection({
   }),
 });
 
+const board = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    title: z.string(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   courses,
+  board,
 };
