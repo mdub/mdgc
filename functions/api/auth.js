@@ -1,14 +1,17 @@
 export async function onRequest(context) {
     const {
-        request, // same as existing Worker API
-        env, // same as existing Worker API
-        params, // if filename includes [id] or [[path]]
-        waitUntil, // same as ctx.waitUntil in existing Worker API
-        next, // used for middleware or to fetch assets
-        data, // arbitrary space for passing data between middlewares
+        request,
+        env,
     } = context;
 
     const client_id = env.GITHUB_CLIENT_ID;
+
+    // Debug: check if client_id is available
+    if (!client_id) {
+        return new Response('GITHUB_CLIENT_ID environment variable not set', {
+            status: 500,
+        });
+    }
 
     try {
         const url = new URL(request.url);
@@ -24,7 +27,7 @@ export async function onRequest(context) {
 
     } catch (error) {
         console.error(error);
-        return new Response(error.message, {
+        return new Response('Error: ' + error.message, {
             status: 500,
         });
     }
