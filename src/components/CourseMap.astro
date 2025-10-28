@@ -46,8 +46,8 @@ const coursesWithLocation = courses.filter(c => c.location);
 	const script = document.createElement('script');
 	script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
 	script.onload = () => {
-		// Initialize map centered on Melbourne
-		const map = L.map('course-map').setView([-37.8136, 144.9631], 10);
+		// Initialize map
+		const map = L.map('course-map');
 
 		// Add OpenStreetMap standard tiles
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -75,7 +75,7 @@ const coursesWithLocation = courses.filter(c => c.location);
 
 			const popupContent = `
 				<div>
-					<h3 style="margin: 0;">${course.name}</h3>
+					<h3 style="margin: 0;"><a href="/courses/${course.slug}">${course.name}</a></h3>
 					<p style="margin: 4px 0 0 0; color: #6b7280; font-size: 14px;">${course.suburb}</p>
 				</div>
 			`;
@@ -152,13 +152,13 @@ const coursesWithLocation = courses.filter(c => c.location);
 			});
 		});
 
-		// Fit bounds to show all markers if we have any
-		if (coursesWithLocation.length > 0) {
-			const bounds = L.latLngBounds(
-				coursesWithLocation.map(c => [c.location.lat, c.location.lng])
-			);
-			map.fitBounds(bounds, { padding: [50, 50] });
-		}
+		// Set explicit bounds to show Melbourne area with all courses
+		// Coordinates roughly encompass all Melbourne disc golf courses
+		const bounds = L.latLngBounds(
+			[-37.89, 144.54],  // Southwest corner (bottom-left)
+			[-37.79, 145.68]  // Northeast corner (top-right)
+		);
+		map.fitBounds(bounds);
 	};
 	document.head.appendChild(script);
 </script>
