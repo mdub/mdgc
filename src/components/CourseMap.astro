@@ -73,19 +73,82 @@ const coursesWithLocation = courses.filter(c => c.location);
 				icon: discIcon
 			}).addTo(map);
 
-			const thumbnailHtml = course.thumbnail
-				? `<img src="${course.thumbnail}" alt="${course.name}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />`
-				: '';
-
-			marker.bindPopup(`
-				<div style="min-width: 200px;">
-					${thumbnailHtml}
-					<h3>${course.name}</h3>
-					<p style="margin: 4px 0 8px 0; color: #6b7280; font-size: 14px;">${course.suburb}</p>
-					<a href="/courses/${course.slug}" style="display: inline-block; margin-top: 4px;">View course details →</a>
+			const popupContent = `
+				<div>
+					<h3 style="margin: 0;">${course.name}</h3>
+					<p style="margin: 4px 0 0 0; color: #6b7280; font-size: 14px;">${course.suburb}</p>
 				</div>
-			`, {
-				maxWidth: 280
+			`;
+
+			marker.bindPopup(popupContent, {
+				maxWidth: 280,
+				closeButton: false,
+				autoPan: false
+			});
+
+			// Open popup on hover (desktop)
+			marker.on('mouseover', function() {
+				this.openPopup();
+			});
+
+			// Click behavior: navigate to course page (or show popup first on touch devices)
+			let clickTimer = null;
+			marker.on('click', function(e) {
+				// If popup is already open, navigate
+				if (this.isPopupOpen()) {
+					window.location.href = `/courses/${course.slug}`;
+				} else {
+					// First click: open popup
+					this.openPopup();
+
+					// On touch devices, auto-close after delay if user doesn't interact
+					if ('ontouchstart' in window) {
+						if (clickTimer) clearTimeout(clickTimer);
+						clickTimer = setTimeout(() => {
+							if (!this._hoveredPopup) {
+								this.closePopup();
+							}
+						}, 3000);
+					}
+				}
+			});
+
+			// Close popup when mouse leaves both marker and popup
+			marker.on('mouseout', function(e) {
+				const popup = this.getPopup();
+				const popupElement = popup.getElement();
+
+				// Don't close if moving to the popup
+				if (popupElement && popupElement.matches(':hover')) {
+					return;
+				}
+
+				setTimeout(() => {
+					if (popupElement && !popupElement.matches(':hover') && !this._icon.matches(':hover')) {
+						this.closePopup();
+					}
+				}, 100);
+			});
+
+			// Keep popup open when hovering over it
+			marker.on('popupopen', function() {
+				const popup = this.getPopup();
+				const popupElement = popup.getElement();
+
+				if (popupElement) {
+					popupElement.addEventListener('mouseover', () => {
+						this._hoveredPopup = true;
+					});
+
+					popupElement.addEventListener('mouseout', () => {
+						this._hoveredPopup = false;
+						setTimeout(() => {
+							if (!this._hoveredPopup && !this._icon.matches(':hover')) {
+								this.closePopup();
+							}
+						}, 100);
+					});
+				}
 			});
 		});
 
