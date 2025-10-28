@@ -86,23 +86,25 @@ const coursesWithLocation = courses.filter(c => c.location);
 				autoPan: false
 			});
 
-			// Open popup on hover (desktop)
-			marker.on('mouseover', function() {
-				this.openPopup();
-			});
+			const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-			// Click behavior: navigate to course page (or show popup first on touch devices)
+			// Open popup on hover (desktop only)
+			if (!isTouchDevice) {
+				marker.on('mouseover', function() {
+					this.openPopup();
+				});
+			}
+
+			// Click behavior: different for desktop vs mobile
 			let clickTimer = null;
 			marker.on('click', function(e) {
-				// If popup is already open, navigate
-				if (this.isPopupOpen()) {
-					window.location.href = `/courses/${course.slug}`;
-				} else {
-					// First click: open popup
-					this.openPopup();
-
-					// On touch devices, auto-close after delay if user doesn't interact
-					if ('ontouchstart' in window) {
+				if (isTouchDevice) {
+					// Mobile: first click opens popup, second click navigates
+					if (this.isPopupOpen()) {
+						window.location.href = `/courses/${course.slug}`;
+					} else {
+						this.openPopup();
+						// Auto-close after delay if user doesn't interact
 						if (clickTimer) clearTimeout(clickTimer);
 						clickTimer = setTimeout(() => {
 							if (!this._hoveredPopup) {
@@ -110,6 +112,9 @@ const coursesWithLocation = courses.filter(c => c.location);
 							}
 						}, 3000);
 					}
+				} else {
+					// Desktop: click navigates immediately (hover already shows popup)
+					window.location.href = `/courses/${course.slug}`;
 				}
 			});
 
