@@ -41,11 +41,13 @@ const { Content } = await course.render();
   {course.data.courseMap && (
     <Prose>
       <h3>Course map</h3>
-      <img
-        src={course.data.courseMap}
-        alt={`${course.data.title} course map`}
-        class="w-full rounded-lg"
-      />
+      <a href={course.data.courseMap}>
+        <img
+          src={course.data.courseMap}
+          alt={`${course.data.title} course map`}
+          class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+        />
+      </a>
     </Prose>
   )}
 </Layout>
