@@ -86,22 +86,27 @@ const coursesWithLocation = courses.filter(c => c.location);
 				autoPan: false
 			});
 
-			const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+			// Track whether hover has been triggered (indicates desktop with mouse)
+			let hasHovered = false;
 
 			// Open popup on hover (desktop only)
-			if (!isTouchDevice) {
-				marker.on('mouseover', function() {
-					this.openPopup();
-				});
-			}
+			marker.on('mouseover', function() {
+				hasHovered = true;
+				this.openPopup();
+			});
 
-			// Click behavior: different for desktop vs mobile
+			// Click behavior: use hover state to determine device type
 			let clickTimer = null;
 			marker.on('click', function(e) {
-				if (isTouchDevice) {
-					// Mobile: first click opens popup, second click navigates
+				// If hover hasn't fired, this is likely a touch device
+				if (!hasHovered) {
+					// Mobile/touch: first click opens popup, second click or link click navigates
 					if (this.isPopupOpen()) {
-						window.location.href = `/courses/${course.slug}`;
+						// Only navigate if clicking the marker again (not the link)
+						const clickedOnLink = e.originalEvent && e.originalEvent.target.tagName === 'A';
+						if (!clickedOnLink) {
+							window.location.href = `/courses/${course.slug}`;
+						}
 					} else {
 						this.openPopup();
 						// Auto-close after delay if user doesn't interact
