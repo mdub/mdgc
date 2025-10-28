@@ -1,6 +1,6 @@
 # Melbourne Disc Golf Club website (WIP)
 
-[![Deployed on Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-deployed-orange?logo=cloudflare&logoColor=white)](https://mdgc.pages.dev/)
+[![Deployment Status](https://img.shields.io/github/check-runs/mdub/mdgc/HEAD)](https://github.com/mdub/mdgc/commits/main)
 
 A modern website for the Melbourne Disc Golf Club.
 
