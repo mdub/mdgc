@@ -1,0 +1,20 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import LinkPanel from "~/components/LinkPanel.astro";
+---
+
+<Layout title="404" subtitle="Page not found">
+  <div class="container mx-auto px-4 py-16">
+    <div class="text-center mb-8">
+      <h2 class="text-4xl text-mdgc-blue-dark mb-4">Sorry, you are <b>out-of-bounds</b></h2>
+    </div>
+    <div class="max-w-md mx-auto">
+      <LinkPanel
+        href="/"
+        title="Re-throw"
+        description="from the Melbourne Disc Golf Club homepage"
+        icon="heroicons:home"
+      />
+    </div>
+  </div>
+</Layout>
