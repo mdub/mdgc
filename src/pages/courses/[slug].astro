@@ -14,6 +14,27 @@ export async function getStaticPaths() {
 
 const { course } = Astro.props;
 const { Content } = await course.render();
+
+// Parse location coordinates if available
+let lat, lng;
+if (course.data.location) {
+  try {
+    const parsed = JSON.parse(course.data.location);
+    if (parsed.type === 'Point' && parsed.coordinates) {
+      lng = parsed.coordinates[0];
+      lat = parsed.coordinates[1];
+    }
+  } catch (e) {
+    // Ignore parse errors
+  }
+}
+
+// Generate map links
+const mapLinks = lat && lng ? {
+  openstreetmap: `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}&zoom=16`,
+  google: `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,
+  apple: `https://maps.apple.com/?q=${lat},${lng}`
+} : null;
 ---
 
 <Layout title={course.data.title} subtitle={course.data.suburb}>
@@ -29,11 +50,21 @@ const { Content } = await course.render();
     <Content />
   </Prose>
 
-  {course.data.address && (
+  {(course.data.address || mapLinks) && (
     <Panel class="bg-gray-50">
       <Prose>
         <h3>Location</h3>
-        <p>{course.data.address}</p>
+        {course.data.address && <p>{course.data.address}</p>}
+        {mapLinks && (
+          <p>
+            View in:
+            <a href={mapLinks.openstreetmap} target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+            {' · '}
+            <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
+            {' · '}
+            <a href={mapLinks.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a>
+          </p>
+        )}
       </Prose>
     </Panel>
   )}
