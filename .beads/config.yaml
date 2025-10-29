@@ -1,2 +1,2 @@
-# Disable daemon for single-user workflows
+issue-prefix: mdgc
 no-daemon: true
