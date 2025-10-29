@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # hermit local settings
 .hermit/
+
+# wrangler local state
+.wrangler/
