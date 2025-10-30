@@ -32,7 +32,7 @@ if (course.data.location) {
 // Generate map links with course name label
 const mapLinks = lat && lng ? {
   openstreetmap: `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}&zoom=16#map=16/${lat}/${lng}`,
-  google: `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,
+  google: course.data.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,
   apple: `https://maps.apple.com/?q=${encodeURIComponent(course.data.title)}&ll=${lat},${lng}`
 } : null;
 ---
