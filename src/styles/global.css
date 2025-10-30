@@ -9,6 +9,15 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Subtle zoom effect on all links */
+a {
+  transition: transform 0.2s ease-in-out;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
 .prose {
   max-width: none;
 }
