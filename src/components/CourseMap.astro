@@ -49,10 +49,11 @@ const coursesWithLocation = courses.filter(c => c.location);
 		// Initialize map
 		const map = L.map('course-map');
 
-		// Add OpenStreetMap standard tiles
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			maxZoom: 19
+		// Add CartoDB Voyager tiles - clean, light cartographic style
+		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+			attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>',
+			maxZoom: 20,
+			subdomains: 'abcd'
 		}).addTo(map);
 
 		// Create custom disc golf icon
