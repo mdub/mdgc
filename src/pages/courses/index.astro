@@ -5,7 +5,7 @@ import CourseCard from '~/components/CourseCard.astro';
 import CourseMap from '~/components/CourseMap.astro';
 import Grid from '~/components/Grid.astro';
 import LinkPanel from '~/components/LinkPanel.astro';
-import Prose from '~/components/Prose.astro';
+import Text from '~/components/Text.astro';
 
 const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
@@ -54,9 +54,9 @@ const coursesForMap = courses.map(course => {
 		))}
 	</Grid>
 
-	<Prose class="text-center">
+	<Text class="text-center">
 		<h2>Further afield</h2>
-	</Prose>
+	</Text>
 
 	<Grid cols={2}>
 		<LinkPanel

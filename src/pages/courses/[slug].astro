@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/Layout.astro';
-import Prose from '~/components/Prose.astro';
+import Text from '~/components/Text.astro';
 import Panel from '~/components/Panel.astro';
 
 export async function getStaticPaths() {
@@ -46,12 +46,12 @@ const mapLinks = lat && lng ? {
     />
   )}
 
-  <Prose>
+  <Text>
     <Content />
-  </Prose>
+  </Text>
 
   {(course.data.address || mapLinks) && (
-    <Prose>
+    <Text>
       <h2>Location</h2>
       {course.data.address && <p>{course.data.address}</p>}
       {course.data.suburb && <p><strong><em>{course.data.suburb}</em></strong></p>}
@@ -65,11 +65,11 @@ const mapLinks = lat && lng ? {
           <a href={mapLinks.openstreetmap} target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
         </p>
       )}
-    </Prose>
+    </Text>
   )}
 
   {course.data.courseMap && (
-    <Prose>
+    <Text>
       <h2>Course map</h2>
       <a href={course.data.courseMap}>
         <img
@@ -78,6 +78,6 @@ const mapLinks = lat && lng ? {
           class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
         />
       </a>
-    </Prose>
+    </Text>
   )}
 </Layout>

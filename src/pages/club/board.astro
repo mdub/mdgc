@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/Layout.astro';
 import Panel from '~/components/Panel.astro';
-import Prose from '~/components/Prose.astro';
+import Text from '~/components/Text.astro';
 
 const boardMembers = await getCollection('board');
 const sortedMembers = boardMembers.sort((a, b) => a.data.order - b.data.order);
@@ -17,20 +17,20 @@ const renderedMembers = await Promise.all(
 ---
 
 <Layout title="Board" subtitle="Meet our volunteer committee members">
-	<Prose>
+	<Text>
 		<p>
 			Since our founding in 2008, MDGC has been managed by passionate volunteers who donate their time and expertise to support the growth of disc golf in Melbourne. As a non-profit organisation, we rely on dedicated community members to guide our club's direction, and are always looking for enthusiastic members to help with various club activities and initiatives.
 		</p>
 
 		<h2>Current board members</h2>
-	</Prose>
+	</Text>
 
 	{renderedMembers.map(({ data, Content }) => (
 		<Panel>
-			<Prose>
+			<Text>
 				<h3>{data.name} - {data.title}</h3>
 				<Content />
-			</Prose>
+			</Text>
 		</Panel>
 	))}
 </Layout>
