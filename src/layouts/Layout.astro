@@ -121,32 +121,35 @@ const faviconSizes = [16, 32, 48, 192];
 
 		<div class="bg-gray-900 text-white">
 			<footer class="extra-width sm:px-6 lg:px-8 py-12">
-				<div class="grid grid-cols-1 lg:[grid-template-columns:repeat(auto-fit,minmax(0,1fr))] gap-4">
-					<div>
+				<div class="flex flex-row gap-24">
+					<!-- Logo section -->
+					<div class="flex-shrink-0">
 						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
 					</div>
 
-					<!-- Navigation sections -->
-					{footerSections.map(section => (
-						<div>
-							<h3 class="font-semibold mb-2">
-								<a href={section.href} class={`${isActiveNavItem(section.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
-									{section.title}
-								</a>
-							</h3>
-							{section.subPages && (
-								<ul class="space-y-1">
-									{section.subPages.map(link => (
-										<li>
-											<a href={link.href} class={`block text-sm ${isActiveNavItem(link.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
-												{link.title}
-											</a>
-										</li>
-									))}
-								</ul>
-							)}
-						</div>
-					))}
+					<!-- Navigation sections grid -->
+					<div class="flex-grow grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
+						{footerSections.map(section => (
+							<div>
+								<h3 class="font-semibold mb-2">
+									<a href={section.href} class={`${isActiveNavItem(section.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+										{section.title}
+									</a>
+								</h3>
+								{section.subPages && (
+									<ul class="space-y-1">
+										{section.subPages.map(link => (
+											<li>
+												<a href={link.href} class={`block text-sm ${isActiveNavItem(link.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+													{link.title}
+												</a>
+											</li>
+										))}
+									</ul>
+								)}
+							</div>
+						))}
+					</div>
 				</div>
 
 				<!-- Bottom section -->
