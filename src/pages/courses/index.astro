@@ -4,7 +4,7 @@ import Layout from '~/layouts/Layout.astro';
 import CourseCard from '~/components/CourseCard.astro';
 import CourseMap from '~/components/CourseMap.astro';
 import Grid from '~/components/Grid.astro';
-import Panel from '~/components/Panel.astro';
+import LinkPanel from '~/components/LinkPanel.astro';
 import Prose from '~/components/Prose.astro';
 
 const courses = await getCollection('courses');
@@ -59,21 +59,18 @@ const coursesForMap = courses.map(course => {
 	</Prose>
 
 	<Grid cols={2}>
-		<Panel class="bg-gray-50 prose text-center mt-0">
-			<h3>Victoria & Australia</h3>
-			<p>
-				Visit <a href="https://flyspot.com.au" target="_blank"><b>flyspot.com.au</b></a>
-				for comprehensive information about disc golf courses across the country.
-			</p>
-		</Panel>
-
-		<Panel class="bg-gray-50 prose text-center mt-0">
-			<h3>Worldwide</h3>
-			<p>
-				<a href="https://udisc.com" target="_blank"><b>UDisc</b></a> is a great place
-				to find information about disc golf courses around the world.
-			</p>
-		</Panel>
+		<LinkPanel
+			href="https://flyspot.com.au"
+			title="FlySpot"
+			description="Disc golf courses around Australia"
+			image="https://flyspot.com.au/wp-content/uploads/2016/09/FlySpot-Icon.svg"
+		/>
+		<LinkPanel
+			href="https://udisc.com"
+			title="UDisc"
+			description="Disc golf courses around the world!"
+			image="https://d1q6yb84lp43gi.cloudfront.net/logos2021/short/OB_U+Icon.svg"
+		/>
 	</Grid>
 
 </Layout>

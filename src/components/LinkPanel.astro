@@ -5,16 +5,18 @@ interface Props {
 	href: string;
 	title: string;
 	description: string;
-	icon: string;
+	icon?: string;
+	image?: string;
 }
 
-const { href, title, description, icon } = Astro.props;
+const { href, title, description, icon, image } = Astro.props;
 ---
 
 <a href={href} class="link-panel">
 	<div class="link-panel-inner">
 		<div class="link-panel-icon">
-			<Icon name={icon} size={58} />
+			{icon && <Icon name={icon} size={58} />}
+			{image && <img src={image} alt={`${title} logo`} />}
 		</div>
 		<div class="link-panel-content">
 			<h3>{title}</h3>
@@ -57,6 +59,12 @@ const { href, title, description, icon } = Astro.props;
 		flex-shrink: 0;
 		color: var(--color-mdgc-blue);
 		transition: all 0.2s;
+	}
+
+	.link-panel-icon img {
+		width: 58px;
+		height: 58px;
+		object-fit: contain;
 	}
 
 	.link-panel-content {
