@@ -27,7 +27,12 @@ export async function getNavItems(): Promise<NavItem[]> {
   return [
     {
       title: 'Disc Golf',
-      href: '/disc-golf'
+      href: '/disc-golf',
+      subPages: [
+        { title: 'Have a go', href: '/disc-golf/have-a-go' },
+        { title: 'Catch the bug', href: '/disc-golf/catch-the-bug' },
+        { title: 'Watch the pros', href: '/disc-golf/watch-the-pros' }
+      ]
     },
     {
       title: 'Club',

@@ -1,0 +1,73 @@
+---
+layout: ~/layouts/MdxLayout.astro
+title: What is disc golf?
+subtitle: An exciting and accessible sport for everyone
+---
+
+import Text from '~/components/Text.astro';
+import Card from '~/components/Card.astro';
+import IconCard from '~/components/IconCard.astro';
+import LinkPanel from '~/components/LinkPanel.astro';
+import Grid from '~/components/Grid.astro';
+
+<Text>
+
+Disc golf is similar to traditional ball golf, but with some exciting differences that make it accessible to players of all ages and abilities.
+
+## The basic concept
+
+Instead of hitting a ball into a hole, players throw a disc (like a frisbee) toward a metal basket. The goal is to complete each "hole" in as few throws as possible.
+
+- Players throw a disc instead of hitting a ball
+- Each hole has a starting point (tee) and a target (metal basket)
+- Hole lengths can range from 40m to over 300m
+- A typical course has 9 or 18 holes
+
+## How to play
+
+1. **Start at the tee** - Begin each hole from the designated tee area
+2. **Throw your disc** - Aim for the metal basket target
+3. **Keep throwing** - Each subsequent throw is made from where your disc landed
+4. **Complete the hole** - Get your disc into the basket
+5. **Count your throws** - The player with the fewest total throws wins
+
+## Why play disc golf?
+
+**Enjoyable** - Fun for all ages and skill levels. Whether you're 9 or 90, disc golf is easy to learn but challenging to master.
+
+**Challenging** - Strategic gameplay with varied terrain. Every course offers unique challenges from wooded technical shots to wide-open distance drives.
+
+**Environmentally responsible** - Disc golf courses are played in natural park settings with minimal environmental impact.
+
+**Accessible** - Most courses are free to play, and you only need a few discs to get started (under $50).
+
+## A brief history
+
+Disc golf evolved from "Frisbee golf" in the 1960s and 70s in the United States. The first formal disc golf course was installed in Oak Grove Park, California in 1975.
+
+The sport has grown exponentially since then, with over 15,000 courses worldwide today. Australia got its first permanent course in the 1990s, and Melbourne now has several excellent courses across the metropolitan area.
+
+The Professional Disc Golf Association (PDGA) was formed in 1976 and now has over 250,000 active members worldwide.
+
+</Text>
+
+<Grid cols={3}>
+	<LinkPanel
+		href="/disc-golf/have-a-go"
+		title="Have a go"
+		description="Ready to try it? Learn how to get started"
+		icon="heroicons:play"
+	/>
+	<LinkPanel
+		href="/disc-golf/catch-the-bug"
+		title="Catch the bug"
+		description="Take your game to the next level"
+		icon="heroicons:fire"
+	/>
+	<LinkPanel
+		href="/disc-golf/watch-the-pros"
+		title="Watch the pros"
+		description="See the best players in action"
+		icon="heroicons:video-camera"
+	/>
+</Grid>
