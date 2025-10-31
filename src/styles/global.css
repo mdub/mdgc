@@ -8,6 +8,8 @@
   --color-mdgc-blue-dark: #3F79B2;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --color-text-body: #4b5563; /* gray-600 - lighter for body text */
+  --color-text-heading: #111827; /* gray-900 - darker for headings */
 }
 
 /* Subtle zoom effect on all links */
@@ -20,7 +22,8 @@ a:hover {
 }
 
 .prose {
-  max-width: none;
+  @apply max-w-4xl mx-auto;
+  color: var(--color-text-body);
 }
 
 .prose p {
@@ -28,9 +31,18 @@ a:hover {
   margin-bottom: 0.75em;
 }
 
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--color-text-heading);
+}
+
+.prose strong, .prose b {
+  color: inherit;
+}
+
 .prose h2 {
   margin-top: 1.5em;
   margin-bottom: 0.75em;
+  font-weight: 600;
 }
 
 .prose h3 {
