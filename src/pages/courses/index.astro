@@ -36,7 +36,7 @@ const coursesForMap = courses.map(course => {
 }).filter(c => c.location);
 ---
 
-<Layout title="Melbourne Disc Golf Courses" subtitle="Discover amazing disc golf courses across Melbourne">
+<Layout title="Courses" subtitle="Discover amazing disc golf courses across Melbourne">
 	{coursesForMap.length > 0 && (
 		<div class="my-8">
 			<CourseMap courses={coursesForMap} />
