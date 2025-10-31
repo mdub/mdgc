@@ -38,7 +38,7 @@ const faviconSizes = [16, 32, 48, 192];
 		<meta name="viewport" content="width=device-width" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
 		{faviconSizes.map(size => (
 			<link rel="icon" type="image/png" sizes={`${size}x${size}`} href={`/images/favicon-${size}x${size}.png`} />
 		))}
@@ -51,7 +51,7 @@ const faviconSizes = [16, 32, 48, 192];
 						<a href="/" title="Home" class="logo-link">
 							<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-12 w-auto" />
 						</a>
-						<em>Melbourne Disc Golf</em>
+						<span class="lg:text-lg font-display">Melbourne Disc Golf</span>
 					</div>
 
 					<div id="menu-links" class="ml-auto">
