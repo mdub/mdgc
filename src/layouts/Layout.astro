@@ -23,8 +23,8 @@ const currentPath = Astro.url.pathname;
 // Get navigation items dynamically
 const navItems: NavItem[] = await getNavItems();
 
-// Transform navigation data for footer - show all nav items
-const footerSections = navItems;
+// Get footer navigation with only featured courses
+const footerSections: NavItem[] = await getNavItems(true);
 
 // Favicon sizes to generate links for
 const faviconSizes = [16, 32, 48, 192];
