@@ -70,6 +70,7 @@ To properly evaluate Sveltia CMS, we should test:
 
 - **Subfolder navigation**: Media library subfolder browsing not available until Sveltia CMS 2.0 (early 2026)
 - **Beta status**: Currently in public beta, v1.0 planned for early 2026
+- **Tilde path prefix issue**: When `public_folder` is set to `~/assets/images`, Sveltia CMS prepends an extra `/` when replacing images, resulting in `/~/assets/images/...` instead of `~/assets/images/...`. This breaks Astro's image imports which expect the `~` prefix to resolve relative to src/.
 
 ## Recommendation
 
@@ -77,8 +78,23 @@ Sveltia CMS appears to be a significant upgrade over Decap CMS with:
 - Better performance
 - More modern UI
 - Active development and bug fixes
-- Drop-in compatibility
+- Generally good compatibility
 
-The main limitation (subfolder navigation in media library) doesn't affect our current setup since we're using a flat structure in `src/assets/images`.
+### Current Issues
 
-Once deployed, club members should test it with real content editing workflows to confirm it meets their needs. If any issues arise, we can easily revert to Decap CMS by accessing `/admin/decap.html`.
+**Image path handling**: There's a bug where Sveltia CMS doesn't properly handle the `~/` prefix in `public_folder`. When replacing images, it writes `/~/assets/images/...` instead of `~/assets/images/...`, which breaks Astro's image imports.
+
+**Workarounds**:
+1. **Use Decap CMS for image uploads/replacements** (at `/admin/`) and Sveltia for other editing
+2. **Manually fix paths** after replacing images in Sveltia (remove the leading `/`)
+3. **Report the bug** to Sveltia CMS and wait for a fix
+4. **Restructure the project** to not use the `~` prefix (significant refactoring required)
+
+### Testing Outcome
+
+✅ Authentication works perfectly
+✅ Content editing works well
+✅ Media library displays correctly
+❌ Image replacement adds incorrect path prefix
+
+For now, **continue using Decap CMS** at `/admin/` for production content management. Sveltia CMS is available at `/admin/sveltia.html` for evaluation and can be used for text-only edits, but avoid replacing images until the path issue is resolved.
