@@ -5,8 +5,6 @@ backend:
   base_url: https://mdgc.pages.dev
   auth_endpoint: api/auth
 
-publish_mode: editorial_workflow
-
 media_folder: src/assets/images
 public_folder: /src/assets/images
 
