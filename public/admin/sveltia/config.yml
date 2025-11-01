@@ -8,7 +8,7 @@ backend:
   auth_endpoint: api/auth
 
 media_folder: src/assets/images
-public_folder: ~/assets/images
+public_folder: /src/assets/images
 
 site_url: https://mdgc.pages.dev
 
