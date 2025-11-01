@@ -4,9 +4,13 @@ import ContentSection from '~/components/ContentSection.astro';
 import Card from '~/components/Card.astro';
 import IconCard from '~/components/IconCard.astro';
 import CallToAction from '~/components/CallToAction.astro';
+import HeroImage from '~/components/HeroImage.astro';
+import heroImage from '~/assets/images/how-to-play-disc-golf.svg';
 ---
 
 <Layout title="What is Disc Golf?" subtitle="Learn about this exciting and accessible sport">
+
+	<HeroImage src={heroImage} alt="Illustration showing how to play disc golf - throwing a disc from the tee towards a basket target" />
 
 	<ContentSection>
 		<div class="prose mx-auto mb-12">
