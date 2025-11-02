@@ -65,6 +65,18 @@ a:hover {
   margin-bottom: 0.25em;
 }
 
+.prose table {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose td,
+.prose th {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .concept-list {
 	list-style: none;
 	counter-reset: list-counter;

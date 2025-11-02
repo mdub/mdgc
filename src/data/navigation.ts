@@ -44,7 +44,7 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       title: 'Disc Golf',
       href: '/disc-golf',
       subPages: [
-        { title: 'Have a go', href: '/disc-golf/have-a-go' },
+        { title: 'Have a go', href: '/disc-golf/try' },
         { title: 'Catch the bug', href: '/disc-golf/catch-the-bug' },
         { title: 'Watch the pros', href: '/disc-golf/watch-the-pros' }
       ]

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" width="800" height="270">
   <!-- Sky -->
   <rect width="800" height="220" fill="#b3d9f2"/>
 
   <!-- Ground -->
-  <rect y="220" width="800" height="80" fill="#81c784"/>
+  <rect y="220" width="800" height="50" fill="#81c784"/>
 
   <!-- Player (stick figure) -->
   <g id="player">
@@ -47,17 +47,7 @@
   </g>
 
   <!-- Distance indicator -->
-  <text x="400" y="270" font-family="Arial, sans-serif" font-size="18" fill="#2e7d32" text-anchor="middle" font-weight="bold">
-    Throw the disc into the basket
-  </text>
-
-  <!-- Start marker -->
-  <text x="100" y="250" font-family="Arial, sans-serif" font-size="14" fill="#1565c0" text-anchor="middle" font-weight="bold">
-    Tee
-  </text>
-
-  <!-- Goal marker -->
-  <text x="680" y="250" font-family="Arial, sans-serif" font-size="14" fill="#1565c0" text-anchor="middle" font-weight="bold">
-    Basket
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="18" fill="#2e7d32" text-anchor="middle" font-weight="bold">
+    Just throw the disc into the basket
   </text>
 </svg>
