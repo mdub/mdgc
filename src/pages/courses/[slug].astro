@@ -44,6 +44,7 @@ const mapLinks = lat && lng ? {
       src={course.data.mainImage}
       alt={course.data.title}
       class="w-full my-8 rounded-lg aspect-[2/1] object-cover"
+      inferSize={true}
     />
   )}
 
@@ -77,6 +78,7 @@ const mapLinks = lat && lng ? {
           src={course.data.courseMap}
           alt={`${course.data.title} course map`}
           class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+          inferSize={true}
         />
       </a>
     </Text>
