@@ -33,32 +33,35 @@ So far, I have:
   - [X] added hero images to major pages with proper optimization
 
 Recent progress:
-  - **Club** section
-    - [X] converted all Club pages to MDX (board, contact, membership, index)
-    - [X] simplified styling and component structure
+  - **Courses** section
+    - [X] added overview map to main Courses page (mdgc-1)
+    - [X] made course map images easier to open in new tab/window (mdgc-8)
+    - [X] created content collection for courses with MDX support
+    - [X] verified coordinates for all courses (mdgc-17)
   - **Events** section
-    - [X] revised and converted Social Days page to MDX
+    - [X] revised and converted Social Days page to MDX (mdgc-9, mdgc-10)
     - [X] converted Tournaments page to MDX
     - [X] added hero images for social days and tournaments
-  - **Courses** section
-    - [X] created content collection for courses with MDX support
-    - [X] added course pages with maps and details
+    - [X] embedded club's Google calendar (mdgc-6)
+  - **Club** section
+    - [X] converted all Club pages to MDX (board, contact, membership, index)
+  - **CMS and editing**
+    - [X] configured Decap CMS with GitHub backend (mdgc-5)
+    - [X] revisited component composition and whitespace handling (mdgc-12, mdgc-13)
+  - **Infrastructure**
+    - [X] switched to Cloudflare Pages hosting (mdgc-15)
 
 Still todo:
   - **Disc Golf** section
-    - [ ] build out content, e.g. "what it is", "how to play", and links to other relevant sites
-  - **Courses** section
-    - [ ] add an overview map to the main "Courses" page
-    - [ ] make course map images easier to open in new tab/window
+    - [ ] clean up disc golf education content (mdgc-32)
   - **Events** section
-    - [ ] pull upcoming social days information from Disc Golf Metrix
-    - [ ] embed club's Google calendar on events page
-  - **General**
-    - [ ] revisit component composition and whitespace handling
-  - Support for other editors
-    - [ ] configure Decap CMS with a "github" backend
-    - [ ] add relevant folks as "contributors" on GitHub
-    - [ ] document the contribution process
+    - [ ] pull upcoming social days information from Disc Golf Metrix (mdgc-11)
+  - **Features**
+    - [ ] support announcement banners on homepage (mdgc-16)
+  - **Documentation**
+    - [ ] document contributor workflow (mdgc-7)
+  - **Research**
+    - [ ] explore Sveltia CMS as alternative to Decap CMS (mdgc-31)
 
 ## 🚀 Development
 
@@ -118,7 +121,7 @@ The `existing-site/` directory contains a summary of the contents and structure 
 
 ### WordPress vs static site
 
-MDGC's existing website is based on WordPress. WordPress is a "dynamic" platform, which generate web-pages on-the-fly, as users browse.
+MDGC's existing website is based on WordPress. WordPress is a "dynamic" platform, which generates web-pages on-the-fly, as users browse.
 
 In constrast, this rebuild is a "static website", meaning that the web-pages are pre-built, meaning much less work needs to be done on the "server" when people use the site.  Because of this, it should be:
 

@@ -46,8 +46,10 @@ const coursesWithLocation = courses.filter(c => c.location);
 	const script = document.createElement('script');
 	script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
 	script.onload = () => {
-		// Initialize map
-		const map = L.map('course-map');
+		// Initialize map with scroll wheel zoom disabled
+		const map = L.map('course-map', {
+			scrollWheelZoom: false
+		});
 
 		// Add CartoDB Voyager tiles - clean, light cartographic style
 		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -56,23 +58,9 @@ const coursesWithLocation = courses.filter(c => c.location);
 			subdomains: 'abcd'
 		}).addTo(map);
 
-		// Create custom disc golf icon
-		const discIcon = L.divIcon({
-			className: 'custom-disc-marker',
-			html: `<div style="
-				font-size: 32px;
-				filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-			">🥏</div>`,
-			iconSize: [32, 32],
-			iconAnchor: [16, 16],
-			popupAnchor: [0, -16]
-		});
-
 		// Add markers for each course
 		coursesWithLocation.forEach(course => {
-			const marker = L.marker([course.location.lat, course.location.lng], {
-				icon: discIcon
-			}).addTo(map);
+			const marker = L.marker([course.location.lat, course.location.lng]).addTo(map);
 
 			const popupContent = `
 				<div>

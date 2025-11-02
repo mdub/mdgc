@@ -23,8 +23,8 @@ const currentPath = Astro.url.pathname;
 // Get navigation items dynamically
 const navItems: NavItem[] = await getNavItems();
 
-// Transform navigation data for footer - show all nav items
-const footerSections = navItems;
+// Get footer navigation with only featured courses
+const footerSections: NavItem[] = await getNavItems(true);
 
 // Favicon sizes to generate links for
 const faviconSizes = [16, 32, 48, 192];
@@ -65,7 +65,7 @@ const faviconSizes = [16, 32, 48, 192];
 												<Icon name="heroicons:chevron-down" class="h-4 w-4" />
 											</button>
 										</div>
-										<div class="absolute -left-4 mt-0 w-56 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl hidden group-hover:block z-10 pt-2">
+										<div class="absolute -left-4 mt-0 w-56 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl hidden group-hover:block z-[1000] pt-2">
 											{item.subPages.map(subItem => (
 												<a href={subItem.href} class={`block px-4 py-2 hover:bg-mdgc-blue-dark hover:text-white transition-colors ${isActiveNavItem(subItem.href, currentPath) ? 'text-white' : ''}`}>{subItem.title}</a>
 											))}
@@ -121,39 +121,43 @@ const faviconSizes = [16, 32, 48, 192];
 
 		<div class="bg-gray-900 text-white">
 			<footer class="extra-width sm:px-6 lg:px-8 py-12">
-				<div class="grid grid-cols-1 lg:[grid-template-columns:repeat(auto-fit,minmax(0,1fr))] gap-4">
-					<div>
+				<div class="flex flex-row gap-24">
+					<!-- Logo section -->
+					<div class="flex-shrink-0">
 						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
 					</div>
 
-					<!-- Navigation sections -->
-					{footerSections.map(section => (
-						<div>
-							<h3 class="font-semibold mb-2">
-								<a href={section.href} class={`${isActiveNavItem(section.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
-									{section.title}
-								</a>
-							</h3>
-							{section.subPages && (
-								<ul class="space-y-1">
-									{section.subPages.map(link => (
-										<li>
-											<a href={link.href} class={`block text-sm ${isActiveNavItem(link.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
-												{link.title}
-											</a>
-										</li>
-									))}
-								</ul>
-							)}
-						</div>
-					))}
+					<!-- Navigation sections grid -->
+					<div class="flex-grow grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
+						{footerSections.map(section => (
+							<div>
+								<h3 class="font-semibold mb-2">
+									<a href={section.href} class={`${isActiveNavItem(section.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+										{section.title}
+									</a>
+								</h3>
+								{section.subPages && (
+									<ul class="space-y-1">
+										{section.subPages.map(link => (
+											<li>
+												<a href={link.href} class={`block text-sm ${isActiveNavItem(link.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+													{link.title}
+												</a>
+											</li>
+										))}
+									</ul>
+								)}
+							</div>
+						))}
+					</div>
 				</div>
 
 				<!-- Bottom section -->
 				<div class="border-t border-gray-700 mt-8 pt-2 flex flex-col md:flex-row justify-between items-center gap-4">
-					<p class="text-gray-400 text-sm">
-						© {new Date().getFullYear()} Melbourne Disc Golf Club. All rights reserved.
-					</p>
+					<div class="text-gray-400 text-sm text-center md:text-left">
+						<p>© {new Date().getFullYear()} Melbourne Disc Golf Club. All rights reserved.</p>
+						<p class="text-xs text-gray-500 mt-1">last updated: {new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', dateStyle: 'medium', timeStyle: 'short' })}</p>
+					</div>
 					<div class="flex items-center gap-4">
 						<a href="https://github.com/mdub/mdgc" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors" aria-label="View source on GitHub" title="View source on GitHub">
 							<Icon name="mdi:github" class="h-5 w-5" />

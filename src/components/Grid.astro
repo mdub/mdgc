@@ -1,22 +1,12 @@
 ---
 export interface Props {
-	cols?: 2 | 3 | 4;
+	minColWidth?: string;
 	class?: string;
 }
 
-const { cols = 2, class: className = "" } = Astro.props;
-
-// Use different breakpoints based on column count:
-// - 2 cols: md: (768px+)
-// - 3 cols: lg: (1024px+)
-// - 4 cols: xl: (1280px+)
-const colsClass = {
-	2: "md:grid-cols-2",
-	3: "lg:grid-cols-3",
-	4: "xl:grid-cols-4"
-}[cols];
+const { minColWidth = "250px", class: className = "" } = Astro.props;
 ---
 
-<div class={`grid grid-cols-1 ${colsClass} gap-8 my-8 items-stretch ${className}`}>
+<div class={`grid gap-4 sm:gap-6 lg:gap-8 my-8 items-stretch ${className}`} style={`grid-template-columns: repeat(auto-fit, minmax(${minColWidth}, 1fr))`}>
 	<slot />
 </div>

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '~/layouts/Layout.astro';
 import Text from '~/components/Text.astro';
 import Panel from '~/components/Panel.astro';
@@ -39,7 +40,7 @@ const mapLinks = lat && lng ? {
 
 <Layout title={course.data.title} subtitle={course.data.suburb}>
   {course.data.mainImage && (
-    <img
+    <Image
       src={course.data.mainImage}
       alt={course.data.title}
       class="w-full my-8 rounded-lg aspect-[2/1] object-cover"
@@ -71,8 +72,8 @@ const mapLinks = lat && lng ? {
   {course.data.courseMap && (
     <Text>
       <h2>Course map</h2>
-      <a href={course.data.courseMap}>
-        <img
+      <a href={course.data.courseMap.src}>
+        <Image
           src={course.data.courseMap}
           alt={`${course.data.title} course map`}
           class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"

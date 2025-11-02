@@ -1,9 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 export interface Props {
   name: string;
   href: string;
   location: string;
-  image: string;
+  image: ImageMetadata;
 }
 
 const { name, href, location, image } = Astro.props;
@@ -11,7 +14,7 @@ const { name, href, location, image } = Astro.props;
 
 <a href={href} class="course-card">
   <div class="course-card-inner">
-    <img
+    <Image
       src={image}
       alt={name}
       class="course-card-image"
