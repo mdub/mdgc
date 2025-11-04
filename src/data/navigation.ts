@@ -54,6 +54,7 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       href: '/club',
       subPages: [
         { title: 'Membership', href: '/club/membership' },
+        { title: 'Pro Shop', href: '/club/shop' },
         { title: 'Board', href: '/club/board' }
       ]
     },
@@ -69,10 +70,6 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
         { title: 'Social Days', href: '/events/social' },
         { title: 'Tournaments', href: '/events/tournaments' }
       ]
-    },
-    {
-      title: 'Shop',
-      href: '/shop'
     }
   ];
 }
