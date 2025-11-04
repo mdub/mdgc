@@ -1,0 +1,27 @@
+---
+layout: ~/layouts/MdxLayout.astro
+title: Shop
+subtitle: buy discs, and more!
+---
+
+import Text from '~/components/Text.astro';
+import LinkPanel from '~/components/LinkPanel.astro';
+import Grid from '~/components/Grid.astro';
+
+<Text>
+
+There are quite a few places to buy disc golf equipment online, in Australia, and worldwide,
+but we think that the MDGC Pro Shop is one of the best.
+
+Browse our selection of discs, bags, and other club merchandise.
+
+<Grid>
+	<LinkPanel
+		icon="heroicons:shopping-cart"
+		href="https://mdgcshop.square.site/"
+		title="MDGC Shop"
+		description="discs and accessories"
+	/>
+</Grid>
+
+</Text>
