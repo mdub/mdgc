@@ -12,10 +12,15 @@ export interface Props {
 const { title, subtitle } = Astro.props;
 
 // Check if current page is under a nav item
-function isActiveNavItem(itemHref: string, currentPath: string): boolean {
+function isActiveNavItem(itemHref: string): boolean {
   if (itemHref === '/' && currentPath === '/') return true;
   if (itemHref !== '/' && currentPath.startsWith(itemHref)) return true;
   return false;
+}
+
+// Get color class for nav item based on active state
+function navItemColor(itemHref: string): string {
+  return isActiveNavItem(itemHref) ? 'text-white' : 'text-mdgc-blue-light';
 }
 
 const currentPath = Astro.url.pathname;
@@ -60,8 +65,8 @@ const faviconSizes = [16, 32, 48, 192];
 								item.subPages ? (
 									<div class="relative group">
 										<div class="flex items-center">
-											<a href={item.href} class={`${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
-											<button class={`ml-1 ${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
+											<button class={`ml-1 ${navItemColor(item.href)} hover:text-white transition-colors`}>
 												<Icon name="heroicons:chevron-down" class="h-4 w-4" />
 											</button>
 										</div>
@@ -72,7 +77,7 @@ const faviconSizes = [16, 32, 48, 192];
 										</div>
 									</div>
 								) : (
-									<a href={item.href} class={`${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
+									<a href={item.href} class={`${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
 								)
 							))}
 						</nav>
@@ -92,13 +97,13 @@ const faviconSizes = [16, 32, 48, 192];
 						{navItems.map(item => (
 							item.subPages ? (
 								<div>
-									<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold ${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
+									<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold ${isActiveNavItem(item.href) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
 									{item.subPages.map(subItem => (
-										<a href={subItem.href} class={`block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md ${isActiveNavItem(subItem.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{subItem.title}</a>
+										<a href={subItem.href} class={`block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md ${isActiveNavItem(subItem.href) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{subItem.title}</a>
 									))}
 								</div>
 							) : (
-								<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md ${isActiveNavItem(item.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
+								<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md ${isActiveNavItem(item.href) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
 							)
 						))}
 					</nav>
@@ -134,7 +139,7 @@ const faviconSizes = [16, 32, 48, 192];
 						{footerSections.map(section => (
 							<div>
 								<h3 class="font-semibold mb-2">
-									<a href={section.href} class={`inline-block ${isActiveNavItem(section.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+									<a href={section.href} class={`inline-block ${navItemColor(section.href)} hover:text-white transition-colors`}>
 										{section.title}
 									</a>
 								</h3>
@@ -142,7 +147,7 @@ const faviconSizes = [16, 32, 48, 192];
 									<ul class="space-y-1">
 										{section.subPages.map(link => (
 											<li>
-												<a href={link.href} class={`inline-block text-sm ${isActiveNavItem(link.href, currentPath) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>
+												<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white transition-colors`}>
 													{link.title}
 												</a>
 											</li>
