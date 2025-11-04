@@ -72,7 +72,7 @@ const faviconSizes = [16, 32, 48, 192];
 										</div>
 										<div class="absolute -left-4 mt-0 w-56 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl hidden group-hover:block z-[1000] pt-2">
 											{item.subPages.map(subItem => (
-												<a href={subItem.href} class={`block px-4 py-2 hover:bg-mdgc-blue-dark hover:text-white transition-colors ${isActiveNavItem(subItem.href, currentPath) ? 'text-white' : ''}`}>{subItem.title}</a>
+												<a href={subItem.href} class={`block px-4 py-2 hover:bg-mdgc-blue-dark hover:text-white transition-colors ${navItemColor(subItem.href)}`}>{subItem.title}</a>
 											))}
 										</div>
 									</div>
@@ -97,13 +97,13 @@ const faviconSizes = [16, 32, 48, 192];
 						{navItems.map(item => (
 							item.subPages ? (
 								<div>
-									<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold ${isActiveNavItem(item.href) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
+									<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md font-semibold ${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
 									{item.subPages.map(subItem => (
-										<a href={subItem.href} class={`block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md ${isActiveNavItem(subItem.href) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{subItem.title}</a>
+										<a href={subItem.href} class={`block px-6 py-1 text-sm hover:bg-mdgc-blue-dark rounded-md ${navItemColor(subItem.href)} hover:text-white transition-colors`}>{subItem.title}</a>
 									))}
 								</div>
 							) : (
-								<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md ${isActiveNavItem(item.href) ? 'text-white' : 'text-mdgc-blue-light'} hover:text-white transition-colors`}>{item.title}</a>
+								<a href={item.href} class={`block px-3 py-2 hover:bg-mdgc-blue-dark rounded-md ${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
 							)
 						))}
 					</nav>
@@ -135,7 +135,7 @@ const faviconSizes = [16, 32, 48, 192];
 					</div>
 
 					<!-- Navigation sections grid -->
-					<div class="flex-grow grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
+					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 mx-auto">
 						{footerSections.map(section => (
 							<div>
 								<h3 class="font-semibold mb-2">
