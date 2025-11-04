@@ -1,12 +1,5 @@
 # issue-016: Support announcement banners on homepage 🔲
 
-```yaml
-status: open
-priority: medium
-type: feature
-created: 2025-10-27
-updated: 2025-10-27
-```
 
 Add support for displaying dismissible announcement banners on the homepage (under the title bar). Store dismissed announcement state in cookies so users don't see the same announcement repeatedly after dismissing it.
 

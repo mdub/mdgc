@@ -9,55 +9,35 @@ Each issue is stored in `docs/issues/issue-{nnn}.md` (zero-padded 3-digit number
 ```markdown
 # issue-016: Support announcement banners on homepage 🔲
 
-```yaml
-status: open
-priority: medium
-type: feature
-created: 2025-10-27
-updated: 2025-10-27
-depends_on: issue-005  # optional: single dependency
-# or for multiple dependencies:
-# depends_on:
-#   - issue-003
-#   - issue-008
-```
-
 Description of the issue...
-
-## Design
-
-Design notes (optional)...
-
-## Acceptance criteria
-
-Acceptance criteria (optional)...
-
-## Notes
-
-Additional notes (optional)...
 ```
 
-## Status values and emoji
+If the issue has dependencies, include a YAML frontmatter block:
 
-- `open` 🔲 - Not started
-- `in_progress` 🚧 - Currently being worked on
-- `closed` ✅ - Completed
+```markdown
+# issue-007: Document contributor workflow 🔲
 
-## Priority values
+```yaml
+depends_on:
+  - issue-005
+  - issue-031
+```
 
-- `critical` - Security, data loss, broken builds
-- `high` - Major features, important bugs
-- `medium` - Default, nice-to-have
-- `low` - Polish, optimization
-- `backlog` - Future ideas
+Description...
+```
 
-## Type values
+Optional sections:
+- `## Design` - Design notes
+- `## Acceptance criteria` - What "done" looks like
+- `## Notes` - Progress updates, findings
 
-- `bug` - Something broken
-- `feature` - New functionality
-- `task` - Work item (tests, docs, refactoring)
-- `epic` - Large feature with subtasks
-- `chore` - Maintenance (dependencies, tooling)
+## Status (emoji in heading)
+
+- 🔲 `open` - Not started
+- 🚧 `in_progress` - Currently being worked on
+- ✅ `closed` - Completed
+
+The emoji in the heading is the single source of truth for status.
 
 ## Finding issues
 
@@ -79,10 +59,12 @@ rg -i "announcement" docs/issues/
 ## Working with issues
 
 1. **Find work**: Browse `docs/issues/` or search with `rg`
-2. **Claim a task**: Edit the file, change status to `in_progress`, add 🚧 emoji
+2. **Claim a task**: Change emoji in heading from 🔲 to 🚧
 3. **Work on it**: Implement, test, document
 4. **Add notes**: Add a `## Notes` section with progress updates
-5. **Complete**: Change status to `closed`, add ✅ emoji, update `updated` date
+5. **Complete**: Change emoji in heading from 🚧 to ✅
+
+**Note**: Git commit history provides all dates (creation, updates, closing).
 
 ## Creating new issues
 
@@ -92,7 +74,7 @@ Create a new file `docs/issues/issue-{nnn}.md` following the format above. Use t
 
 Since each issue is a separate file, conflicts are rare. When they do occur:
 
-**Most common conflict**: Two people update the same issue (e.g., both add notes or change status)
+**Duelling changes**: Two people update the same issue (e.g., both add notes or change status)
 - **Resolution**: Review both versions and merge the changes manually
 - The YAML frontmatter is small and easy to reconcile
 - Notes sections can usually be combined

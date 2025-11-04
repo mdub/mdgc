@@ -1,13 +1,5 @@
 # issue-031: Explore Sveltia CMS as alternative to Decap CMS 🚧
 
-```yaml
-status: in_progress
-priority: low
-type: task
-created: 2025-10-31
-updated: 2025-11-01
-```
-
 Investigate Sveltia CMS (https://sveltia.com) as a potential replacement for Decap CMS. Initial approach: deploy Sveltia alongside Decap to evaluate it without disrupting existing setup. Compare features, performance, and user experience.
 
 ## Notes
