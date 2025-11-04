@@ -59,22 +59,22 @@ const faviconSizes = [16, 32, 48, 192];
 						<span class="lg:text-lg font-display">Melbourne Disc Golf</span>
 					</div>
 
-					<div id="menu-links" class="ml-auto">
+					<div id="menu-links" class="mx-auto">
 						<nav class="hidden md:flex items-center space-x-8">
 							{navItems.map(item => (
 								item.subPages ? (
 									<div class="relative group">
 										<div class="flex items-center">
-											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
+											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white hover:underline transition-colors`}>{item.title}</a>
 										</div>
-										<div class="absolute -left-4 mt-0 w-56 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl hidden group-hover:block z-[1000] pt-2">
+										<div class="absolute -left-4 mt-0 w-auto min-w-30 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-300 z-[1000] pt-2">
 											{item.subPages.map(subItem => (
-												<a href={subItem.href} class={`block px-4 py-2 hover:bg-mdgc-blue-dark hover:text-white transition-colors ${navItemColor(subItem.href)}`}>{subItem.title}</a>
+												<a href={subItem.href} class={`block px-4 py-2 hover:bg-mdgc-blue-dark hover:text-white hover:underline transition-colors whitespace-nowrap ${navItemColor(subItem.href)}`}>{subItem.title}</a>
 											))}
 										</div>
 									</div>
 								) : (
-									<a href={item.href} class={`${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
+									<a href={item.href} class={`${navItemColor(item.href)} hover:text-white hover:underline transition-colors`}>{item.title}</a>
 								)
 							))}
 						</nav>
@@ -136,7 +136,7 @@ const faviconSizes = [16, 32, 48, 192];
 						{footerSections.map(section => (
 							<div>
 								<h3 class="font-semibold mb-2">
-									<a href={section.href} class={`inline-block ${navItemColor(section.href)} hover:text-white transition-colors`}>
+									<a href={section.href} class={`inline-block ${navItemColor(section.href)} hover:text-white hover:underline transition-colors`}>
 										{section.title}
 									</a>
 								</h3>
@@ -144,7 +144,7 @@ const faviconSizes = [16, 32, 48, 192];
 									<ul class="space-y-1">
 										{section.subPages.map(link => (
 											<li>
-												<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white transition-colors`}>
+												<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white hover:underline transition-colors`}>
 													{link.title}
 												</a>
 											</li>
