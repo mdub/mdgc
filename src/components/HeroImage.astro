@@ -12,12 +12,12 @@ export interface Props {
 const { src, alt, caption, class: className = "" } = Astro.props;
 ---
 
-<figure class={`my-8 ${className}`}>
+<figure class="my-8">
 	<Image
 		src={src}
 		alt={alt}
 		title={alt}
-		class="w-full rounded-lg object-cover"
+		class={`w-full rounded-lg object-cover ${className}`}
 		inferSize={true}
 	/>
 	{caption && (

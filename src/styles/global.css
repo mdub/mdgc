@@ -36,8 +36,12 @@ a:hover {
   margin-bottom: 0.75em;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+.prose h1, .prose h2 {
   color: var(--color-text-heading);
+}
+
+.prose h3, .prose h4 {
+  color: var(--color-text-body);
 }
 
 .prose strong, .prose b {
@@ -51,11 +55,7 @@ a:hover {
 .prose h3 {
   margin-top: 1.25em;
   margin-bottom: 0.5em;
-}
-
-.prose h4 {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  font-size: 1em;
 }
 
 .prose ul, .prose ol {
@@ -64,6 +64,12 @@ a:hover {
 }
 
 .prose li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.prose li > ul,
+.prose li > ol {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
 }
