@@ -1,20 +1,35 @@
 ---
-export interface Props {
-	courses: Array<{
-		name: string;
-		slug: string;
-		suburb: string;
-		thumbnail?: string;
-		location?: { lat: number; lng: number };
-	}>;
-}
+import { getCollection } from 'astro:content';
 
-const { courses } = Astro.props;
-const coursesWithLocation = courses.filter(c => c.location);
+const courses = await getCollection('courses');
+
+// Prepare courses for map - parse GeoJSON location data
+const coursesWithLocation = courses.map(course => {
+	let location = undefined;
+
+	if (course.data.location) {
+		try {
+			const parsed = JSON.parse(course.data.location);
+			if (parsed.type === 'Point' && parsed.coordinates) {
+				// GeoJSON uses [longitude, latitude] order
+				location = { lat: parsed.coordinates[1], lng: parsed.coordinates[0] };
+			}
+		} catch (e) {
+			// Ignore parse errors
+		}
+	}
+
+	return {
+		name: course.data.title,
+		slug: course.slug,
+		suburb: course.data.suburb,
+		location
+	};
+}).filter(c => c.location);
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<div id="course-map" class="w-full aspect-[3/2] rounded-lg"></div>
+<div id="course-map" class="w-full aspect-[2/1] rounded-lg"></div>
 
 <style>
 	/* Custom popup styling */
@@ -154,8 +169,8 @@ const coursesWithLocation = courses.filter(c => c.location);
 		// Set explicit bounds to show Melbourne area with all courses
 		// Coordinates roughly encompass all Melbourne disc golf courses
 		const bounds = L.latLngBounds(
-			[-37.89, 144.54],  // Southwest corner (bottom-left)
-			[-37.79, 145.68]  // Northeast corner (top-right)
+			[-37.96, 144.55],  // Southwest corner (bottom-left)
+			[-37.68, 145.55]  // Northeast corner (top-right)
 		);
 		map.fitBounds(bounds);
 	};
