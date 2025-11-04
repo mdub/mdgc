@@ -64,13 +64,16 @@ const faviconSizes = [16, 32, 48, 192];
 							{navItems.map(item => (
 								item.subPages ? (
 									<div class="relative group">
-										<div class="flex items-center">
-											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white hover:underline transition-colors`}>{item.title}</a>
+										<div class="flex items-center -ml-4">
+											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white hover:underline transition-colors px-4 py-1 rounded-t-md group-hover:bg-slate-800 group-hover:text-mdgc-blue-light group-hover:rounded-b-none`}>{item.title}</a>
 										</div>
-										<div class="absolute -left-4 mt-0 w-auto min-w-30 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-300 z-[1000] pt-2">
-											{item.subPages.map(subItem => (
-												<a href={subItem.href} class={`block px-4 py-2 hover:bg-mdgc-blue-dark hover:text-white hover:underline transition-colors whitespace-nowrap ${navItemColor(subItem.href)}`}>{subItem.title}</a>
-											))}
+										<div class="absolute -left-4 mt-0 pb-2 w-auto min-w-30 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-300 z-[1000]">
+											{item.subPages.map(subItem => {
+												const isActive = navItemColor(subItem.href) === 'text-white';
+												return (
+													<a href={subItem.href} class={`block px-4 py-1 hover:text-white hover:underline transition-colors whitespace-nowrap ${navItemColor(subItem.href)} ${isActive ? 'bg-mdgc-blue-dark/30' : ''}`}>{subItem.title}</a>
+												);
+											})}
 										</div>
 									</div>
 								) : (
