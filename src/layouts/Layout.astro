@@ -126,7 +126,7 @@ const faviconSizes = [16, 32, 48, 192];
 
 		<div class="bg-gray-900 text-white">
 			<footer class="context-width sm:px-6 lg:px-8 py-12">
-				<div class="flex flex-row gap-24">
+				<div class="no-print flex flex-row gap-24">
 					<!-- Logo section -->
 					<div class="flex-shrink-0">
 						<a href="/" title="Home" class="logo-link">
@@ -165,7 +165,7 @@ const faviconSizes = [16, 32, 48, 192];
 						<p>© {new Date().getFullYear()} Melbourne Disc Golf Club. All rights reserved.</p>
 						<p class="text-xs text-gray-500 mt-1">last updated: {new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', dateStyle: 'medium', timeStyle: 'short' })}</p>
 					</div>
-					<div class="flex items-center gap-4">
+					<div class="no-print flex items-center gap-4">
 						<a href="https://github.com/mdub/mdgc" target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="View source on GitHub" title="View source on GitHub">
 							<Icon name="mdi:github" class="h-5 w-5" />
 						</a>
@@ -193,6 +193,12 @@ const faviconSizes = [16, 32, 48, 192];
 
 	.logo-link:hover {
 		transform: scale(1.15);
+	}
+
+	@media print {
+		.no-print {
+			display: none;
+		}
 	}
 </style>
 
