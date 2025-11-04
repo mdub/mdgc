@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+
+const discLibraries = await getCollection('discLibraries');
+const courses = await getCollection('courses');
+
+const librariesWithCourses = discLibraries.map((lib) => {
+  const nearbyCourses = courses.filter(c => c.data.discLibrary?.id === lib.id);
+return { lib, nearbyCourses };
+});
+---
+
+<ul>
+{librariesWithCourses.map(({ lib, nearbyCourses }) => (
+<li>
+<a href={lib.data.url}>{lib.data.council}</a>
+  {nearbyCourses.length > 0 && (
+      <> - near
+        {nearbyCourses.map((course, i) => (
+          <>
+            {i > 0 && (i === nearbyCourses.length - 1 ? ' and ' : ', ')}
+            <a href={`/courses/${course.slug}`}>{course.data.title}</a>
+          </>
+        ))}
+      </>
+    )}
+  </li>
+))}
+</ul>
