@@ -12,7 +12,7 @@ courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout title="Courses" subtitle="permanent disc golf courses around Melbourne">
-	<Grid cols={3}>
+	<Grid>
 		{courses.map((course) => (
 			<CourseCard
 				name={course.data.title}
@@ -31,7 +31,7 @@ courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 		<h2>Further afield</h2>
 	</Text>
 
-	<Grid cols={2}>
+	<Grid>
 		<LinkPanel
 			href="https://flyspot.com.au"
 			title="FlySpot"
