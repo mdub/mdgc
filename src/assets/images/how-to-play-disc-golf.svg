@@ -46,8 +46,4 @@
        transform="matrix(0.13333333,0,0,-0.13333333,0,99.933333)" />
   </g>
 
-  <!-- Distance indicator -->
-  <text x="400" y="250" font-family="Arial, sans-serif" font-size="18" fill="#2e7d32" text-anchor="middle" font-weight="bold">
-    Just throw the disc into the basket
-  </text>
 </svg>
