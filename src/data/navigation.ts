@@ -54,8 +54,8 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       href: '/club',
       subPages: [
         { title: 'Membership', href: '/club/membership' },
-        { title: 'Pro Shop', href: '/club/shop' },
-        { title: 'Board', href: '/club/board' }
+        { title: 'Board', href: '/club/board' },
+        { title: 'Shop', href: '/club/shop' }
       ]
     },
     {

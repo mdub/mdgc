@@ -66,9 +66,6 @@ const faviconSizes = [16, 32, 48, 192];
 									<div class="relative group">
 										<div class="flex items-center">
 											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white transition-colors`}>{item.title}</a>
-											<button class={`ml-1 ${navItemColor(item.href)} hover:text-white transition-colors`}>
-												<Icon name="heroicons:chevron-down" class="h-4 w-4" />
-											</button>
 										</div>
 										<div class="absolute -left-4 mt-0 w-56 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl hidden group-hover:block z-[1000] pt-2">
 											{item.subPages.map(subItem => (

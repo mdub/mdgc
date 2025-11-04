@@ -17,20 +17,22 @@ const renderedMembers = await Promise.all(
 ---
 
 <Layout title="Board" subtitle="Meet our volunteer committee members">
-	<Text>
-		<p>
-			Since our founding in 2008, MDGC has been managed by passionate volunteers who donate their time and expertise to support the growth of disc golf in Melbourne. As a non-profit organisation, we rely on dedicated community members to guide our club's direction, and are always looking for enthusiastic members to help with various club activities and initiatives.
-		</p>
+	<div class="max-w-4xl mx-auto">
+		<Text>
+			<p>
+				Since our founding in 2008, MDGC has been managed by passionate volunteers who donate their time and expertise to support the growth of disc golf in Melbourne. As a non-profit organisation, we rely on dedicated community members to guide our club's direction, and are always looking for enthusiastic members to help with various club activities and initiatives.
+			</p>
 
-		<h2>Current board members</h2>
-	</Text>
+			<h2>Current board members</h2>
+		</Text>
 
-	{renderedMembers.map(({ data, Content }) => (
-		<Panel>
-			<Text>
-				<h3>{data.name} - {data.title}</h3>
-				<Content />
-			</Text>
-		</Panel>
-	))}
+		{renderedMembers.map(({ data, Content }) => (
+			<Panel>
+				<Text>
+					<h3>{data.name} - {data.title}</h3>
+					<Content />
+				</Text>
+			</Panel>
+		))}
+	</div>
 </Layout>

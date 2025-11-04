@@ -43,6 +43,18 @@ a:hover {
   margin-top: 1.5em;
   margin-bottom: 0.75em;
   font-weight: 600;
+  position: relative;
+  padding-top: 0.75em;
+  clear: both;
+}
+
+.prose h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 1px;
+  background-color: #d1d5db; /* gray-300 */
 }
 
 .prose h3 {
