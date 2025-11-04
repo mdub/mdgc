@@ -5,7 +5,7 @@ import CourseCard from '~/components/CourseCard.astro';
 import CourseMap from '~/components/CourseMap.astro';
 import Grid from '~/components/Grid.astro';
 import LinkPanel from '~/components/LinkPanel.astro';
-import Text from '~/components/Text.astro';
+import Section from '~/components/Section.astro';
 
 const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
@@ -27,23 +27,21 @@ courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 		<CourseMap />
 	</div>
 
-	<Text class="text-center">
-		<h2>Further afield</h2>
-	</Text>
-
-	<Grid>
-		<LinkPanel
-			href="https://flyspot.com.au"
-			title="FlySpot"
-			description="Disc golf courses around Australia"
-			image="https://flyspot.com.au/wp-content/uploads/2016/09/FlySpot-Icon.svg"
-		/>
-		<LinkPanel
-			href="https://udisc.com"
-			title="UDisc"
-			description="Disc golf courses around the world!"
-			image="https://d1q6yb84lp43gi.cloudfront.net/logos2021/short/OB_U+Icon.svg"
-		/>
-	</Grid>
+	<Section title="Further afield">
+		<Grid>
+			<LinkPanel
+				href="https://flyspot.com.au"
+				title="FlySpot"
+				description="Disc golf courses around Australia"
+				image="https://flyspot.com.au/wp-content/uploads/2016/09/FlySpot-Icon.svg"
+			/>
+			<LinkPanel
+				href="https://udisc.com"
+				title="UDisc"
+				description="Disc golf courses around the world!"
+				image="https://d1q6yb84lp43gi.cloudfront.net/logos2021/short/OB_U+Icon.svg"
+			/>
+		</Grid>
+	</Section>
 
 </Layout>

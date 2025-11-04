@@ -22,8 +22,12 @@ a:hover {
   transform: scale(1.05);
 }
 
+.text-width {
+	@apply max-w-4xl mx-auto;
+}
+
 .prose {
-  @apply max-w-4xl mx-auto;
+	@apply max-w-4xl mx-auto;
   color: var(--color-text-body);
 }
 
@@ -40,22 +44,8 @@ a:hover {
   color: inherit;
 }
 
-.prose h2 {
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-  font-weight: 600;
-  position: relative;
-  padding-top: 0.75em;
-  clear: both;
-}
-
-.prose h2::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 1px;
-  background-color: #d1d5db; /* gray-300 */
+.prose .not-prose {
+  margin-top: 0 !important;
 }
 
 .prose h3 {
@@ -121,8 +111,4 @@ a:hover {
 
 .content-width {
 	@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.extra-width {
-	@apply max-w-7xl mx-auto px-4;
 }
