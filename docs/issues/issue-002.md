@@ -1,4 +1,4 @@
-# issue-002: Clean up disc golf education content 🔲
+# issue-002: Clean up disc golf education content 🚧
 
 Improve the "Disc Golf" section, with multiple pages, covering:
 

@@ -10,37 +10,60 @@ import IconCard from '~/components/IconCard.astro';
 import LinkPanel from '~/components/LinkPanel.astro';
 import Grid from '~/components/Grid.astro';
 import HeroImage from '~/components/HeroImage.astro';
+import IllustrationImage from '~/components/IllustrationImage.astro';
+import Panel from '~/components/Panel.astro';
 import heroImage from '~/assets/images/how-to-play-disc-golf.svg';
+import starterSetImage from '~/assets/images/rpm-starter-set.webp';
+import basketImage from '~/assets/images/disc-golf-basket.jpg';
 
 <HeroImage src={heroImage} alt="Illustration showing how to play disc golf" />
 
 <Text>
 
-Disc golf is similar to traditional golf: the goal is to get from a **tee** to a **target** in as few **throws** as possible. But instead of hitting balls with clubs, you throw flying discs with your hands.
+[Disc golf](https://en.wikipedia.org/wiki/Disc_golf) is similar to traditional golf:
+the goal is to get from a **tee** to a **target** in as few **throws** as possible.
+But instead of hitting balls with clubs, you throw flying discs with your hands.
 
-## Golf vs disc golf
-
+<Panel class="bg-gray-100 mx-auto max-w-2xl">
 |  | traditional "ball" golf | disc golf |
 |---|---|---|
-| **thing** | small white **ball** | flying **disc** |
+| **thing** | small white **ball** | plastic flying **disc** |
 | **target** | **hole** in ground | metal **basket** on a pole |
 | **tools** | metal **clubs** | your bare **hands** |
 | **venue** | manicured **golf course** | public **park** |
-| **cost** | $$$ (clubs + green fees) | $ (just buy discs) |
+| **cost** | $$$ (clubs + green fees) | $ (discs are cheap) |
 | **duration** | 4-5 hours | 2-3 hours |
+</Panel>
 
-Despite the differences above, there are _many_ similarities between the games; courses typically have 9 or 18 holes,
-and we use golf terminology like _par_, _birdie_, _driver_, and _putter_.
+The game dates back to the advent of the "[frisbee](https://en.wikipedia.org/wiki/Frisbee)" in the early 1960s.
+The first formal disc golf course was installed in California in 1975, and the
+Professional Disc Golf Association ([PDGA](https://www.pdga.com/)) was formed the following year.
 
-## History
-
-[Disc golf](https://en.wikipedia.org/wiki/Disc_golf) dates back to the early 1960s.
-The first formal disc golf course was installed in Oak Grove Park, California in 1975, and the
-Professional Disc Golf Association (PDGA) was formed in 1976.
-
-The sport has grown exponentially since then, and saw major growth during the COVID pandemic.
+The sport has grown exponentially since then, and saw major growth during the COVID-19 pandemic.
 There are now over 15,000 courses worldwide. Australia got its first permanent course in the 1990s,
 and Melbourne now has many excellent [courses](../courses) across the metropolitan area.
+
+## Golf discs
+
+<IllustrationImage src={starterSetImage} caption="a set of golf discs" />
+
+Golf discs are similar to frisbees, but slightly smaller, and harder -- not designed for ease of catching.
+They come in a variety of plastics, weights, and designs to cater for different situations, levels of skill, and styles of play.
+
+At a high level, we categorize discs as:
+
+- **drivers** - for distance off the tee
+- **mid-range discs** - for controlled medium-distance shots
+- **putters** - for short, accurate throws near the basket
+
+## Baskets
+
+<IllustrationImage src={basketImage} caption="disc golf basket at Bald Hill" />
+
+The target in disc golf is a metal basket mounted on a pole, typically about chest height. The basket has chains hanging from a
+central post that help "catch" the disc, slowing it down so it falls into the "cage" below.
+
+To complete a hole, your disc must come to rest in the basket. Just hitting the chains doesn't count - it has to stay in!
 
 ## Why people love it
 
@@ -70,17 +93,3 @@ and Melbourne now has many excellent [courses](../courses) across the metropolit
 		icon="heroicons:video-camera"
 	/>
 </Grid>
-
-<Text>
-
-## Just don't say "frisbee"
-
-A word of warning: don't call it "frisbee golf", unless you want a well-meaning pedant to (politely) correct you.
-We tend not to use that term today, because:
-
-  - "Frisbee®" is a trademark (of Wham-O Inc.)
-  - most disc golf discs are made by _other_ companies
-
-Best just call it "disc golf".
-
-</Text>

@@ -77,6 +77,16 @@ a:hover {
   padding-right: 1.5rem;
 }
 
+.prose td:first-child,
+.prose th:first-child {
+  padding-left: 0;
+}
+
+.prose td:last-child,
+.prose th:last-child {
+  padding-right: 0;
+}
+
 .concept-list {
 	list-style: none;
 	counter-reset: list-counter;
