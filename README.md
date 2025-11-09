@@ -87,7 +87,7 @@ _Some_ of the site content can be edited via a CMS. This is the recommended way 
 - **Board Members**
 
 To edit content using the CMS:
-  - Visit https://mdgc.pages.dev/admin/
+  - Visit https://mdgc.pages.dev/cms/
   - Log in with your GitHub account
   - Edit content as desired
   - Press "Publish"
