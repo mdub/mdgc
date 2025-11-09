@@ -35,7 +35,7 @@ const footerSections: NavItem[] = await getNavItems(true);
 
 // Generate footer links
 const githubUrl = 'https://github.com/mdub/mdgc';
-const cmsUrl = collectionName && entrySlug 
+const cmsUrl = collectionName && entrySlug
   ? `https://mdgc.pages.dev/admin/#/collections/${collectionName}/entries/${entrySlug}`
   : null;
 
@@ -132,60 +132,61 @@ const faviconSizes = [16, 32, 48, 192];
 			<slot />
 		</main>
 
-		<div class="bg-gray-900 text-white">
-			<footer class="context-width sm:px-6 lg:px-8 py-12">
-				<div class="no-print flex flex-row gap-24">
-					<!-- Logo section -->
-					<div class="flex-shrink-0">
-						<a href="/" title="Home" class="logo-link">
-							<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
-						</a>
-					</div>
+		<footer class="bg-gray-900 text-white context-width sm:px-6 lg:px-8 py-12">
+			<div class="no-print flex flex-row gap-24">
 
-					<!-- Navigation sections grid -->
-					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 mx-auto">
-						{footerSections.map(section => (
-							<div>
-								<h3 class="font-semibold mb-2">
-									<a href={section.href} class={`inline-block ${navItemColor(section.href)} hover:text-white hover:underline transition-colors`}>
-										{section.title}
-									</a>
-								</h3>
-								{section.subPages && (
-									<ul class="space-y-1">
-										{section.subPages.map(link => (
-											<li>
-												<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white hover:underline transition-colors`}>
-													{link.title}
-												</a>
-											</li>
-										))}
-									</ul>
-								)}
-							</div>
-						))}
-					</div>
+				<!-- Logo section -->
+				<div class="flex-shrink-0">
+					<a href="/" title="Home" class="logo-link">
+						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
+					</a>
 				</div>
 
-				<!-- Bottom section -->
-				<div class="border-t border-gray-700 mt-8 pt-2 flex flex-col md:flex-row justify-between items-center gap-4">
-					<div class="text-gray-400 text-sm text-center md:text-left">
-						<p>© {new Date().getFullYear()} Melbourne Disc Golf Club. All rights reserved.</p>
-						<p class="text-xs text-gray-500 mt-1">last updated: {new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', dateStyle: 'medium', timeStyle: 'short' })}</p>
-					</div>
-					<div class="no-print flex items-center gap-4">
-						<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="View source on GitHub" title="View source on GitHub">
-							<Icon name="mdi:github" class="h-5 w-5" />
-						</a>
-						{cmsUrl && (
-							<a href={cmsUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="Edit in CMS" title="Edit in CMS">
-								<Icon name="mdi:pencil" class="h-5 w-5" />
-							</a>
-						)}
-					</div>
+				<!-- Navigation sections grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 mx-auto">
+					{footerSections.map(section => (
+						<div>
+							<h3 class="font-semibold mb-2">
+								<a href={section.href} class={`inline-block ${navItemColor(section.href)} hover:text-white hover:underline transition-colors`}>
+									{section.title}
+								</a>
+							</h3>
+							{section.subPages && (
+								<ul class="space-y-1">
+									{section.subPages.map(link => (
+										<li>
+											<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white hover:underline transition-colors`}>
+												{link.title}
+											</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</div>
+					))}
 				</div>
-			</footer>
-		</div>
+			</div>
+
+			<!-- Bottom section -->
+			<div class="border-t border-gray-700 mt-8 pt-2 flex flex-col md:flex-row justify-between items-center gap-4">
+				<div class="text-gray-400 text-sm text-center md:text-left">
+					<p>© {new Date().getFullYear()} Melbourne Disc Golf Club. All rights reserved.</p>
+					<p class="text-xs text-gray-500 mt-1">last updated: {new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', dateStyle: 'medium', timeStyle: 'short' })}</p>
+				</div>
+				<div class="no-print flex items-center gap-4">
+					<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="View source on GitHub" title="View source on GitHub">
+						<Icon name="mdi:github" class="h-5 w-5" />
+					</a>
+					{cmsUrl && (
+						<a href={cmsUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="Edit in CMS" title="Edit in CMS">
+							<Icon name="mdi:pencil" class="h-5 w-5" />
+						</a>
+					)}
+				</div>
+			</div>
+
+		</footer>
+
 	</body>
 </html>
 
