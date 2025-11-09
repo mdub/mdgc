@@ -11,7 +11,7 @@ const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<Layout title="Courses" subtitle="permanent disc golf courses around Melbourne">
+<Layout title="Courses" subtitle="disc golf courses around Melbourne">
 	<Grid>
 		{courses.map((course) => (
 			<CourseCard
