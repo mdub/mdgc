@@ -13,7 +13,7 @@ return { lib, nearbyCourses };
 <ul>
 {librariesWithCourses.map(({ lib, nearbyCourses }) => (
 <li>
-<a href={lib.data.url}>{lib.data.council}</a>
+{lib.data.council}: <a href={lib.data.url}>{lib.data.location}</a>
   {nearbyCourses.length > 0 && (
       <> - near
         {nearbyCourses.map((course, i) => (

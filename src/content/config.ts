@@ -29,6 +29,7 @@ const discLibraries = defineCollection({
   type: 'data',
   schema: z.object({
     council: z.string(),
+    location: z.string(),
     url: z.string(),
   }),
 });

@@ -41,8 +41,8 @@ const mapLinks = lat && lng ? {
 } : null;
 ---
 
-<Layout 
-  title={course.data.title} 
+<Layout
+  title={course.data.title}
   subtitle={course.data.suburb}
   collectionName="courses"
   entrySlug={course.slug}
@@ -79,8 +79,8 @@ const mapLinks = lat && lng ? {
 
   {discLibrary && (
     <Text>
-      <h2>Borrow discs</h2>
-      <p>You can borrow discs from <a href={discLibrary.data.url}>{discLibrary.data.council}</a>.</p>
+      <h2>Nearest disc library</h2>
+      <p>If you don't have your own discs, you can borrow some from <a href={discLibrary.data.url}>{discLibrary.data.location}</a>.</p>
     </Text>
   )}
 
