@@ -63,6 +63,60 @@ Still todo:
   - **Research**
     - [ ] explore Sveltia CMS as alternative to Decap CMS (mdgc-31)
 
+## ✏️ Making changes to the site
+
+The site is managed using code hosted on GitHub:
+
+- https://github.com/mdub/mdgc
+
+### Getting access
+
+In order to make changes to the website, ask Mike Williams to add you as a "collaborator" on the GitHub repository.  You will need to register for a (free) [GitHub account](https://github.com/signup) (if you don't already have one).
+
+### For non-technical users
+
+There are two ways to edit content without needing to understand Git or programming.
+
+#### Using the Content Management System
+
+_Some_ of the site content can be edited via a CMS. This is the recommended way to edit:
+
+- **Events** (coming soon)
+- **News** (coming soon)
+- **Courses**
+- **Board Members**
+
+To edit content using the CMS:
+  - Visit https://mdgc.pages.dev/admin/
+  - Log in with your GitHub account
+  - Edit content as desired
+  - Press "Publish"
+
+#### Using GitHub's web interface
+
+Other pages are not CMS-managed but you can edit them online in GitHub.
+  - Navigate to the file you want to edit on GitHub
+  - Click the pencil icon to edit
+  - Make your changes using Markdown
+  - Commit the changes with a description
+  - The site will automatically rebuild and deploy
+
+### For technical users
+
+If you're comfortable with Git and development tools:
+  - Clone the repository: `git clone https://github.com/mdub/mdgc.git`
+  - Make your changes locally
+  - Test them using `pnpm run dev`
+  - Commit and push: `git commit -am "Description" && git push`
+
+### Re-deployment after changes
+
+When you make changes to the site source-code on GitHub - using either the CMS, or the GitHub
+web interface - it triggers an automatic "build" and "deployment" process, which updates the live site.
+
+This usually takes about one minute. You can observe the process on the Cloudflare dashboard:
+  - [Cloudflare Pages: mdgc](https://dash.cloudflare.com/1dbfd2793b506e08151b86bd944859b5/pages/view/mdgc)
+
 ## 🚀 Development
 
 ### 🏗️ Tech Stack
