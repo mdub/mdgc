@@ -41,7 +41,12 @@ const mapLinks = lat && lng ? {
 } : null;
 ---
 
-<Layout title={course.data.title} subtitle={course.data.suburb}>
+<Layout 
+  title={course.data.title} 
+  subtitle={course.data.suburb}
+  collectionName="courses"
+  entrySlug={course.slug}
+>
   {course.data.mainImage && (
     <Image
       src={course.data.mainImage}
