@@ -7,10 +7,20 @@ import tailwindcss from '@tailwindcss/vite';
 
 import icon from 'astro-icon';
 
+import { rehypeSectionize } from './src/lib/rehype-sectionize.js';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  integrations: [mdx(), icon()],
+  markdown: {
+    rehypePlugins: [rehypeSectionize],
+  },
+  integrations: [
+    mdx({
+      rehypePlugins: [rehypeSectionize],
+    }),
+    icon()
+  ],
   vite: {
     plugins: [tailwindcss()],
     resolve: {
