@@ -117,6 +117,8 @@ web interface - it triggers an automatic "build" and "deployment" process, which
 This usually takes about one minute. You can observe the process on the Cloudflare dashboard:
   - [Cloudflare Pages: mdgc](https://dash.cloudflare.com/1dbfd2793b506e08151b86bd944859b5/pages/view/mdgc)
 
+Tip: if you're wondering whether your changes are live yet, check the "last updated" timestamp in the page footer.
+
 ## 🚀 Development
 
 ### 🏗️ Tech Stack
