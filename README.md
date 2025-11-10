@@ -12,57 +12,6 @@ A preview of new site is available at:
 
 Once development is complete, we will change the existing site URL to refer to the new one.
 
-## 📋 Project Status
-
-Mike Williams is currently in the midst of porting the existing WordPress site to a modern static website. The plan is to prove viability by end of Oct 2025, and complete migration by the end of Nov.
-
-So far, I have:
-
-  - [X] selected and set up a static website framework - [Astro](https://astro.build)
-  - [X] set up site "builds" and hosting on [Cloudflare Pages](https://pages.cloudflare.com)
-  - [X] set up high-level site structure
-    - **Disc Golf** - about the sport
-    - **Club** - about the club
-    - **Courses** - where to play
-    - **Events** - when to play
-  - [X] sketched content across all sections
-  - [X] integrated [Decap CMS](https://decapcms.org) for easier content editing
-  - [X] created reusable page components (Panel, Prose, LinkPanel, Grid, HeroImage)
-  - [X] converted key pages to MDX format for easier editing
-  - [X] added custom font (Inter) and refined typography
-  - [X] added hero images to major pages with proper optimization
-
-Recent progress:
-  - **Courses** section
-    - [X] added overview map to main Courses page (mdgc-1)
-    - [X] made course map images easier to open in new tab/window (mdgc-8)
-    - [X] created content collection for courses with MDX support
-    - [X] verified coordinates for all courses (mdgc-17)
-  - **Events** section
-    - [X] revised and converted Social Days page to MDX (mdgc-9, mdgc-10)
-    - [X] converted Tournaments page to MDX
-    - [X] added hero images for social days and tournaments
-    - [X] embedded club's Google calendar (mdgc-6)
-  - **Club** section
-    - [X] converted all Club pages to MDX (board, contact, membership, index)
-  - **CMS and editing**
-    - [X] configured Decap CMS with GitHub backend (mdgc-5)
-    - [X] revisited component composition and whitespace handling (mdgc-12, mdgc-13)
-  - **Infrastructure**
-    - [X] switched to Cloudflare Pages hosting (mdgc-15)
-
-Still todo:
-  - **Disc Golf** section
-    - [ ] clean up disc golf education content (mdgc-32)
-  - **Events** section
-    - [ ] pull upcoming social days information from Disc Golf Metrix (mdgc-11)
-  - **Features**
-    - [ ] support announcement banners on homepage (mdgc-16)
-  - **Documentation**
-    - [ ] document contributor workflow (mdgc-7)
-  - **Research**
-    - [ ] explore Sveltia CMS as alternative to Decap CMS (mdgc-31)
-
 ## ✏️ Making changes to the site
 
 The site is managed using code hosted on GitHub:
@@ -202,3 +151,54 @@ On their Free [plan](https://developers.cloudflare.com/pages/platform/limits/), 
 
 The experience of people _editing_ the website will be quite different, for those used to WordPress. In particular, the new solution
 will not provide a WYSIWYG ("what you see is what you get") editing experience, and it will be harder to change site _styling_, without some technical knowledge. However - though a combination of Decap CMS and the GitHub UI - we should be able to make it pretty easy for non-technical folks to edit and add _content_.
+
+## 📋 Project Status
+
+Mike Williams is currently in the midst of porting the existing WordPress site to a modern static website. The plan is to prove viability by end of Oct 2025, and complete migration by the end of Nov.
+
+So far, I have:
+
+  - [X] selected and set up a static website framework - [Astro](https://astro.build)
+  - [X] set up site "builds" and hosting on [Cloudflare Pages](https://pages.cloudflare.com)
+  - [X] set up high-level site structure
+    - **Disc Golf** - about the sport
+    - **Club** - about the club
+    - **Courses** - where to play
+    - **Events** - when to play
+  - [X] sketched content across all sections
+  - [X] integrated [Decap CMS](https://decapcms.org) for easier content editing
+  - [X] created reusable page components (Panel, Prose, LinkPanel, Grid, HeroImage)
+  - [X] converted key pages to MDX format for easier editing
+  - [X] added custom font (Inter) and refined typography
+  - [X] added hero images to major pages with proper optimization
+
+Recent progress:
+  - **Courses** section
+    - [X] added overview map to main Courses page (mdgc-1)
+    - [X] made course map images easier to open in new tab/window (mdgc-8)
+    - [X] created content collection for courses with MDX support
+    - [X] verified coordinates for all courses (mdgc-17)
+  - **Events** section
+    - [X] revised and converted Social Days page to MDX (mdgc-9, mdgc-10)
+    - [X] converted Tournaments page to MDX
+    - [X] added hero images for social days and tournaments
+    - [X] embedded club's Google calendar (mdgc-6)
+  - **Club** section
+    - [X] converted all Club pages to MDX (board, contact, membership, index)
+  - **CMS and editing**
+    - [X] configured Decap CMS with GitHub backend (mdgc-5)
+    - [X] revisited component composition and whitespace handling (mdgc-12, mdgc-13)
+  - **Infrastructure**
+    - [X] switched to Cloudflare Pages hosting (mdgc-15)
+
+Still todo:
+  - **Disc Golf** section
+    - [ ] clean up disc golf education content (mdgc-32)
+  - **Events** section
+    - [ ] pull upcoming social days information from Disc Golf Metrix (mdgc-11)
+  - **Features**
+    - [ ] support announcement banners on homepage (mdgc-16)
+  - **Documentation**
+    - [ ] document contributor workflow (mdgc-7)
+  - **Research**
+    - [ ] explore Sveltia CMS as alternative to Decap CMS (mdgc-31)
