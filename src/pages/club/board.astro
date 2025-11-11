@@ -32,7 +32,7 @@ const renderedMembers = await Promise.all(
 				<Text>
 					<h3>{data.name} - {data.title}</h3>
 					{data.photo && (
-						<IllustrationImage src={data.photo} alt={data.name} />
+						<IllustrationImage src={data.photo} alt={data.name} class="aspect-square" />
 					)}
 					<Content />
 				</Text>
