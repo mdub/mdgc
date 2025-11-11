@@ -5,7 +5,8 @@ subtitle: our regular meetups
 ---
 
 import Text from '~/components/Text.astro';
-import Panel from '~/components/Panel.astro';
+import LinkPanel from '~/components/LinkPanel.astro';
+import Grid from '~/components/Grid.astro';
 import HeroImage from '~/components/HeroImage.astro';
 import heroImage from '~/assets/images/mdgc-cover-photo.jpg';
 
@@ -17,12 +18,19 @@ import heroImage from '~/assets/images/mdgc-cover-photo.jpg';
 
 <Text>
 
-MDGC Social Days are casual, friendly events where disc golfers of all skill levels come together
-to enjoy the sport in a relaxed atmosphere. These events are perfect for:
+## What
 
-- **experienced players** wanting to hang out with fellow enthusiasts
-- **new players** looking to try the game and improve their skills
-- anyone seeking a fun day out in Melbourne's parks
+Social Days are the mainstay of the MDGC calendar, where most new players get their first experience of organised events.
+We split the year into two seasons (Feb-Jun and Jul-Nov), with 15 Social Days in each season.
+
+We aim to make social days welcoming and friendly -- a great place for new players to come and learn the rules and
+pick some tips from more experienced club members. We typically get 30–60 players at each one, ranging from beginners to professionals,
+young (kids) to old (die-hards).
+
+All social days are free for club members. Casual players are welcome too (free first time, $12 per round after that).
+
+Please note that (due to demand) **pre-registration is required** for all Social Days.
+Registration typically closes on the evening before the event.
 
 ## When and where
 
@@ -34,7 +42,6 @@ We alternate between Saturdays and Sundays, and rotate around three "zones":
 
 Check [MDGC events on Disc Golf Metrix](https://discgolfmetrix.com/?u=club_events&id=235) for the latest schedule and registration.
 
-Please note that **pre-registration is required** for all Social Days, due to demand.
 
 ## What to expect
 
@@ -53,12 +60,28 @@ We use Disc Golf Metrix for event management, registration, and scoring:
 - **Club Profile:** [MDGC on Disc Golf Metrix](https://discgolfmetrix.com/club/235)
 - **On the Day:** Use the Disc Golf Metrix mobile app to track scores
 
-## Beginners welcome
+## Shop in person
 
-Never played disc golf before? Social Days are a great introduction to the sport.
-Register for an event and we'll pair you with experienced players who can help you learn the basics.
+We often have the <a href="/club/shop">MDGC Shop</a> at social days (in mobile form), so it's a great opportunity
+to buy new discs.
 
-No equipment needed - we can lend you discs to get started, though bringing water and
-sun protection is recommended.
+## Need more info?
+
+If you have any questions then drop us a note at socialdays@melbournediscgolf.com and we will try to help.
+
+<Grid>
+	<LinkPanel
+		href="/disc-golf"
+		title="Disc Golf"
+		description="about the game"
+		icon="heroicons:play-circle"
+	/>
+	<LinkPanel
+		icon="heroicons:shopping-cart"
+		href="/club/shop"
+		title="Shop"
+		description="buy discs, etc."
+	/>
+</Grid>
 
 </Text>
