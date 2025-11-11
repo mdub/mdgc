@@ -4,16 +4,18 @@ import { getCollection } from 'astro:content';
 const discLibraries = await getCollection('discLibraries');
 const courses = await getCollection('courses');
 
-const librariesWithCourses = discLibraries.map((lib) => {
-  const nearbyCourses = courses.filter(c => c.data.discLibrary?.id === lib.id);
-return { lib, nearbyCourses };
-});
+const librariesWithCourses = discLibraries
+  .map((lib) => {
+    const nearbyCourses = courses.filter(c => c.data.discLibrary?.id === lib.id);
+    return { lib, nearbyCourses };
+  })
+  .sort((a, b) => a.lib.data.location.localeCompare(b.lib.data.location));
 ---
 
 <ul>
 {librariesWithCourses.map(({ lib, nearbyCourses }) => (
 <li>
-{lib.data.council}: <a href={lib.data.url}>{lib.data.location}</a>
+<a href={lib.data.url}>{lib.data.location}</a> ({lib.data.council})
   {nearbyCourses.length > 0 && (
       <> - near
         {nearbyCourses.map((course, i) => (
