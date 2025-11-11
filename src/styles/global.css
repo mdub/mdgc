@@ -40,6 +40,13 @@ a:hover {
   color: var(--color-text-heading);
 }
 
+.prose h2 {
+  background: linear-gradient(to right, #f3f4f6, white);
+  padding: 0.5rem 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .prose h3, .prose h4 {
   color: var(--color-text-body);
 }
