@@ -18,10 +18,11 @@ const courses = defineCollection({
 
 const board = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     name: z.string(),
     title: z.string(),
     order: z.number(),
+    photo: image().optional(),
   }),
 });
 
