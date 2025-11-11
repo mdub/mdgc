@@ -6,18 +6,19 @@ export interface Props {
 	src: ImageMetadata;
 	alt: string;
 	caption?: string;
-	class?: string;
+	imageClass?: string;
+	figureClass?: string;
 }
 
-const { src, alt, caption, class: className = "" } = Astro.props;
+const { src, alt, caption, imageClass = "", figureClass = "" } = Astro.props;
 ---
 
-<figure class={`max-w-[250px] mx-auto md:mx-0 mt-4 md:mt-0 mb-4 md:float-right md:ml-6 ${className}`}>
+<figure class={`max-w-[250px] mx-auto md:mx-0 mt-4 md:mt-0 mb-4 md:float-right md:ml-6 ${figureClass}`}>
 	<Image
 		src={src}
 		alt={alt}
 		title={alt}
-		class="w-full rounded-lg object-cover"
+		class={`w-full rounded-lg object-cover ${imageClass}`}
 		inferSize={true}
 	/>
 	{caption && (
