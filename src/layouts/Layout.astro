@@ -58,7 +58,7 @@ const faviconSizes = [16, 32, 48, 192];
 	</head>
 	<body>
 		<header>
-			<div id="menu-strip" class="bg-gradient-to-b from-mdgc-blue-dark to-slate-900 text-white shadow-lg">
+			<div id="menu-strip" class="bg-linear-to-b from-mdgc-blue-dark to-slate-900 text-white shadow-lg">
 				<div id="menu-content" class="content-width flex items-center h-16 space-x-8">
 					<div id="menu-logo" class="flex items-center gap-3">
 						<a href="/" title="Home" class="logo-link">
@@ -75,7 +75,7 @@ const faviconSizes = [16, 32, 48, 192];
 										<div class="flex items-center -ml-4">
 											<a href={item.href} class={`${navItemColor(item.href)} hover:text-white hover:underline transition-colors px-4 py-1 rounded-t-md group-hover:bg-slate-800 group-hover:text-mdgc-blue-light group-hover:rounded-b-none`}>{item.title}</a>
 										</div>
-										<div class="absolute -left-4 mt-0 pb-2 w-auto min-w-30 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-300 z-[1000]">
+										<div class="absolute -left-4 mt-0 pb-2 w-auto min-w-30 bg-slate-800 text-mdgc-blue-light rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-300 z-1000">
 											{item.subPages.map(subItem => {
 												const isActive = navItemColor(subItem.href) === 'text-white';
 												return (
@@ -117,7 +117,9 @@ const faviconSizes = [16, 32, 48, 192];
 					</nav>
 				</div>
 			</div>
+		</header>
 
+		<main>
 			<div class="bg-mdgc-blue-dark text-white">
 				<div id="title-content" class="content-width p-8">
 					<div id="title-and-subtitle">
@@ -126,17 +128,16 @@ const faviconSizes = [16, 32, 48, 192];
 					</div>
 				</div>
 			</div>
-		</header>
-
-		<main class="content-width">
-			<slot />
+			<div class="content-width">
+				<slot />
+			</div>
 		</main>
 
 		<footer class="bg-gray-900 text-white context-width sm:px-6 lg:px-8 py-12">
 			<div class="no-print flex flex-row gap-24">
 
 				<!-- Logo section -->
-				<div class="flex-shrink-0">
+				<div class="shrink-0">
 					<a href="/" title="Home" class="logo-link">
 						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
 					</a>
