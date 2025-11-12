@@ -4,11 +4,11 @@ import Layout from '~/layouts/Layout.astro';
 import Panel from '~/components/Panel.astro';
 import Text from '~/components/Text.astro';
 import IllustrationImage from '~/components/IllustrationImage.astro';
+import PastBoardMembers from './_past-board-members.mdx';
 
 const boardMembers = await getCollection('board');
 const sortedMembers = boardMembers.sort((a, b) => a.data.order - b.data.order);
 
-// Render all members in the frontmatter
 const renderedMembers = await Promise.all(
 	sortedMembers.map(async (member) => ({
 		...member,
@@ -37,6 +37,8 @@ const renderedMembers = await Promise.all(
 		))}
 
 		</section>
+
+		<PastBoardMembers />
 
 	</Text>
 </Layout>
