@@ -7,12 +7,13 @@ interface Props {
 	description: string;
 	icon?: string;
 	image?: string;
+	class?: string;
 }
 
-const { href, title, description, icon, image } = Astro.props;
+const { href, title, description, icon, image, class: className = '' } = Astro.props;
 ---
 
-<a href={href} class="link-panel not-prose">
+<a href={href} class={`link-panel not-prose ${className}`}>
 	<div class="link-panel-inner">
 		<div class="link-panel-icon">
 			{icon && <Icon name={icon} size={58} />}
