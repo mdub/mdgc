@@ -4,7 +4,7 @@ title: Events
 ---
 
 import Text from '~/components/Text.astro';
-import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import Grid from '~/components/Grid.astro';
 import Calendar from '~/components/Calendar.astro';
 
@@ -18,18 +18,8 @@ supportive and welcoming community.
 </Text>
 
 <Grid>
-	<LinkPanel
-		href="/events/social"
-		title="Social Days"
-		description="regular casual events"
-		icon="heroicons:heart"
-	/>
-	<LinkPanel
-		href="/events/tournaments"
-		title="Tournaments"
-		description="competitive events"
-		icon="heroicons:trophy"
-	/>
+	<NavLink href="/events/social" />
+	<NavLink href="/events/tournaments" />
 </Grid>
 
 ## Upcoming events

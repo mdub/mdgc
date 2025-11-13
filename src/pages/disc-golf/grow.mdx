@@ -6,6 +6,7 @@ title: Grow your game
 import Text from '~/components/Text.astro';
 import Panel from '~/components/Panel.astro';
 import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import Grid from '~/components/Grid.astro';
 
 <Text>
@@ -33,12 +34,7 @@ The [MDGC Shop](/club/shop) is a great place to buy discs (and other gear).
 Or, [search the web](https://www.google.com/search?q=disc+golf+discs+australia) to find other online stores.
 
 <Grid>
-	<LinkPanel
-		icon="heroicons:shopping-cart"
-		href="/club/shop"
-		title="Shop"
-		description="buy discs, etc."
-	/>
+	<NavLink href="/club/shop" />
 </Grid>
 
 ## Play regularly
@@ -49,18 +45,8 @@ The more you play, the better you'll get.
 - **Social days** - Join some of our [regular social events](/events/social); you'll learn faster (and probably have more fun) playing with others.
 
 <Grid>
-	<LinkPanel
-		href="/courses"
-		title="Courses"
-		description="where to play"
-		icon="heroicons:map-pin"
-	/>
-	<LinkPanel
-		href="/events/social"
-		title="Social Days"
-		description="regular casual events"
-		icon="heroicons:heart"
-	/>
+	<NavLink href="/courses" />
+	<NavLink href="/events/social" />
 </Grid>
 
 ## Join the club
@@ -68,12 +54,7 @@ The more you play, the better you'll get.
 Becoming an MDGC [member](/club/membership) gives you access to regular events, and a supportive community.
 
 <Grid>
-	<LinkPanel
-		icon="heroicons:users"
-		href="/club/membership"
-		title="Membership"
-		description="join the club"
-	/>
+	<NavLink href="/club/membership" />
 </Grid>
 
 ## Watch online coverage

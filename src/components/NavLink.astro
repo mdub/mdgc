@@ -1,0 +1,43 @@
+---
+import LinkPanel from './LinkPanel.astro';
+import { getNavItems, type NavItem, type NavSubPage } from '~/data/navigation';
+
+interface Props {
+	href: string;
+	title?: string;
+	description?: string;
+	icon?: string;
+	class?: string;
+}
+
+const { href, ...overrides } = Astro.props;
+
+// Get navigation data
+const navItems = await getNavItems();
+
+// Find the matching navigation item
+let navData: (NavItem | NavSubPage) | undefined;
+
+for (const item of navItems) {
+	if (item.href === href) {
+		navData = item;
+		break;
+	}
+	if (item.subPages) {
+		navData = item.subPages.find(sub => sub.href === href);
+		if (navData) break;
+	}
+}
+
+const title = overrides.title || navData?.title || href;
+const description = overrides.description || navData?.description || '';
+const icon = overrides.icon || navData?.icon;
+---
+
+<LinkPanel
+	href={href}
+	title={title}
+	description={description}
+	icon={icon}
+	class={overrides.class}
+/>

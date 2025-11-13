@@ -4,7 +4,7 @@ title: Welcome
 subtitle: to the home of disc golf in Melbourne (Australia)
 ---
 
-import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import HeroImage from '~/components/HeroImage.astro';
 import Grid from '~/components/Grid.astro';
 import heroImage from '~/assets/images/royal-park-group.jpg';
@@ -16,28 +16,8 @@ import heroImage from '~/assets/images/royal-park-group.jpg';
 />
 
 <Grid>
-	<LinkPanel
-		href="/disc-golf"
-		title="Disc Golf"
-		description="about the game"
-		icon="heroicons:play-circle"
-	/>
-	<LinkPanel
-		href="/club"
-		title="Club"
-		description="about us"
-		icon="heroicons:users"
-	/>
-	<LinkPanel
-		href="/courses"
-		title="Courses"
-		description="where to play"
-		icon="heroicons:map-pin"
-	/>
-	<LinkPanel
-		href="/events"
-		title="Events"
-		description="what is happening"
-		icon="heroicons:calendar"
-	/>
+	<NavLink href="/disc-golf" />
+	<NavLink href="/club" />
+	<NavLink href="/courses" />
+	<NavLink href="/events" />
 </Grid>

@@ -3,11 +3,15 @@ import { getCollection } from 'astro:content';
 export interface NavSubPage {
   title: string;
   href: string;
+  description?: string;
+  icon?: string;
 }
 
 export interface NavItem {
   title: string;
   href: string;
+  description?: string;
+  icon?: string;
   subPages?: NavSubPage[];
 }
 
@@ -43,31 +47,39 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
     {
       title: 'Disc Golf',
       href: '/disc-golf',
+      description: 'about the game',
+      icon: 'heroicons:play-circle',
       subPages: [
-        { title: 'Try it', href: '/disc-golf/try' },
-        { title: 'Grow your game', href: '/disc-golf/grow' }
+        { title: 'Try it', href: '/disc-golf/try', description: 'how to get started', icon: 'heroicons:play' },
+        { title: 'Grow your game', href: '/disc-golf/grow', description: 'take it further', icon: 'heroicons:arrow-trending-up' }
       ]
     },
     {
       title: 'Club',
       href: '/club',
+      description: 'about us',
+      icon: 'heroicons:users',
       subPages: [
-        { title: 'Membership', href: '/club/membership' },
-        { title: 'Board', href: '/club/board' },
-        { title: 'Shop', href: '/club/shop' }
+        { title: 'Membership', href: '/club/membership', description: 'join us!', icon: 'heroicons:users' },
+        { title: 'Board', href: '/club/board', description: 'meet the team' },
+        { title: 'Shop', href: '/club/shop', description: 'buy discs, and more!', icon: 'heroicons:shopping-cart' }
       ]
     },
     {
       title: 'Courses',
       href: '/courses',
+      description: 'where to play',
+      icon: 'heroicons:map-pin',
       subPages: courseSubPages
     },
     {
       title: 'Events',
       href: '/events',
+      description: 'what is happening',
+      icon: 'heroicons:calendar',
       subPages: [
-        { title: 'Social Days', href: '/events/social' },
-        { title: 'Tournaments', href: '/events/tournaments' }
+        { title: 'Social Days', href: '/events/social', description: 'our regular meetups', icon: 'heroicons:heart' },
+        { title: 'Tournaments', href: '/events/tournaments', description: 'compete!' }
       ]
     }
   ];

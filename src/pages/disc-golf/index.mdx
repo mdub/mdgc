@@ -4,7 +4,7 @@ title: What is disc golf?
 ---
 
 import Text from '~/components/Text.astro';
-import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import Grid from '~/components/Grid.astro';
 import HeroImage from '~/components/HeroImage.astro';
 import IllustrationImage from '~/components/IllustrationImage.astro';
@@ -75,24 +75,8 @@ To complete a hole, your disc must come to rest in the basket. Just hitting the 
 ## Next steps
 
 <Grid>
-	<LinkPanel
-		icon="heroicons:play"
-		href="/disc-golf/try"
-		title="Try it!"
-		description="how to get started"
-	/>
-	{/* <LinkPanel
-		icon="heroicons:fire"
-		href="/disc-golf/get-hooked"
-		title="Get hooked"
-		description="more about the game"
-	/> */}
-	<LinkPanel
-		icon="heroicons:arrow-trending-up"
-		href="/disc-golf/grow"
-		title="Grow your game"
-		description="take it further"
-	/>
+	<NavLink href="/disc-golf/try" title="Try it!" />
+	<NavLink href="/disc-golf/grow" />
 </Grid>
 
 </Text>

@@ -5,7 +5,7 @@ title: Try disc golf
 
 import Text from '~/components/Text.astro';
 import Panel from '~/components/Panel.astro';
-import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import Grid from '~/components/Grid.astro';
 import HeroImage from '~/components/HeroImage.astro';
 import IllustrationImage from '~/components/IllustrationImage.astro';
@@ -113,24 +113,8 @@ The following libraries operate disc loan schemes:
 ## Next steps
 
 <Grid>
-	<LinkPanel
-		icon="heroicons:information-circle"
-		href="/disc-golf/grow"
-		title="Learn more"
-		description="more about the game"
-	/>
-	<LinkPanel
-		icon="heroicons:map-pin"
-		href="/courses"
-		title="Courses"
-		description="places to play"
-	/>
-	<LinkPanel
-		href="/events/social"
-		title="Social Days"
-		description="try with others"
-		icon="heroicons:heart"
-	/>
+	<NavLink href="/courses" />
+	<NavLink href="/events/social" description="try with others" />
 </Grid>
 
 </Text>

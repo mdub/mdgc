@@ -5,7 +5,7 @@ subtitle: our regular meetups
 ---
 
 import Text from '~/components/Text.astro';
-import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import Grid from '~/components/Grid.astro';
 import HeroImage from '~/components/HeroImage.astro';
 import heroImage from '~/assets/images/mdgc-cover-photo.jpg';
@@ -70,18 +70,8 @@ to buy new discs.
 If you have any questions then drop us a note at socialdays@melbournediscgolf.com and we will try to help.
 
 <Grid>
-	<LinkPanel
-		href="/disc-golf"
-		title="Disc Golf"
-		description="about the game"
-		icon="heroicons:play-circle"
-	/>
-	<LinkPanel
-		icon="heroicons:shopping-cart"
-		href="/club/shop"
-		title="Shop"
-		description="buy discs, etc."
-	/>
+	<NavLink href="/disc-golf" />
+	<NavLink href="/club/shop" />
 </Grid>
 
 </Text>

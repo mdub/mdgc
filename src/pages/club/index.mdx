@@ -5,6 +5,7 @@ title: Club
 
 import Text from '~/components/Text.astro';
 import LinkPanel from '~/components/LinkPanel.astro';
+import NavLink from '~/components/NavLink.astro';
 import Grid from '~/components/Grid.astro';
 import HeroImage from '~/components/HeroImage.astro';
 import Section from '~/components/Section.astro';
@@ -26,24 +27,9 @@ sport that brings people together. We focus on building an inclusive community w
 players of all ages and skill levels can enjoy the game.
 
 <Grid>
-	<LinkPanel
-		icon="heroicons:users"
-		href="/club/membership"
-		title="Membership"
-		description="join the club"
-	/>
-	<LinkPanel
-		icon="heroicons:user-group"
-		href="/club/board"
-		title="Board"
-		description="meet the team"
-	/>
-	<LinkPanel
-		icon="heroicons:shopping-cart"
-		href="/club/shop"
-		title="Shop"
-		description="buy discs, etc."
-	/>
+	<NavLink href="/club/membership" />
+	<NavLink href="/club/board" />
+	<NavLink href="/club/shop" />
 </Grid>
 
 <Section title="Contact us">
