@@ -124,3 +124,7 @@ a:hover {
 .content-width {
 	@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
+
+.metrix-button {
+	@apply bg-orange-500 text-white px-1.5 py-0.5 font-semibold;
+}
