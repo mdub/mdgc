@@ -1,4 +1,6 @@
-# issue-032: Link to "DG in Melbourne" chat on Messenger 🔲
+# issue-032: Link to "DG in Melbourne" chat on Messenger ✅
+
+**Moved to GitHub:** https://github.com/mdub/mdgc/issues/10
 
 Add a link to the "DG in Melbourne" Facebook Messenger group chat on the website.
 

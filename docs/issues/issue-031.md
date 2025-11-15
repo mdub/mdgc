@@ -1,4 +1,6 @@
-# issue-031: Explore Sveltia CMS as alternative to Decap CMS 🚧
+# issue-031: Explore Sveltia CMS as alternative to Decap CMS ✅
+
+**Moved to GitHub:** https://github.com/mdub/mdgc/issues/7
 
 Investigate Sveltia CMS (https://sveltia.com) as a potential replacement for Decap CMS. Initial approach: deploy Sveltia alongside Decap to evaluate it without disrupting existing setup. Compare features, performance, and user experience.
 

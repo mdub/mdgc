@@ -1,4 +1,6 @@
-# issue-016: Support announcement banners on homepage 🔲
+# issue-016: Support announcement banners on homepage ✅
+
+**Moved to GitHub:** https://github.com/mdub/mdgc/issues/8
 
 
 Add support for displaying dismissible announcement banners on the homepage (under the title bar). Store dismissed announcement state in cookies so users don't see the same announcement repeatedly after dismissing it.
