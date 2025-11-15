@@ -89,10 +89,10 @@ Dear agent: when working with humans on this project, please:
 To determine (or update) current status, see:
 
 - the "Project Status" section in the README.md
-- issues in the `docs/issues/` directory
+- GitHub Issues at https://github.com/mdub/mdgc/issues
 
 ## Issue tracking
 
-**IMPORTANT**: This project tracks issues in markdown files in the `docs/issues/` directory.
+**IMPORTANT**: This project uses GitHub Issues for tracking tasks and bugs.
 
-Full documentation is available in `docs/issues/README.md`.
+View and create issues at: https://github.com/mdub/mdgc/issues
