@@ -61,7 +61,7 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       icon: 'heroicons:users',
       subPages: [
         { title: 'Membership', href: '/club/membership', description: 'join us!', icon: 'heroicons:users' },
-        { title: 'Board', href: '/club/board', description: 'meet the team' },
+        { title: 'Board', href: '/club/board', description: 'meet the team', icon: 'heroicons:user-group' },
         { title: 'Shop', href: '/club/shop', description: 'buy discs, and more!', icon: 'heroicons:shopping-cart' }
       ]
     },
