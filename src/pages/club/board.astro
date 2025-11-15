@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '~/layouts/Layout.astro';
-import Panel from '~/components/Panel.astro';
-import Text from '~/components/Text.astro';
-import IllustrationImage from '~/components/IllustrationImage.astro';
+import Layout from '@layouts/Layout.astro';
+import Panel from '@components/Panel.astro';
+import Text from '@components/Text.astro';
+import IllustrationImage from '@components/IllustrationImage.astro';
 import PastBoardMembers from './_past-board-members.mdx';
 
 const boardMembers = await getCollection('board');

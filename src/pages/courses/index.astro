@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '~/layouts/Layout.astro';
-import CourseCard from '~/components/CourseCard.astro';
-import CourseMap from '~/components/CourseMap.astro';
-import Grid from '~/components/Grid.astro';
-import LinkPanel from '~/components/LinkPanel.astro';
-import Section from '~/components/Section.astro';
+import Layout from '@layouts/Layout.astro';
+import CourseCard from '@components/CourseCard.astro';
+import CourseMap from '@components/CourseMap.astro';
+import Grid from '@components/Grid.astro';
+import LinkPanel from '@components/LinkPanel.astro';
+import Section from '@components/Section.astro';
 
 const courses = await getCollection('courses');
 courses.sort((a, b) => a.data.title.localeCompare(b.data.title));

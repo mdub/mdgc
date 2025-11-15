@@ -3,9 +3,16 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "baseUrl": ".",
+    "strictNullChecks": true,
+    "baseUrl": "src",
     "paths": {
-      "~/*": ["src/*"]
+      "@src/*": ["*"],
+      "@assets/*": ["assets/*"],
+      "@images/*": ["assets/images/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@styles/*": ["styles/*"],
+      "@data/*": ["data/*"]
     },
     "types": ["astro/client"]
   }

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '~/layouts/Layout.astro';
-import Text from '~/components/Text.astro';
+import Layout from '@layouts/Layout.astro';
+import Text from '@components/Text.astro';
 
 const allNews = await getCollection('news');
 
