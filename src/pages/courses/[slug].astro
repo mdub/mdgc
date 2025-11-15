@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Layout from '~/layouts/Layout.astro';
 import Text from '~/components/Text.astro';
 import Panel from '~/components/Panel.astro';
+import HeroImage from '~/components/HeroImage.astro';
 
 export async function getStaticPaths() {
   const courses = await getCollection('courses');
@@ -48,53 +49,55 @@ const mapLinks = lat && lng ? {
   entrySlug={course.slug}
 >
   {course.data.mainImage && (
-    <Image
+    <HeroImage
       src={course.data.mainImage}
       alt={course.data.title}
-      class="w-full my-8 rounded-lg aspect-[2/1] object-cover"
-      inferSize={true}
+      class="aspect-2/1"
     />
   )}
 
   <Text>
+
     <Content />
+
+    {(course.data.address || mapLinks) && (
+      <section>
+        <h2>Location</h2>
+        {course.data.address && <p>{course.data.address}</p>}
+        {mapLinks && (
+          <p>
+            View in:
+            <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
+            {' · '}
+            <a href={mapLinks.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a>
+            {' · '}
+            <a href={mapLinks.openstreetmap} target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+          </p>
+        )}
+      </section>
+    )}
+
+    {discLibrary && (
+      <section>
+        <h2>Nearest disc library</h2>
+        <p>If you don't have your own discs, you can borrow some from <a href={discLibrary.data.url}>{discLibrary.data.location}</a>.</p>
+      </section>
+    )}
+
+    {course.data.courseMap && (
+      <section>
+        <h2>Course map</h2>
+        <a href={course.data.courseMap.src}>
+          <Image
+            src={course.data.courseMap}
+            alt={`${course.data.title} course map`}
+            class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+            inferSize={true}
+          />
+        </a>
+      </section>
+    )}
+
   </Text>
 
-  {(course.data.address || mapLinks) && (
-    <Text>
-      <h2>Location</h2>
-      {course.data.address && <p>{course.data.address}</p>}
-      {mapLinks && (
-        <p>
-          View in:
-          <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
-          {' · '}
-          <a href={mapLinks.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a>
-          {' · '}
-          <a href={mapLinks.openstreetmap} target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
-        </p>
-      )}
-    </Text>
-  )}
-
-  {discLibrary && (
-    <Text>
-      <h2>Nearest disc library</h2>
-      <p>If you don't have your own discs, you can borrow some from <a href={discLibrary.data.url}>{discLibrary.data.location}</a>.</p>
-    </Text>
-  )}
-
-  {course.data.courseMap && (
-    <Text>
-      <h2>Course map</h2>
-      <a href={course.data.courseMap.src}>
-        <Image
-          src={course.data.courseMap}
-          alt={`${course.data.title} course map`}
-          class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
-          inferSize={true}
-        />
-      </a>
-    </Text>
-  )}
 </Layout>
