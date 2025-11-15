@@ -3,6 +3,7 @@ import '~/styles/global.css'
 import logoImage from '~/assets/images/mdgc-logo.png';
 import { getNavItems, type NavItem } from '~/data/navigation.ts';
 import { Icon } from 'astro-icon/components'
+import ReportIssue from '~/components/ReportIssue.astro';
 
 export interface Props {
   title: string;
@@ -178,6 +179,7 @@ const faviconSizes = [16, 32, 48, 192];
 					<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="View source on GitHub" title="View source on GitHub">
 						<Icon name="mdi:github" class="h-5 w-5" />
 					</a>
+					<ReportIssue />
 					{cmsUrl && (
 						<a href={cmsUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="Edit in CMS" title="Edit in CMS">
 							<Icon name="mdi:pencil" class="h-5 w-5" />

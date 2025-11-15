@@ -1,0 +1,44 @@
+name: Website issue
+description: Report an issue with the MDGC website
+labels: ["user-reported"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue with the website!
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: The URL of the page where you found the issue
+      placeholder: https://mdgc.pages.dev/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Issue details
+      description: Please describe the problem you encountered
+      placeholder: Tell us what you see and what you expected to see
+    validations:
+      required: true
+
+  - type: textarea
+    id: browser-info
+    attributes:
+      label: Browser information
+      description: Browser and device details
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional information
+      description: Any other relevant details
+      placeholder: Screenshots, etc.
+    validations:
+      required: false
