@@ -51,7 +51,7 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       icon: 'heroicons:play-circle',
       subPages: [
         { title: 'Try it', href: '/disc-golf/try', description: 'how to get started', icon: 'heroicons:play' },
-        { title: 'Grow your game', href: '/disc-golf/grow', description: 'take it further', icon: 'heroicons:arrow-trending-up' }
+        { title: 'Get into it', href: '/disc-golf/grow', description: 'take it further', icon: 'heroicons:arrow-trending-up' }
       ]
     },
     {
