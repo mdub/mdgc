@@ -35,8 +35,19 @@ const discLibraries = defineCollection({
   }),
 });
 
+const news = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    author: z.string().optional(),
+    expiryDate: z.date().optional(),
+  }),
+});
+
 export const collections = {
   courses,
   board,
   discLibraries,
+  news,
 };

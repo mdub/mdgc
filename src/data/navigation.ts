@@ -60,9 +60,10 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       description: 'about us',
       icon: 'heroicons:users',
       subPages: [
+        { title: 'News', href: '/club/news', description: 'latest updates', icon: 'heroicons:newspaper' },
+        { title: 'Shop', href: '/club/shop', description: 'buy discs, and more!', icon: 'heroicons:shopping-cart' },
         { title: 'Membership', href: '/club/membership', description: 'join us!', icon: 'heroicons:users' },
-        { title: 'Board', href: '/club/board', description: 'meet the team', icon: 'heroicons:user-group' },
-        { title: 'Shop', href: '/club/shop', description: 'buy discs, and more!', icon: 'heroicons:shopping-cart' }
+        { title: 'Board', href: '/club/board', description: 'meet the team', icon: 'heroicons:user-group' }
       ]
     },
     {
