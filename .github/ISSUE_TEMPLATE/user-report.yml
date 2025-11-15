@@ -1,4 +1,4 @@
-name: Website issue
+name: MDGC website issue
 description: Report an issue with the MDGC website
 labels: ["user-report"]
 body:

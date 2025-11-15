@@ -18,7 +18,7 @@
 
 <!-- Modal -->
 <div id="issue-modal" class="fixed inset-0 backdrop-blur-sm bg-black/5 hidden z-2000">
-	<div id="issue-modal-content" class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto absolute bottom-20 right-4 transform transition-all duration-200 ease-out opacity-0 scale-95">
+	<div id="issue-modal-content" class="bg-white rounded-lg shadow-2xl max-w-md w-full absolute bottom-20 right-4 transform transition-all duration-200 ease-out opacity-0 scale-95">
 		<div class="p-6">
 			<div class="flex justify-between items-start mb-4">
 				<h2 class="text-2xl font-bold text-gray-900">Report an issue</h2>
@@ -29,65 +29,25 @@
 				</button>
 			</div>
 
-			<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-md">
-				<p class="text-sm text-blue-800">
-					<strong>Note:</strong> You'll need a GitHub account to submit an issue.
-					We'll open GitHub with your information pre-filled, and you can review and submit it there.
-				</p>
+			<p class="text-sm text-gray-700 mb-6">
+				You'll need a GitHub account to report the issue.
+				We'll open a "new issue" form, with page information pre-filled.
+			</p>
+
+			<div class="flex justify-end gap-3">
+				<button
+					id="cancel-btn"
+					class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+				>
+					Cancel
+				</button>
+				<button
+					id="submit-btn"
+					class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+				>
+					Continue to GitHub
+				</button>
 			</div>
-
-			<form id="issue-form" class="space-y-4">
-				<div>
-					<label for="issue-headline" class="block text-sm font-medium text-gray-700 mb-1">
-						Headline <span class="text-red-500">*</span>
-					</label>
-					<input
-						type="text"
-						id="issue-headline"
-						name="headline"
-						required
-						class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
-						placeholder="Brief description of the issue"
-					/>
-				</div>
-
-				<div>
-					<label for="issue-details" class="block text-sm font-medium text-gray-700 mb-1">
-						Details <span class="text-red-500">*</span>
-					</label>
-					<textarea
-						id="issue-details"
-						name="details"
-						rows="6"
-						required
-						class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
-						placeholder="Provide additional details about the issue..."
-					></textarea>
-				</div>
-
-				<div class="bg-gray-50 p-3 rounded-md">
-					<p class="text-sm text-gray-600">
-						<strong>Page URL:</strong> <span id="current-url" class="font-mono text-xs break-all"></span>
-					</p>
-				</div>
-
-				<div class="flex justify-end gap-3 pt-4">
-					<button
-						type="button"
-						id="cancel-btn"
-						class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
-					>
-						Cancel
-					</button>
-					<button
-						type="submit"
-						id="submit-btn"
-						class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-					>
-						Continue to GitHub
-					</button>
-				</div>
-			</form>
 		</div>
 	</div>
 </div>
@@ -98,21 +58,41 @@
 	const reportBtn = document.getElementById('report-issue-btn');
 	const closeBtn = document.getElementById('close-modal');
 	const cancelBtn = document.getElementById('cancel-btn');
-	const form = document.getElementById('issue-form') as HTMLFormElement;
-	const currentUrlSpan = document.getElementById('current-url');
+	const submitBtn = document.getElementById('submit-btn');
 
-	// Set current URL
-	if (currentUrlSpan) {
-		currentUrlSpan.textContent = window.location.href;
+	// Gather browser information
+	function getBrowserInfo(): string {
+		const info = [
+			`- Browser: \`${navigator.userAgent}\``,
+			`- Viewport: \`${window.innerWidth}x${window.innerHeight}\``,
+			`- Screen: \`${window.screen.width}x${window.screen.height}\``,
+		];
+		return info.join('\n');
+	}
+
+	// Open GitHub issue form
+	function openGitHubIssue() {
+		const pageUrl = window.location.href;
+		const browserInfo = getBrowserInfo();
+
+		const params = new URLSearchParams({
+			template: 'user-report.yml',
+			labels: 'user-report',
+			'page-url': pageUrl,
+			'browser-info': browserInfo,
+		});
+
+		const githubUrl = `https://github.com/mdub/mdgc/issues/new?${params.toString()}`;
+
+		// Open in new window
+		window.open(githubUrl, '_blank', 'noopener,noreferrer');
+
+		closeModal();
 	}
 
 	// Open modal with animation
 	reportBtn?.addEventListener('click', () => {
 		modal?.classList.remove('hidden');
-		form?.reset();
-		if (currentUrlSpan) {
-			currentUrlSpan.textContent = window.location.href;
-		}
 		// Trigger animation after render
 		requestAnimationFrame(() => {
 			modalContent?.classList.remove('opacity-0', 'scale-95');
@@ -132,48 +112,12 @@
 
 	closeBtn?.addEventListener('click', closeModal);
 	cancelBtn?.addEventListener('click', closeModal);
+	submitBtn?.addEventListener('click', openGitHubIssue);
 
 	// Close on backdrop click
 	modal?.addEventListener('click', (e) => {
 		if (e.target === modal) {
 			closeModal();
 		}
-	});
-
-	// Gather browser information
-	function getBrowserInfo(): string {
-		const info = [
-			`- Browser: \`${navigator.userAgent}\``,
-			`- Viewport: \`${window.innerWidth}x${window.innerHeight}\``,
-			`- Screen: \`${window.screen.width}x${window.screen.height}\``,
-		];
-		return info.join('\n');
-	}
-
-	// Handle form submission - open GitHub with pre-filled issue
-	form?.addEventListener('submit', (e) => {
-		e.preventDefault();
-
-		const headline = (document.getElementById('issue-headline') as HTMLInputElement).value;
-		const details = (document.getElementById('issue-details') as HTMLTextAreaElement).value;
-		const pageUrl = window.location.href;
-		const browserInfo = getBrowserInfo();
-
-		// Build GitHub issue URL with pre-filled template
-		const params = new URLSearchParams({
-			template: 'user-report.yml',
-			title: headline,
-			'page-url': pageUrl,
-			'browser-info': browserInfo,
-			details: details || '',
-		});
-
-		const githubUrl = `https://github.com/mdub/mdgc/issues/new?${params.toString()}`;
-
-		// Open in new tab
-		window.open(githubUrl, '_blank', 'noopener,noreferrer');
-
-		// Close modal
-		closeModal();
 	});
 </script>
