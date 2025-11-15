@@ -143,9 +143,9 @@
 	// Gather browser information
 	function getBrowserInfo(): string {
 		const info = [
-			`- Browser: ${navigator.userAgent}`,
-			`- Viewport: ${window.innerWidth}x${window.innerHeight}`,
-			`- Screen: ${window.screen.width}x${window.screen.height}`,
+			`- Browser: \`${navigator.userAgent}\``,
+			`- Viewport: \`${window.innerWidth}x${window.innerHeight}\``,
+			`- Screen: \`${window.screen.width}x${window.screen.height}\``,
 		];
 		return info.join('\n');
 	}

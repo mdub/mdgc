@@ -30,7 +30,6 @@ body:
     attributes:
       label: Browser information
       description: Browser and device details
-      render: text
     validations:
       required: false
 
