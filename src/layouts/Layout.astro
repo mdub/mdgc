@@ -57,7 +57,7 @@ const faviconSizes = [16, 32, 48, 192];
 			<link rel="icon" type="image/png" sizes={`${size}x${size}`} href={`/images/favicon-${size}x${size}.png`} />
 		))}
 	</head>
-	<body>
+	<body class="flex flex-col min-h-screen">
 		<header>
 			<div id="menu-strip" class="bg-linear-to-b from-mdgc-blue-dark to-slate-900 text-white shadow-lg">
 				<div id="menu-content" class="content-width flex items-center h-16 space-x-8">
@@ -120,7 +120,7 @@ const faviconSizes = [16, 32, 48, 192];
 			</div>
 		</header>
 
-		<main>
+		<main class="flex-grow">
 			<div class="bg-mdgc-blue-dark text-white">
 				<div id="title-content" class="content-width p-8">
 					<div id="title-and-subtitle">
@@ -134,7 +134,7 @@ const faviconSizes = [16, 32, 48, 192];
 			</div>
 		</main>
 
-		<footer class="bg-gray-900 text-white context-width sm:px-6 lg:px-8 py-12">
+		<footer class="bg-gray-900 text-white context-width sm:px-6 lg:px-8 py-12 mt-auto">
 			<div class="no-print flex flex-row gap-24">
 
 				<!-- Logo section -->
