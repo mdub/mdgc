@@ -12,6 +12,7 @@ export interface NavItem {
   href: string;
   description?: string;
   icon?: string;
+  image?: string;
   subPages?: NavSubPage[];
 }
 
@@ -48,7 +49,7 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       title: 'Disc Golf',
       href: '/disc-golf',
       description: 'about the game',
-      icon: 'heroicons:play-circle',
+      icon: 'basket',
       subPages: [
         { title: 'Try it', href: '/disc-golf/try', description: 'how to get started', icon: 'heroicons:play' },
         { title: 'Get into it', href: '/disc-golf/grow', description: 'take it further', icon: 'heroicons:arrow-trending-up' }
