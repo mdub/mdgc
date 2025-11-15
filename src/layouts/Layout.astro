@@ -176,15 +176,15 @@ const faviconSizes = [16, 32, 48, 192];
 					<p class="text-xs text-gray-500 mt-1">last updated: {new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne', dateStyle: 'medium', timeStyle: 'short' })}</p>
 				</div>
 				<div class="no-print flex items-center gap-4">
+					{cmsUrl && (
+						<a href={cmsUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="Edit page in CMS" title="Edit in CMS">
+							<Icon name="mdi:pencil" class="h-5 w-5" />
+						</a>
+					)}
 					<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="View source on GitHub" title="View source on GitHub">
 						<Icon name="mdi:github" class="h-5 w-5" />
 					</a>
 					<ReportIssue />
-					{cmsUrl && (
-						<a href={cmsUrl} target="_blank" rel="noopener noreferrer" class="inline-block text-gray-400 hover:text-white transition-colors" aria-label="Edit in CMS" title="Edit in CMS">
-							<Icon name="mdi:pencil" class="h-5 w-5" />
-						</a>
-					)}
 				</div>
 			</div>
 
