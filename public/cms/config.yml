@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
 backend:
   name: github
   repo: mdub/mdgc
@@ -9,7 +11,9 @@ media_folder: src/assets/images
 public_folder: ~/assets/images
 
 site_url: https://mdgc.pages.dev
-logo_url: https://mdgc.pages.dev/images/favicon-192x192.png
+
+logo:
+  src: https://mdgc.pages.dev/images/favicon-192x192.png
 
 collections:
   - name: "courses"
