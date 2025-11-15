@@ -1,4 +1,4 @@
-# issue-007: Document contributor workflow 🔲
+# issue-007: Document contributor workflow ✅
 
 ```yaml
 depends_on:
