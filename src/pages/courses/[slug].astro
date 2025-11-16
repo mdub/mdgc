@@ -5,6 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import Text from '@components/Text.astro';
 import Panel from '@components/Panel.astro';
 import HeroImage from '@components/HeroImage.astro';
+import SingleCourseMap from '@components/SingleCourseMap.astro';
 
 export async function getStaticPaths() {
   const courses = await getCollection('courses');
@@ -55,8 +56,7 @@ const mapLinks = {
 
     <section>
       <h2>Location</h2>
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-      <div id="course-detail-map" class="w-full h-[300px] rounded-lg mb-4"></div>
+      <SingleCourseMap lat={lat} lng={lng} title={course.data.title} />
       <p>
         View in:
         <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
@@ -89,52 +89,3 @@ const mapLinks = {
   </Text>
 
 </Layout>
-
-<style>
-  /* Custom tooltip styling */
-  :global(.course-label) {
-    background: white;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    color: #1e3a8a;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-  :global(.course-label::before) {
-    border-top-color: white;
-  }
-</style>
-
-<script is:inline define:vars={{ lat, lng, title: course.data.title }}>
-  // Load Leaflet dynamically
-  const script = document.createElement('script');
-  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-  script.onload = () => {
-    // Initialize map centered on this course, zoomed out to show Melbourne context
-    const map = L.map('course-detail-map', {
-      scrollWheelZoom: false,
-      center: [lat, lng],
-      zoom: 12
-    });
-
-    // Add CartoDB Voyager tiles - clean, light cartographic style
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 20,
-      subdomains: 'abcd'
-    }).addTo(map);
-
-    // Add marker for this course with permanent label
-    const marker = L.marker([lat, lng]).addTo(map);
-    marker.bindTooltip(title, {
-      permanent: true,
-      direction: 'top',
-      offset: [-15, -15],
-      className: 'course-label'
-    });
-  };
-  document.head.appendChild(script);
-</script>
