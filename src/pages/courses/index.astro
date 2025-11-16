@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import CourseCard from '@components/CourseCard.astro';
-import CourseMap from '@components/CourseMap.astro';
+import AllCourseLocationsMap from '@components/AllCourseLocationsMap.astro';
 import Grid from '@components/Grid.astro';
 import LinkPanel from '@components/LinkPanel.astro';
 import Section from '@components/Section.astro';
@@ -24,7 +24,7 @@ courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 	</Grid>
 
 	<div class="my-8">
-		<CourseMap />
+		<AllCourseLocationsMap />
 	</div>
 
 	<Section title="Further afield">

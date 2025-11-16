@@ -5,7 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import Text from '@components/Text.astro';
 import Panel from '@components/Panel.astro';
 import HeroImage from '@components/HeroImage.astro';
-import SingleCourseMap from '@components/SingleCourseMap.astro';
+import CourseLocationMap from '@components/CourseLocationMap.astro';
 
 export async function getStaticPaths() {
   const courses = await getCollection('courses');
@@ -56,7 +56,7 @@ const mapLinks = {
 
     <section>
       <h2>Location</h2>
-      <SingleCourseMap lat={lat} lng={lng} title={course.data.title} />
+      <CourseLocationMap lat={lat} lng={lng} title={course.data.title} />
       <p>
         View in:
         <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
@@ -74,11 +74,11 @@ const mapLinks = {
 
     {course.data.courseMap && (
       <section>
-        <h2>Course map</h2>
+        <h2>Course layout</h2>
         <a href={course.data.courseMap.src}>
           <Image
             src={course.data.courseMap}
-            alt={`${course.data.title} course map`}
+            alt={`${course.data.title} course layout`}
             class="w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
             inferSize={true}
           />
