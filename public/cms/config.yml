@@ -16,6 +16,25 @@ logo:
   src: https://mdgc.pages.dev/images/favicon-192x192.png
 
 collections:
+
+  - name: "news"
+    label: "News"
+    label_singular: "News Item"
+    folder: "src/content/news"
+    create: true
+    editor:
+      preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "News will not be displayed after this date" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "courses"
     label: "Courses"
     label_singular: "Course"
@@ -54,21 +73,3 @@ collections:
       - { label: "Role", name: "role", widget: "string", required: false }
       - { label: "Photo", name: "photo", widget: "image", required: false }
       - { label: "Bio", name: "body", widget: "markdown" }
-
-  - name: "news"
-    label: "News"
-    label_singular: "News Item"
-    folder: "src/content/news"
-    create: true
-    editor:
-      preview: false
-    slug: "{{slug}}"
-    extension: "md"
-    format: "frontmatter"
-    sortable_fields: ["date", "title"]
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Author", name: "author", widget: "string", required: false }
-      - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "News will not be displayed after this date" }
-      - { label: "Body", name: "body", widget: "markdown" }
