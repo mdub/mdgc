@@ -89,10 +89,10 @@ Dear agent: when working with humans on this project, please:
 To determine (or update) current status, see:
 
 - the "Project Status" section in the README.md
-- GitHub Issues at https://github.com/mdub/mdgc/issues
+- GitHub Issues at https://github.com/melbourne-disc-golf/mdgc-website/issues
 
 ## Issue tracking
 
 **IMPORTANT**: This project uses GitHub Issues for tracking tasks and bugs.
 
-View and create issues at: https://github.com/mdub/mdgc/issues
+View and create issues at: https://github.com/melbourne-disc-golf/mdgc-website/issues

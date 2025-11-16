@@ -1,6 +1,6 @@
 # Melbourne Disc Golf Club website (WIP)
 
-[![Deployment Status](https://img.shields.io/github/check-runs/mdub/mdgc/HEAD)](https://github.com/mdub/mdgc/commits/main)
+[![Deployment Status](https://img.shields.io/github/check-runs/melbourne-disc-golf/mdgc-website/HEAD)](https://github.com/melbourne-disc-golf/mdgc-website/commits/main)
 
 A modern website for the Melbourne Disc Golf Club.
 
@@ -16,7 +16,7 @@ Once development is complete, we will change the existing site URL to refer to t
 
 The site is managed using code hosted on GitHub:
 
-- https://github.com/mdub/mdgc
+- https://github.com/melbourne-disc-golf/mdgc-website
 
 ### Getting access
 
@@ -53,7 +53,7 @@ Other pages are not CMS-managed but you can edit them online in GitHub.
 ### For technical users
 
 If you're comfortable with Git and development tools:
-  - Clone the repository: `git clone https://github.com/mdub/mdgc.git`
+  - Clone the repository: `git clone https://github.com/melbourne-disc-golf/mdgc-website.git`
   - Make your changes locally
   - Test them using `pnpm run dev`
   - Commit and push: `git commit -am "Description" && git push`
