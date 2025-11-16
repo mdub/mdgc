@@ -8,5 +8,3 @@ We're re-developing the club website!
 What do you think of it so far?
 
 Stay tuned for more updates!
-
-_Here_ is one.
