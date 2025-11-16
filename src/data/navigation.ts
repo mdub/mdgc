@@ -52,7 +52,7 @@ export async function getNavItems(featuredCoursesOnly: boolean = false): Promise
       icon: 'basket',
       subPages: [
         { title: 'Try it', href: '/disc-golf/try', description: 'how to get started', icon: 'heroicons:rocket-launch' },
-        { title: 'Get into it', href: '/disc-golf/grow', description: 'take it further', icon: 'heroicons:arrow-trending-up' }
+        { title: 'Get into it', href: '/disc-golf/grow', description: 'grow your game', icon: 'heroicons:arrow-trending-up' }
       ]
     },
     {
