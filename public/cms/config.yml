@@ -41,17 +41,17 @@ collections:
     label: "Board Members"
     label_singular: "Board Member"
     folder: "src/content/board"
+    identifier_field: "name"
     create: true
     editor:
       preview: false
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    sortable_fields: ["order", "name"]
+    sortable_fields: ["name"]
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1, hint: "Display order on the board page" }
+      - { label: "Role", name: "role", widget: "string", required: false }
       - { label: "Photo", name: "photo", widget: "image", required: false }
       - { label: "Bio", name: "body", widget: "markdown" }
 

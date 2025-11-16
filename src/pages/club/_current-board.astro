@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import IllustrationImage from '@components/IllustrationImage.astro';
+
+const boardMembers = await getCollection('board');
+
+const knownRoles = ['President', 'Vice President', 'Secretary', 'Treasurer'];
+
+const getRolePriority = (role: string | undefined): number => {
+	if (!role) return knownRoles.length + 1;
+	const index = knownRoles.indexOf(role);
+	return index === -1 ? knownRoles.length : index;
+};
+
+const sortedMembers = boardMembers.sort((a, b) => {
+	const aPriority = getRolePriority(a.data.role);
+	const bPriority = getRolePriority(b.data.role);
+
+	if (aPriority !== bPriority) {
+		return aPriority - bPriority;
+	}
+
+	return a.data.name.localeCompare(b.data.name);
+});
+
+const renderedMembers = await Promise.all(
+	sortedMembers.map(async (member) => ({
+		...member,
+		Content: (await member.render()).Content
+	}))
+);
+---
+
+<section>
+	<h2>Current board members</h2>
+
+	{renderedMembers.map(({ data, Content }) => (
+		<section>
+			<h3>{data.name}{data.role ? ` (${data.role})` : ''}</h3>
+			{data.photo && (
+				<IllustrationImage src={data.photo} alt={data.name} imageClass="aspect-square" />
+			)}
+			<Content />
+		</section>
+	))}
+</section>

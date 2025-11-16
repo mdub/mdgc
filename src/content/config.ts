@@ -20,8 +20,7 @@ const board = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
     name: z.string(),
-    title: z.string(),
-    order: z.number(),
+    role: z.string().optional(),
     photo: image().optional(),
   }),
 });
