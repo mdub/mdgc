@@ -56,7 +56,7 @@ const coursesWithLocation = courses.map(course => {
 	}
 </style>
 
-<script define:vars={{ coursesWithLocation }}>
+<script is:inline define:vars={{ coursesWithLocation }}>
 	// Load Leaflet dynamically
 	const script = document.createElement('script');
 	script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
@@ -128,7 +128,7 @@ const coursesWithLocation = courses.map(course => {
 			});
 
 			// Close popup when mouse leaves both marker and popup
-			marker.on('mouseout', function(e) {
+			marker.on('mouseout', function() {
 				const popup = this.getPopup();
 				const popupElement = popup.getElement();
 
