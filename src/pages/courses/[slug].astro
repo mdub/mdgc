@@ -75,6 +75,11 @@ const mapLinks = {
     {course.data.courseMap && (
       <section>
         <h2>Course layout</h2>
+        {course.data.udiscUrl && (
+          <p>
+            View on: <a href={course.data.udiscUrl} target="_blank" rel="noopener noreferrer">uDisc</a>
+          </p>
+        )}
         <a href={course.data.courseMap.src}>
           <Image
             src={course.data.courseMap}
