@@ -40,7 +40,7 @@ const news = defineCollection({
     title: z.string(),
     date: z.date(),
     author: z.string().optional(),
-    expiryDate: z.date().optional(),
+    expiryDate: z.union([z.date(), z.literal('')]).optional(),
   }),
 });
 
