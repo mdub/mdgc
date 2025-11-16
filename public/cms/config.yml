@@ -28,12 +28,13 @@ collections:
     extension: "md"
     format: "frontmatter"
     sortable_fields: ["date", "title"]
+    summary: "{{date}} - {{title}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "News will not be displayed after this date" }
-      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "courses"
     label: "Courses"
