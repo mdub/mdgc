@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: mdub/mdgc
+  repo: melbourne-disc-golf/mdgc-website
   branch: main
   base_url: https://mdgc.pages.dev
   auth_endpoint: api/auth
