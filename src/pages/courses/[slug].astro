@@ -20,26 +20,19 @@ const { Content } = await course.render();
 // Get disc library if referenced
 const discLibrary = course.data.discLibrary ? await getEntry(course.data.discLibrary) : null;
 
-// Parse location coordinates if available
-let lat, lng;
-if (course.data.location) {
-  try {
-    const parsed = JSON.parse(course.data.location);
-    if (parsed.type === 'Point' && parsed.coordinates) {
-      lng = parsed.coordinates[0];
-      lat = parsed.coordinates[1];
-    }
-  } catch (e) {
-    // Ignore parse errors
-  }
+// Parse location coordinates (mandatory)
+if (!course.data.location) {
+  throw new Error(`Course ${course.slug} is missing required location data`);
 }
+const parsed = JSON.parse(course.data.location);
+const lat = parsed.coordinates[1];
+const lng = parsed.coordinates[0];
 
-// Generate map links with course name label
-const mapLinks = lat && lng ? {
-  openstreetmap: `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}&zoom=16#map=16/${lat}/${lng}`,
+// Generate map links
+const mapLinks = {
   google: course.data.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,
   apple: `https://maps.apple.com/?q=${encodeURIComponent(course.data.title)}&ll=${lat},${lng}`
-} : null;
+};
 ---
 
 <Layout
@@ -60,22 +53,17 @@ const mapLinks = lat && lng ? {
 
     <Content />
 
-    {(course.data.address || mapLinks) && (
-      <section>
-        <h2>Location</h2>
-        {course.data.address && <p>{course.data.address}</p>}
-        {mapLinks && (
-          <p>
-            View in:
-            <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
-            {' · '}
-            <a href={mapLinks.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a>
-            {' · '}
-            <a href={mapLinks.openstreetmap} target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
-          </p>
-        )}
-      </section>
-    )}
+    <section>
+      <h2>Location</h2>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <div id="course-detail-map" class="w-full h-[300px] rounded-lg mb-4"></div>
+      <p>
+        View in:
+        <a href={mapLinks.google} target="_blank" rel="noopener noreferrer">Google Maps</a>
+        {' · '}
+        <a href={mapLinks.apple} target="_blank" rel="noopener noreferrer">Apple Maps</a>
+      </p>
+    </section>
 
     {discLibrary && (
       <section>
@@ -101,3 +89,52 @@ const mapLinks = lat && lng ? {
   </Text>
 
 </Layout>
+
+<style>
+  /* Custom tooltip styling */
+  :global(.course-label) {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e3a8a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  :global(.course-label::before) {
+    border-top-color: white;
+  }
+</style>
+
+<script is:inline define:vars={{ lat, lng, title: course.data.title }}>
+  // Load Leaflet dynamically
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.onload = () => {
+    // Initialize map centered on this course, zoomed out to show Melbourne context
+    const map = L.map('course-detail-map', {
+      scrollWheelZoom: false,
+      center: [lat, lng],
+      zoom: 12
+    });
+
+    // Add CartoDB Voyager tiles - clean, light cartographic style
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 20,
+      subdomains: 'abcd'
+    }).addTo(map);
+
+    // Add marker for this course with permanent label
+    const marker = L.marker([lat, lng]).addTo(map);
+    marker.bindTooltip(title, {
+      permanent: true,
+      direction: 'top',
+      offset: [-15, -15],
+      className: 'course-label'
+    });
+  };
+  document.head.appendChild(script);
+</script>
