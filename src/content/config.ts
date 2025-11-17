@@ -44,9 +44,22 @@ const news = defineCollection({
   }),
 });
 
+const tournaments = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    date: z.date(),
+    endDate: z.date().optional(),
+    courses: z.array(reference('courses')),
+    heroImage: image().optional(),
+    registrationUrl: z.string().optional(),
+  }),
+});
+
 export const collections = {
   courses,
   board,
   discLibraries,
   news,
+  tournaments,
 };

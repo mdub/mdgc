@@ -1,0 +1,105 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+import Text from '@components/Text.astro';
+
+export async function getStaticPaths() {
+  const tournaments = await getCollection('tournaments');
+  return tournaments.map((tournament) => ({
+    params: { slug: tournament.slug },
+    props: { tournament },
+  }));
+}
+
+const { tournament } = Astro.props;
+const { Content } = await tournament.render();
+
+const courses = await Promise.all(
+  tournament.data.courses.map(async (courseRef) => {
+    const course = await getEntry(courseRef);
+    return course;
+  })
+);
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-AU', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<Layout
+  title={tournament.data.title}
+  subtitle={formatDate(tournament.data.date)}
+  collectionName="tournaments"
+  entrySlug={tournament.slug}
+>
+  {tournament.data.heroImage && (
+    <Image
+      src={tournament.data.heroImage}
+      alt={tournament.data.title}
+      class="w-full max-h-96 object-contain rounded-lg my-8"
+      inferSize={true}
+    />
+  )}
+
+  <Text>
+    <Content />
+
+    <section>
+      <h2>Event details</h2>
+      <dl>
+        <dt>Date</dt>
+        <dd>{formatDate(tournament.data.date)}</dd>
+
+        {tournament.data.endDate && (
+          <>
+            <dt>End date</dt>
+            <dd>{formatDate(tournament.data.endDate)}</dd>
+          </>
+        )}
+
+        <dt>{courses.length > 1 ? 'Courses' : 'Course'}</dt>
+        <dd>
+          {courses.map((course, index) => (
+            <>
+              <a href={`/courses/${course.slug}`}>{course.data.title}</a>
+              {index < courses.length - 1 && ', '}
+            </>
+          ))}
+        </dd>
+
+        {tournament.data.registrationUrl && (
+          <>
+            <dt>Registration</dt>
+            <dd>
+              <a href={tournament.data.registrationUrl} target="_blank" rel="noopener noreferrer">
+                Register here
+              </a>
+            </dd>
+          </>
+        )}
+      </dl>
+    </section>
+  </Text>
+</Layout>
+
+<style>
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+  }
+</style>
