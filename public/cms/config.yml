@@ -17,6 +17,18 @@ logo:
 
 collections:
 
+  - name: "fragments"
+    label: "Fragments"
+    editor:
+      preview: false
+    files:
+      - name: "homepage-text"
+        label: "Homepage Text"
+        file: "src/pages/_homepage-text.mdx"
+        format: "frontmatter"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown", hint: "Displayed after the navigation grid" }
+
   - name: "news"
     label: "News"
     label_singular: "News Item"

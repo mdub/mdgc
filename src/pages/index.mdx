@@ -7,7 +7,9 @@ subtitle: to the home of disc golf in Melbourne (Australia)
 import NavLink from '@components/NavLink.astro';
 import HeroImage from '@components/HeroImage.astro';
 import Grid from '@components/Grid.astro';
+import Text from '@components/Text.astro';
 import heroImage from '@images/royal-park-group.jpg';
+import { Content as HomepageText } from './_homepage-text.mdx';
 
 <HeroImage
   src={heroImage}
@@ -21,3 +23,7 @@ import heroImage from '@images/royal-park-group.jpg';
 	<NavLink href="/courses" />
 	<NavLink href="/events" />
 </Grid>
+
+<Text>
+	<HomepageText />
+</Text>
