@@ -12,7 +12,8 @@
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
       "@styles/*": ["styles/*"],
-      "@data/*": ["data/*"]
+      "@data/*": ["data/*"],
+      "@utils/*": ["utils/*"]
     },
     "types": ["astro/client"]
   }
