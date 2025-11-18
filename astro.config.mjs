@@ -22,7 +22,22 @@ export default defineConfig({
     icon()
   ],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      {
+        name: 'cms-extensionless-urls',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url === '/cms/sveltia') {
+              req.url = '/cms/sveltia.html';
+            } else if (req.url === '/cms/decap') {
+              req.url = '/cms/decap.html';
+            }
+            next();
+          });
+        }
+      }
+    ],
     resolve: {
       alias: {
         '~': path.resolve('./src'),
