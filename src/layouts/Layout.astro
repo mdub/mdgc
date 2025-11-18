@@ -8,11 +8,10 @@ import ReportIssue from '@components/ReportIssue.astro';
 export interface Props {
   title: string;
   subtitle?: string;
-  collectionName?: string;  // e.g., 'courses', 'board'
-  entrySlug?: string;        // e.g., 'bald-hill-park'
+  cmsPath?: string;  // e.g., '/collections/courses/entries/bald-hill-park'
 }
 
-const { title, subtitle, collectionName, entrySlug } = Astro.props;
+const { title, subtitle, cmsPath } = Astro.props;
 
 // Check if current page is under a nav item
 function isActiveNavItem(itemHref: string): boolean {
@@ -36,9 +35,7 @@ const footerSections: NavItem[] = await getNavItems(true);
 
 // Generate footer links
 const githubUrl = 'https://github.com/melbourne-disc-golf/mdgc-website';
-const cmsUrl = collectionName && entrySlug
-  ? `https://mdgc.pages.dev/cms/#/collections/${collectionName}/entries/${entrySlug}`
-  : null;
+const cmsUrl = cmsPath ? `/cms/sveltia#${cmsPath}` : null;
 
 // Favicon sizes to generate links for
 const faviconSizes = [16, 32, 48, 192];

@@ -35,8 +35,7 @@ const formatDate = (date: Date) => {
 <Layout
   title={event.data.title}
   subtitle={formatDate(event.data.date)}
-  collectionName="events"
-  entrySlug={event.slug}
+  cmsPath={`/collections/events/entries/${event.slug}`}
 >
   {event.data.heroImage && (
     <Image

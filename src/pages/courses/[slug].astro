@@ -38,8 +38,7 @@ const mapLinks = {
 <Layout
   title={course.data.title}
   subtitle={course.data.suburb}
-  collectionName="courses"
-  entrySlug={course.slug}
+  cmsPath={`/collections/courses/entries/${course.slug}`}
 >
   {course.data.mainImage && (
     <HeroImage
