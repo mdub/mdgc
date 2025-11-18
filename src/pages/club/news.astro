@@ -13,7 +13,7 @@ const activeNews = allNews
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout title="News">
+<Layout title="News" cmsPath="/collections/news">
 	<Text>
 		{activeNews.length === 0 ? (
 			<p class="text-gray-600">No news at the moment.</p>
