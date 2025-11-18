@@ -44,10 +44,11 @@ const news = defineCollection({
   }),
 });
 
-const tournaments = defineCollection({
+const events = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
     title: z.string(),
+    eventType: z.enum(['tournament', 'come-and-try', 'other']),
     date: z.date(),
     endDate: z.date().optional(),
     courses: z.array(reference('courses')),
@@ -61,5 +62,5 @@ export const collections = {
   board,
   discLibraries,
   news,
-  tournaments,
+  events,
 };

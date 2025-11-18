@@ -10,7 +10,7 @@ import Panel from '@components/Panel.astro';
 import HeroImage from '@components/HeroImage.astro';
 import heroImage from '@images/adgc-tournament.jpg';
 
-export const tournaments = (await getCollection('tournaments')).sort((a, b) => 
+export const tournaments = (await getCollection('events', ({ data }) => data.eventType === 'tournament')).sort((a, b) => 
   b.data.date.getTime() - a.data.date.getTime()
 );
 
@@ -28,13 +28,13 @@ export const tournaments = (await getCollection('tournaments')).sort((a, b) =>
   <p>No tournaments scheduled at the moment. Check back soon!</p>
 ) : (
   <ul>
-    {tournaments.map((tournament) => (
+    {tournaments.map((event) => (
       <li>
-        <a href={`/events/tournaments/${tournament.slug}`}>
-          <strong>{tournament.data.title}</strong>
+        <a href={`/events/tournaments/${event.slug}`}>
+          <strong>{event.data.title}</strong>
         </a>
         {' - '}
-        {tournament.data.date.toLocaleDateString('en-AU', { 
+        {event.data.date.toLocaleDateString('en-AU', { 
           year: 'numeric', 
           month: 'long', 
           day: 'numeric' 

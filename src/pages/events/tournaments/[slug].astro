@@ -5,18 +5,18 @@ import Layout from '@layouts/Layout.astro';
 import Text from '@components/Text.astro';
 
 export async function getStaticPaths() {
-  const tournaments = await getCollection('tournaments');
-  return tournaments.map((tournament) => ({
-    params: { slug: tournament.slug },
-    props: { tournament },
+  const events = await getCollection('events', ({ data }) => data.eventType === 'tournament');
+  return events.map((event) => ({
+    params: { slug: event.slug },
+    props: { event },
   }));
 }
 
-const { tournament } = Astro.props;
-const { Content } = await tournament.render();
+const { event } = Astro.props;
+const { Content } = await event.render();
 
 const courses = await Promise.all(
-  tournament.data.courses.map(async (courseRef) => {
+  event.data.courses.map(async (courseRef) => {
     const course = await getEntry(courseRef);
     return course;
   })
@@ -33,15 +33,15 @@ const formatDate = (date: Date) => {
 ---
 
 <Layout
-  title={tournament.data.title}
-  subtitle={formatDate(tournament.data.date)}
-  collectionName="tournaments"
-  entrySlug={tournament.slug}
+  title={event.data.title}
+  subtitle={formatDate(event.data.date)}
+  collectionName="events"
+  entrySlug={event.slug}
 >
-  {tournament.data.heroImage && (
+  {event.data.heroImage && (
     <Image
-      src={tournament.data.heroImage}
-      alt={tournament.data.title}
+      src={event.data.heroImage}
+      alt={event.data.title}
       class="w-full max-h-96 object-contain rounded-lg my-8"
       inferSize={true}
     />
@@ -54,12 +54,12 @@ const formatDate = (date: Date) => {
       <h2>Event details</h2>
       <dl>
         <dt>Date</dt>
-        <dd>{formatDate(tournament.data.date)}</dd>
+        <dd>{formatDate(event.data.date)}</dd>
 
-        {tournament.data.endDate && (
+        {event.data.endDate && (
           <>
             <dt>End date</dt>
-            <dd>{formatDate(tournament.data.endDate)}</dd>
+            <dd>{formatDate(event.data.endDate)}</dd>
           </>
         )}
 
@@ -73,11 +73,11 @@ const formatDate = (date: Date) => {
           ))}
         </dd>
 
-        {tournament.data.registrationUrl && (
+        {event.data.registrationUrl && (
           <>
             <dt>Registration</dt>
             <dd>
-              <a href={tournament.data.registrationUrl} target="_blank" rel="noopener noreferrer">
+              <a href={event.data.registrationUrl} target="_blank" rel="noopener noreferrer">
                 Register here
               </a>
             </dd>

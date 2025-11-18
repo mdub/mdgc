@@ -74,3 +74,25 @@ collections:
       - { label: "Role", name: "role", widget: "string", required: false }
       - { label: "Photo", name: "photo", widget: "image", required: false }
       - { label: "Bio", name: "body", widget: "markdown" }
+
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    folder: "src/content/events"
+    create: true
+    editor:
+      preview: false
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    sortable_fields: ["date", "title", "eventType"]
+    summary: "{{date}} - {{title}} ({{eventType}})"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Event Type", name: "eventType", widget: "select", options: ["tournament", "come-and-try", "other"] }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "End Date", name: "endDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: "Courses", name: "courses", widget: "relation", collection: "courses", search_fields: ["title"], value_field: "{{slug}}", display_fields: ["title"], multiple: true }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - { label: "Registration URL", name: "registrationUrl", widget: "string", required: false, hint: "Link to registration form or page" }
+      - { label: "Body", name: "body", widget: "markdown" }
