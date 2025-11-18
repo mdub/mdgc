@@ -10,10 +10,10 @@ backend:
 media_folder: src/assets/images
 public_folder: "@images"
 
-site_url: https://mdgc.pages.dev
+site_url: /
 
 logo:
-  src: https://mdgc.pages.dev/images/favicon-192x192.png
+  src: /images/favicon-192x192.png
 
 collections:
 
