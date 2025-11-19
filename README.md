@@ -30,8 +30,8 @@ There are two ways to edit content without needing to understand Git or programm
 
 _Some_ of the site content can be edited via a CMS. This is the recommended way to edit:
 
-- **Events** (coming soon)
-- **News** (coming soon)
+- **Events** 
+- **News**
 - **Courses**
 - **Board Members**
 
