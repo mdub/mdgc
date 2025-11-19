@@ -132,18 +132,18 @@ const faviconSizes = [16, 32, 48, 192];
 			<div class="no-print content-width flex flex-row gap-8">
 
 				<!-- Logo section -->
-				<div class="shrink">
+				<div class="shrink-0">
 					<a href="/" title="Home" class="logo-link">
-						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
+						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-12 sm:h-16 w-auto" />
 					</a>
 				</div>
 
 				<!-- Navigation sections grid -->
-				<div class="flex flex-row mx-auto gap-8 items-center md:items-start md:gap-16">
+				<nav class="flex flex-wrap mx-auto gap-4 sm:gap-8 md:gap-16 items-center md:items-start ">
 					{navItems.map(section => (
 						<div>
 							<h3 class="font-semibold mb-2">
-								<a href={section.href} class={`inline-block ${navItemColor(section.href)} hover:text-white hover:underline transition-colors`}>
+								<a href={section.href} class={`inline-block ${navItemColor(section.href)} whitespace-nowrap`}>
 									{section.title}
 								</a>
 							</h3>
@@ -151,7 +151,7 @@ const faviconSizes = [16, 32, 48, 192];
 								<ul class="space-y-1 hidden md:block">
 									{section.subPages.map(link => (
 										<li>
-											<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white hover:underline transition-colors`}>
+											<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)}`}>
 												{link.title}
 											</a>
 										</li>
@@ -160,7 +160,7 @@ const faviconSizes = [16, 32, 48, 192];
 							)}
 						</div>
 					))}
-				</div>
+				</nav>
 
 			</div>
 
@@ -189,6 +189,8 @@ const faviconSizes = [16, 32, 48, 192];
 </html>
 
 <style>
+	@import "tailwindcss";
+
 	html,
 	body {
 		margin: 0;
@@ -202,6 +204,10 @@ const faviconSizes = [16, 32, 48, 192];
 
 	.logo-link:hover {
 		transform: scale(1.15);
+	}
+
+	footer nav a {
+		@apply hover:text-white hover:underline transition-colors;
 	}
 
 	@media print {
