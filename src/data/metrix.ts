@@ -19,7 +19,7 @@ interface SeasonData {
   events: MetrixEventInfo[];
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'metrix', 'seasons');
+const DATA_DIR = path.resolve(process.cwd(), 'src/data/metrix/seasons');
 
 export function getAllSeasonEvents(): MetrixEventInfo[] {
   if (!fs.existsSync(DATA_DIR)) {

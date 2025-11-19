@@ -2,7 +2,6 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import metrixSeasons from '../src/data/metrix-seasons.json';
 
 interface MetrixCompetition {
   ID: string;
@@ -26,7 +25,7 @@ interface MetrixResponse {
   };
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'metrix', 'seasons');
+const DATA_DIR = path.join(process.cwd(), 'src', 'data', 'metrix', 'seasons');
 
 async function fetchFromMetrix(id: string): Promise<MetrixResponse> {
   const url = `https://discgolfmetrix.com/api.php?content=result&id=${id}`;
@@ -90,8 +89,9 @@ async function main() {
   const seasonIds = process.argv.slice(2);
 
   if (seasonIds.length === 0) {
-    // Default to current season
-    seasonIds.push(metrixSeasons.currentSeasonId);
+    console.error('Please provide one or more season IDs.');
+    console.error('Usage: ./fetch-metrix-data.ts <seasonId> [seasonId...]');
+    process.exit(1);
   }
 
   console.log(`Fetching data for ${seasonIds.length} season(s)...\n`);
