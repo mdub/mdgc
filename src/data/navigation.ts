@@ -16,33 +16,19 @@ export interface NavItem {
   subPages?: NavSubPage[];
 }
 
-async function getCourseNavItems(featuredOnly: boolean = false): Promise<NavSubPage[]> {
+async function getCourseNavItems(): Promise<NavSubPage[]> {
   let courses = await getCollection('courses');
-
-  if (featuredOnly) {
-    courses = courses.filter(course => course.data.featured);
-  }
 
   courses.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-  const navItems = courses.map(course => ({
+  return courses.map(course => ({
     title: course.data.title,
     href: `/courses/${course.slug}`
   }));
-
-  // Add "View all courses" link if showing featured only
-  if (featuredOnly && navItems.length > 0) {
-    navItems.push({
-      title: '...',
-      href: '/courses'
-    });
-  }
-
-  return navItems;
 }
 
 export async function getNavItems(featuredCoursesOnly: boolean = false): Promise<NavItem[]> {
-  const courseSubPages = await getCourseNavItems(featuredCoursesOnly);
+  const courseSubPages = await getCourseNavItems();
 
   return [
     {
