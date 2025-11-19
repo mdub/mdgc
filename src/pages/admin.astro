@@ -1,18 +1,3 @@
 ---
-// Client-side redirect to cms/index.html
+return Astro.redirect('/cms', 308)
 ---
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/cms/index.html">
-  <title>Redirecting to CMS...</title>
-</head>
-<body>
-  <p>Redirecting to CMS interface...</p>
-  <script>
-    window.location.href = '/cms/index.html';
-  </script>
-</body>
-</html>
