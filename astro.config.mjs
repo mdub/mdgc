@@ -21,6 +21,9 @@ export default defineConfig({
     }),
     icon()
   ],
+  image: {
+    layout: 'constrained'
+  },
   vite: {
     plugins: [
       tailwindcss(),
