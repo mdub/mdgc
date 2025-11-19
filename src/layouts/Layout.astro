@@ -131,18 +131,18 @@ const faviconSizes = [16, 32, 48, 192];
 			</div>
 		</main>
 
-		<footer class="bg-gray-900 text-white context-width sm:px-6 lg:px-8 py-12 mt-auto">
-			<div class="no-print flex flex-row gap-24">
+		<footer class="bg-gray-900 text-white sm:px-6 lg:px-8 py-12 mt-auto">
+			<div class="no-print content-width flex flex-row gap-8">
 
 				<!-- Logo section -->
-				<div class="shrink-0">
+				<div class="shrink">
 					<a href="/" title="Home" class="logo-link">
 						<img src={logoImage.src} alt="Melbourne Disc Golf Club" class="h-16 w-auto" />
 					</a>
 				</div>
 
 				<!-- Navigation sections grid -->
-				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4 mx-auto">
+				<div class="flex flex-row mx-auto gap-8 items-center md:items-start md:gap-16">
 					{footerSections.map(section => (
 						<div>
 							<h3 class="font-semibold mb-2">
@@ -151,7 +151,7 @@ const faviconSizes = [16, 32, 48, 192];
 								</a>
 							</h3>
 							{section.subPages && (
-								<ul class="space-y-1">
+								<ul class="space-y-1 hidden md:block">
 									{section.subPages.map(link => (
 										<li>
 											<a href={link.href} class={`inline-block text-sm ${navItemColor(link.href)} hover:text-white hover:underline transition-colors`}>
@@ -164,6 +164,7 @@ const faviconSizes = [16, 32, 48, 192];
 						</div>
 					))}
 				</div>
+
 			</div>
 
 			<!-- Bottom section -->
