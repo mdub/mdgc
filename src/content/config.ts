@@ -57,10 +57,30 @@ const events = defineCollection({
   }),
 });
 
+const metrixSeasons = defineCollection({
+  type: 'data',
+  schema: z.object({
+    id: z.number(),
+    name: z.string(),
+    dateStart: z.string(),
+    dateEnd: z.string(),
+    eventCount: z.number(),
+    events: z.array(z.object({
+      id: z.number(),
+      name: z.string(),
+      date: z.string(),
+      time: z.string(),
+      courseName: z.string(),
+      courseId: z.string(),
+    })),
+  }),
+});
+
 export const collections = {
   courses,
   board,
   discLibraries,
   news,
   events,
+  metrixSeasons,
 };

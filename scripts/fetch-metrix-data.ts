@@ -25,7 +25,7 @@ interface MetrixResponse {
   };
 }
 
-const DATA_DIR = path.join(process.cwd(), 'src', 'data', 'metrix', 'seasons');
+const DATA_DIR = path.join(process.cwd(), 'src', 'content', 'metrixSeasons');
 
 async function fetchFromMetrix(id: string): Promise<MetrixResponse> {
   const url = `https://discgolfmetrix.com/api.php?content=result&id=${id}`;
