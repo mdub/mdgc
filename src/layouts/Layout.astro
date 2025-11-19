@@ -31,7 +31,7 @@ const currentPath = Astro.url.pathname;
 const navItems: NavItem[] = await getNavItems();
 
 // Get footer navigation with only featured courses
-const footerSections: NavItem[] = await getNavItems(true);
+const footerSections: NavItem[] = await getNavItems(false);
 
 // Generate footer links
 const githubUrl = 'https://github.com/melbourne-disc-golf/mdgc-website';
