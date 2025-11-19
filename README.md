@@ -1,6 +1,6 @@
 # Melbourne Disc Golf Club website (WIP)
 
-[![Deployment Status](https://img.shields.io/github/check-runs/melbourne-disc-golf/mdgc-website/HEAD)](https://github.com/melbourne-disc-golf/mdgc-website/commits/main)
+[![Deployment Status](https://img.shields.io/github/check-runs/melbourne-disc-golf/mdgc-website/HEAD?label="deployment")](https://github.com/melbourne-disc-golf/mdgc-website/commits/main)
 
 A modern website for the Melbourne Disc Golf Club.
 
@@ -26,20 +26,26 @@ In order to make changes to the website, ask Mike Williams to add you as a "coll
 
 There are two ways to edit content without needing to understand Git or programming.
 
-#### Using the Content Management System
+#### Using the CMS
 
-_Some_ of the site content can be edited via a CMS. This is the recommended way to edit:
+We have integrated a Content Management System (CMS) into the site, for management of _structured_ content. This is the recommended way to add and edit:
 
-- **Events** 
+- **Events**
 - **News**
 - **Courses**
 - **Board Members**
 
-To edit content using the CMS:
-  - Visit https://mdgc.pages.dev/cms/
+To use the CMS:
+  - Visit https://mdgc.pages.dev/cms
   - Log in with your GitHub account
   - Edit content as desired
   - Press "Publish"
+
+Hint: pages which can be edited in the CMS _usually_ have a pencil icon in the footer:
+
+<p align="center">
+  <img width="300" src="./docs/edit-in-cms.png" alt="Edit in CMS link">
+</p>
 
 #### Using GitHub's web interface
 
@@ -63,10 +69,10 @@ If you're comfortable with Git and development tools:
 When you make changes to the site source-code on GitHub - using either the CMS, or the GitHub
 web interface - it triggers an automatic "build" and "deployment" process, which updates the live site.
 
-This usually takes about one minute. You can observe the process on the Cloudflare dashboard:
-  - [Cloudflare Pages: mdgc](https://dash.cloudflare.com/1dbfd2793b506e08151b86bd944859b5/pages/view/mdgc)
+**Redployment of the site after a change takes about one minute**.
 
-Tip: if you're wondering whether your changes are live yet, check the "last updated" timestamp in the page footer.
+You can observe the process on the [Cloudflare dashboard](https://dash.cloudflare.com/1dbfd2793b506e08151b86bd944859b5/pages/view/mdgc).
+Tip: if you're wondering whether your changes are live yet, check the "last updated" timestamp in bottom-left of the page footer.
 
 ## 🚀 Development
 
